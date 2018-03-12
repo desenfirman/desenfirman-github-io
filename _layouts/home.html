@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <script defer src="{{ "/assets/js/fontawesome-all.min.js" | absolute_url }}"></script>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="{{ "/assets/css/bootstrap.min.css" | absolute_url }}">
+    <link rel="stylesheet" type="text/css" href="{{ "/assets/css/style.css" | absolute_url }}">
+
+
+</head>
+<body >
+    <div id="particles-js">
+
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-1 d-none d-md-block bg-light sidebar">
+                  <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                      <li class="nav-item" style="margin: auto auto 80px auto;>
+                        <a class="nav-link active" href="#">
+                             <h2>DF</h2>
+                        </a>
+                      </li>
+                      <br ">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                          <span class="fas fa-home fa-2x"></span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <span class="fas fa-pencil-alt fa-2x"></span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <span class="fas fa-code fa-2x"></span>
+                        </a>
+                      </li>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+
+                    </ul>
+                  </div>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            </main>
+        </div>
+    </div>
+
+    <script src="{{ "/assets/js/jquery-3.2.1.min.js" | absolute_url }}"></script>
+    <script src="{{ "/assets/js/popper.min.js" | absolute_url }}"></script>
+    <script src="{{ "/assets/js/bootstrap.min.js" | absolute_url }}"></script>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script src="{{ "/assets/js/particle.js" | absolute_url }}"></script>
+</body>
+</html>
