@@ -8,16 +8,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" type="text/css" href="{{ "/assets/css/bootstrap.min.css" | absolute_url }}">
-    <link rel="stylesheet" type="text/css" href="{{ "/assets/css/style.css" | absolute_url }}">
-    <link rel="stylesheet" type="text/css" href="{{ "/assets/css/typewriter.css" | absolute_url }}">
+    <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | absolute_url }}">
 
     {% seo %}
 </head>
 <body >
-    <div id="particles-js">
-
-    </div>
+    <div id="particles-js"></div>
     <div class="container-fluid">
         <div class="row">
             <nav class="col-md-1 d-none d-md-block bg-light sidebar">
@@ -66,9 +62,9 @@
                 <div class="container-fluid">
                     <span class="row" style="margin-bottom: 8vh;"></span>
                     <pre class="typewriter" style="background-color: rgba(255, 255, 255, 0); box-shadow: none; color: #EBF4F7; font-size:1.6vh;" >
-<span class="fun-highlight">import</span> SomeDBConnector <span class="fun-highlight">as</span> db;
+                    <span class="fun-highlight">import</span> SomeDBConnector <span class="fun-highlight">as</span> db;
 
-<span class="fun-highlight">class</span> MyInformation:
+                    <span class="fun-highlight">class</span> MyInformation:
     conn = db.connect(<span class="string-highlight">"SOMEHOST"</span>, <span class="string-highlight">"guest"</span>, <span class="string-highlight">"*******"</span>,
         <span class="string-highlight">"SOMEDATABASE"</span>)
     cursor = conn.cursor()
@@ -110,11 +106,11 @@
         </div>
     </div>
 
-    <script src="{{ "/assets/js/jquery-3.2.1.min.js" | absolute_url }}"></script>
-    <script src="{{ "/assets/js/popper.min.js" | absolute_url }}"></script>
-    <script src="{{ "/assets/js/bootstrap.min.js" | absolute_url }}"></script>
+    <script src="{{ "js/jquery-3.2.1.min.js" | absolute_url }}"></script>
+    <script src="{{ "js/popper.min.js" | absolute_url }}"></script>
+    <script src="{{ "js/bootstrap.min.js" | absolute_url }}"></script>
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="{{ "/assets/js/particle.js" | absolute_url }}"></script>
-    <script src="{{ "/assets/js/typewriter.js" | absolute_url }}"></script>
+    <script src="{{ "js/particle.js" | absolute_url }}"></script>
+    <script src="{{ "js/typewriter.js" | absolute_url }}"></script>
 </body>
 </html>
