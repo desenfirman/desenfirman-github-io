@@ -1,48 +1,4 @@
 /* Google Fonts */
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 
-.fun-highlight {
-  color: #1A2A40;
-}
 
-.string-highlight {
-  color: #F2A30F;
-}
-
-.typewrite{
-  color: #EBF4F7;
-  font-family: "Anonymous Pro", monospace;
-}
-
-.typewriter{
-  margin: 0;
-}
-
-h1{
-  font-size: 9vh;
-  color: #F2A30F;
-  font-family: "Anonymous Pro", monospace;
-}
-
-.typewriter:after {
-  content: "|";
-  -webkit-animation: blink 500ms linear infinite alternate;
-          animation: blink 500ms linear infinite alternate;
-}
-
-@-webkit-keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}

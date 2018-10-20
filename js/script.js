@@ -6,4 +6,9 @@ $(document).ready(function () {
         $('#page-leftbar>span' ).toggleClass('expanded');
     });
 
+    $('.overlay').on('click', function(){
+        $('#page-leftbar').toggleClass('expanded');
+        $('.overlay').toggleClass('active');
+    });
+
 });

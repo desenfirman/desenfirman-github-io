@@ -1,0 +1,39 @@
+<span class="fun-highlight">import</span> SomeDBConnector <span class="fun-highlight">as</span> db;
+
+<span class="fun-highlight">class</span> MyInformation:
+    conn = db.connect(<span class="string-highlight">"SOMEHOST"</span>, <span class="string-highlight">"guest"</span>, <span class="string-highlight">"*******"</span>,
+        <span class="string-highlight">"SOMEDATABASE"</span>)
+    cursor = conn.cursor()
+
+    query = <span class="string-highlight">'SELECT email, instagram, twitter,  </span>
+    <span class="string-highlight">linkedin, github FROM user_table </span>
+    <span class="string-highlight">WHERE username=\'desenfirman\''</span>
+
+    <span class="fun-highlight">def</span> __init__(self):
+        cursor.execute(query)
+        self.__result = cursor.fetchone()
+
+    <span class="fun-highlight">def</span> <a href="mailto:desenfirman@gmail.com" style="
+    font-weight: 1000; background-color: #f4f4f4;
+    ">getEmailData()</a>:
+        <span class="fun-highlight">return</span> self.__result[0]
+
+    <span class="fun-highlight">def</span> <a href="http://instagram.com/desenfirman" style="
+    font-weight: 1000; background-color: #f4f4f4;
+    ">getInstagramData()</a>:
+        <span class="fun-highlight">return</span> self.__result[1]
+
+    <span class="fun-highlight">def</span> <a href="http://twitter.com/desenfirman" style="
+    font-weight: 1000; background-color: #f4f4f4;
+    ">getTwitterData()</a>:
+        <span class="fun-highlight">return</span> self.__result[2]
+
+    <span class="fun-highlight">def</span> <a href="http://www.linkedin.com/in/desenfirman/" style="
+    font-weight: 1000; background-color: #f4f4f4;
+    ">getLinkedInData()</a>:
+        <span class="fun-highlight">return</span> self.__result[3]
+
+    <span class="fun-highlight">def</span> <a href="http://github.com/desenfirman" style="
+    font-weight: 1000; background-color: #f4f4f4;
+    ">getGithubData()</a>:
+        <span class="fun-highlight">return</span> self.__result[4]

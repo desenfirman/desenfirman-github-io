@@ -16,8 +16,10 @@ $icon-font-path:   "/fonts/bootstrap";
 @import "bootstrap/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "font";
 
 // Syntax highlighting @import is at the bottom of this file
+
 
 
 
@@ -68,6 +70,12 @@ body{
   transition:250ms ease;
   background-color: #f4f4f4;
 
+  header{
+    span{
+      font-family: 'Teko', cursive;
+    }
+  }
+
   span{
       visibility: hidden;
       position: absolute;
@@ -84,8 +92,6 @@ body{
   
 
   #sidebar{
-  
-
     //white-space:normal;
     margin:10px 0 0 0;
     padding-left:0!important;
@@ -166,6 +172,8 @@ body{
   
   }
 }
+
+@import "typewriter.scss";
 
  
 // #sidebar ul,#sidebar ul li a{background:#dfe0e2;color:rgba(63,68,76,0.7);box-shadow:inset -1px 0 0 0 rgba(0,0,0,0.1)}
