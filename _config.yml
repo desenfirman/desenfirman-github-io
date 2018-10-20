@@ -70,11 +70,11 @@ kramdown:
 
 # Set the Sass partials directory, as we're using @imports
 sass:
-  style: :expanded # You might prefer to minify using :compressed
+  style: :compressed # You might prefer to minify using :compressed
+  sass_dir: _sass
 
 # Use the following plug-ins
-gems:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+plugins:
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jekyll-seo-tag
 
@@ -86,4 +86,3 @@ exclude:
   - README.md
   - CNAME
 
-theme: jekyll-theme-slate

@@ -1,19 +1,60 @@
 ---
 layout: default
 ---
-<!--
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
+<div class="row">
+  <main role="main" class="ml-5 pl-5 col-lg-6 pt-3">
+      <div class="container-fluid">
+                  <span class="row" style="margin-bottom: 50vh;"></span>
+                  <h1  class="typewriter">
+                      <section>Hi, <br>I'm Dese,</section>
+                  </h1>
+                  <h3 class="typewrite" data-period="2000" data-type='[ "Study at Universitas Brawijaya.", "Taking computer science course and...", "focused at Machine Learning Development.", "I love programming", "Used to be Java Developer. But...", "Now, I am a Pythoneer", "Python is Love, Python is Life!" , ""  ]'></h3>
       </div>
+  </main>
+  <div class="ml-5 pl-5 col-lg-4 pt-3">
+    <div class="container-fluid">
+      <span class="row" style="margin-bottom: 8vh;"></span>
+      <pre class="typewriter" style="background-color: rgba(255, 255, 255, 0); box-shadow: none; color: #EBF4F7; font-size:1.6vh;" >
+      <span class="fun-highlight">import</span> SomeDBConnector <span class="fun-highlight">as</span> db;
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+      <span class="fun-highlight">class</span> MyInformation:
+  conn = db.connect(<span class="string-highlight">"SOMEHOST"</span>, <span class="string-highlight">"guest"</span>, <span class="string-highlight">"*******"</span>,
+  <span class="string-highlight">"SOMEDATABASE"</span>)
+  cursor = conn.cursor()
+
+  query = <span class="string-highlight">'SELECT email, instagram, twitter,  </span>
+  <span class="string-highlight">linkedin, github FROM user_table </span>
+  <span class="string-highlight">WHERE username=\'desenfirman\''</span>
+
+  <span class="fun-highlight">def</span> __init__(self):
+  cursor.execute(query)
+  self.__result = cursor.fetchone()
+
+  <span class="fun-highlight">def</span> <a href="mailto:desenfirman@gmail.com" style="
+  font-weight: 1000; background-color: #f4f4f4;
+  ">getEmailData()</a>:
+  <span class="fun-highlight">return</span> self.__result[0]
+
+  <span class="fun-highlight">def</span> <a href="http://instagram.com/desenfirman" style="
+  font-weight: 1000; background-color: #f4f4f4;
+  ">getInstagramData()</a>:
+  <span class="fun-highlight">return</span> self.__result[1]
+
+  <span class="fun-highlight">def</span> <a href="http://twitter.com/desenfirman" style="
+  font-weight: 1000; background-color: #f4f4f4;
+  ">getTwitterData()</a>:
+  <span class="fun-highlight">return</span> self.__result[2]
+
+  <span class="fun-highlight">def</span> <a href="http://www.linkedin.com/in/desenfirman/" style="
+  font-weight: 1000; background-color: #f4f4f4;
+  ">getLinkedInData()</a>:
+  <span class="fun-highlight">return</span> self.__result[3]
+
+  <span class="fun-highlight">def</span> <a href="http://github.com/desenfirman" style="
+  font-weight: 1000; background-color: #f4f4f4;
+  ">getGithubData()</a>:
+  <span class="fun-highlight">return</span> self.__result[4] </pre>
+  </div>
+  </div>
+  </div>
 </div>
- -->
