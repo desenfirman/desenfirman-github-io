@@ -19,7 +19,8 @@ $icon-font-path:   "/fonts/bootstrap";
 // Syntax highlighting @import is at the bottom of this file
 
 
-
+$mobile_width: '600px';
+$topbar_height: '1ex';
 
 /**************/
 /* BASE RULES */
@@ -28,6 +29,7 @@ $icon-font-path:   "/fonts/bootstrap";
 body{
   background-color: $blue;
 }
+
 
 #particles-js canvas{
   position: absolute;
@@ -57,8 +59,8 @@ body{
 
 
 #page-leftbar{
-  width: 5ex;
-  height: 100vh;
+  width: 100vh;
+  height: $topbar_height;
   z-index:9999;
   overflow:hidden;
   position:fixed;
@@ -67,6 +69,12 @@ body{
   -webkit-transition:250ms ease;
   transition:250ms ease;
   background-color: #f4f4f4;
+
+  @media only screen and (min-width: $mobile_width ) {
+    width: 5ex;
+    height: 100vh;
+    margin-top: 0;
+  }
 
   header{
     span{
@@ -79,28 +87,39 @@ body{
       position: absolute;
   }
 
-  &.expanded{
-    width:15%;
-    span{
-      visibility: visible;
-      transition-delay: 2s;
-      transition: visibility 250ms ease;
-    }  
+  @media only screen and (min-width: $mobile_width) {   
+    &.expanded{
+      width:20ex;
+      span{
+        visibility: visible;
+        transition-delay: 2s;
+        transition: visibility 250ms ease;
+      }  
+    } 
   }
+
   
 
   #sidebar{
     //white-space:normal;
-    margin:10px 0 0 0;
+
+    @media only screen and (max-width: $mobile_width) {   
+      margin:0 0 0 0;
+    }
     padding-left:0!important;
   
     .badge{
       font-weight:600;
       background-color:rgba(21,22,26,0.6);
       right:25px!important;
+
     }
   
     .divider{
+      @media  only screen and (max-width: $mobile_width) {
+        height: 100%;
+        width: 1px;
+      }
       height:1px;
       width:100%;
       margin:10px 0;
@@ -118,11 +137,17 @@ body{
         box-shadow:inset -1px 0 0 0 rgba(0,0,0,0.1);
       }
     }
+
   
-    li{
+  
+    li, header{
+      @media  only screen and (max-width: $mobile_width) {
+        display: inline-block;
+      }
       a{
         color:#3f444c;
         display:block;
+        
         padding:10px;
         position:relative;
   
@@ -143,13 +168,36 @@ body{
         }
       }
     }
+
+
+  @media only screen and (max-width: $mobile_width) {
+    header{
+      left: 200vh;
+      float: right;
+      i{
+        display: none;
+      }
+      span{
+        visibility: visible;
+        //display: inline;
+      }
+    }
+  }
+
   
   
     &>li.active{
       &>a{
         background:#595f69;color:#fff;box-shadow:inset -1px 0 0 0 rgba(0,0,0,0.1);
         &:after{
-          width:0;height:0;border-style:solid;border-width:9px 9px 9px 0;border-color:transparent #f7f8fa transparent transparent;content:"";position:absolute;top:50%;margin-top:-9px;right:0
+          width:0;
+          height:0;
+          border-style:solid;
+          border-width:9px 9px 9px 0;
+          border-color:transparent #f7f8fa transparent transparent;
+          content:"";
+          position:absolute;
+          top:50%;margin-top:-9px;right:0;
         }
       }
     }
@@ -171,58 +219,13 @@ body{
   }
 }
 
-@import "typewriter.scss";
-
- 
-// #sidebar ul,#sidebar ul li a{background:#dfe0e2;color:rgba(63,68,76,0.7);box-shadow:inset -1px 0 0 0 rgba(0,0,0,0.1)}
-// #sidebar a:hover i{color:#3f444c}
-#sidebar li ul{display:none}
-#sidebar li li li a{padding-left:60px}
-#sidebar ul ul ul li a{padding-left:80px}
-#sidebar ul ul ul ul li a{padding-left:100px}
-//#sidebar:hover li.hasChild>a:before,#sidebar:hover li.hasChild.open>a:before{content:"\f105";opacity:.5;filter:alpha(opacity=50)}
-//#sidebar:hover li.hasChild.open>a:before{content:"\f107";opacity:.5;filter:alpha(opacity=50)}
-#sidebar li.hasChild>a:before,#sidebar li.hasChild.open>a:before{font-family:FontAwesome;font-style:normal;font-weight:normal;font-size:14px!important;text-decoration:inherit;text-align:right;font-size:14px;padding-right:0;float:right}
-#sidebar li.hasChild li.hasChild a:before{top:5px}
-body.collapse-leftbar #sidebar>li.hasChild.open>a:before{content:""}
-body.collapse-leftbar #sidebar>li.hasChild>a:before{content:""}
-body.collapse-leftbar #sidebar>li.hasChild:hover>a:before{content:""}
-
-
-
-@media(max-width:768px){
-  // #page-leftbar{
-  //   height: 100%;
-  //   z-index:1;
-  //   overflow:hidden;
-  //   position:fixed;
-  //   top: 0;
-  //   left:0;
-  //   -webkit-transition:250ms ease;
-  //   transition:250ms ease;
-  // }
-  #page-leftbar #sidebar>li.active>a{
-    background-image:none
+#wrap{
+  @media only screen and (min-width: $mobile_width) {
+    margin-left: 3rem !important;
   }
-  #page-content{width:100%;margin-left:0;-webkit-transition:250ms ease;transition:250ms ease}
-  footer{margin-left:0}
-  body.show-leftbar #page-leftbar{
-    width:60px
-  }
-  body.show-leftbar #page-content{margin-left:60px}
-  body.show-leftbar footer{-webkit-transform:translate(60px,0);-ms-transform:translate(80px,0);transform:translate(80px,0)}
 }
-body.collapse-leftbar #page-leftbar{width:40px}
-body.collapse-leftbar #page-content,body.collapse-leftbar footer{margin-left:40px}
-body.collapse-leftbar #sidebar>li{white-space:nowrap;z-index:999;position:relative}
-body.collapse-leftbar #sidebar>li span{display:none}
-body.collapse-leftbar #sidebar>li>ul{position:absolute;width:210px;left:40px}
-body.collapse-leftbar #sidebar>li:hover,body.collapse-leftbar #sidebar>li.keep-open{box-shadow:inset -1px 0 0 0 rgba(0,0,0,0.1);background:#d2d3d6;width:250px}
-body.collapse-leftbar #sidebar>li:hover span,body.collapse-leftbar #sidebar>li.keep-open span{display:inline}
-body.collapse-leftbar #sidebar>li:hover>ul,body.collapse-leftbar #sidebar>li.keep-open>ul{display:block}
-body.collapse-leftbar #sidebar>li:hover.divider,body.collapse-leftbar #sidebar>li.keep-open.divider{width:40px!important}
-body.collapse-leftbar #sidebar>li:hover>a,body.collapse-leftbar #sidebar>li.keep-open>a,body.collapse-leftbar #sidebar>li:hover a i,body.collapse-leftbar #sidebar>li.keep-open a i{color:#3f444c}
-body.collapse-leftbar #sidebar>li.active:hover>a:after{display:none}body.collapse-leftbar #sidebar>li.active:hover>a,body.collapse-leftbar #sidebar>li.active:hover>a i{color:#fff}body.collapse-leftbar #sidebar i{margin-right:20px!important;margin-left:1px}body.collapse-leftbar #sidebar li li a{padding-left:10px}body.collapse-leftbar #sidebar li li li a{padding-left:20px}body.collapse-leftbar #sidebar li li li li a{padding-left:30px}
+
+@import "typewriter.scss";
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start

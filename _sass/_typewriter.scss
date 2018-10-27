@@ -12,7 +12,10 @@
   }
   
   .typewriter{
-    margin: 0;
+    margin-top: 30vh;
+    @media only screen and (min-width: $mobile_width) {
+      margin-top: 50vh;
+    }
   }
   
   h1{
