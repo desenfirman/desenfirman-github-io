@@ -19,7 +19,7 @@ $icon-font-path:   "/fonts/bootstrap";
 // Syntax highlighting @import is at the bottom of this file
 
 
-$mobile_width: '600px';
+$mobile_width: '450px';
 $topbar_height: '1ex';
 
 /**************/
@@ -70,7 +70,7 @@ body{
   transition:250ms ease;
   background-color: #f4f4f4;
 
-  @media only screen and (min-width: $mobile_width ) {
+  @media only screen and (min-device-width: $mobile_width ) {
     width: 5ex;
     height: 100vh;
     margin-top: 0;
@@ -87,7 +87,7 @@ body{
       position: absolute;
   }
 
-  @media only screen and (min-width: $mobile_width) {   
+  @media only screen and (min-device-width: $mobile_width) {   
     &.expanded{
       width:20ex;
       span{
@@ -103,7 +103,7 @@ body{
   #sidebar{
     //white-space:normal;
 
-    @media only screen and (max-width: $mobile_width) {   
+    @media only screen and (max-device-width: $mobile_width) {   
       margin:0 0 0 0;
     }
     padding-left:0!important;
@@ -116,7 +116,7 @@ body{
     }
   
     .divider{
-      @media  only screen and (max-width: $mobile_width) {
+      @media  only screen and (max-device-width: $mobile_width) {
         height: 100%;
         width: 1px;
       }
@@ -141,7 +141,7 @@ body{
   
   
     li, header{
-      @media  only screen and (max-width: $mobile_width) {
+      @media  only screen and (max-device-width: $mobile_width) {
         display: inline-block;
       }
       a{
@@ -170,7 +170,7 @@ body{
     }
 
 
-  @media only screen and (max-width: $mobile_width) {
+  @media only screen and (max-device-width: $mobile_width) {
     header{
       left: 200vh;
       float: right;
@@ -220,7 +220,7 @@ body{
 }
 
 #wrap{
-  @media only screen and (min-width: $mobile_width) {
+  @media only screen and (min-device-width: $mobile_width) {
     margin-left: 3rem !important;
   }
 }
