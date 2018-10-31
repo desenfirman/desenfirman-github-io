@@ -1,3 +1,8 @@
+----
+
+----
+
+
 <nav id="page-leftbar" role="navigation">
     <!-- BEGIN SIDEBAR MENU -->
         <ul class="acc-menu" id="sidebar">
@@ -11,15 +16,33 @@
                 <a href="javascript:void(0);"><i class="fa fa-search  fa-fw"></i><span>Search</span></a>                
             </li>
             <li class="divider"></li>
+            
+            
+            {% for n in site.data.nav %}
+                {% if n.page == "divider" %}
+                    <li class="divider"></li>
+                {% else %}
+                <li 
+                    {%if page.url == n.permalink %}
+                        class="active"
+                    {% endif %} 
+                >
+                    <a href="{{ n.permalink }}"><i class="fa {{ n.icon }} fa-fw"></i><span>{{ n.page }}</span></a>
+                </li>
+                {% endif %}
+            {% endfor %}
+
+
+<!-- 
             {% if page.url == "/" %}
             <li class="active">
             {% else %}
             <li>
             {% endif %}
-                <a  href="/"><i class="fa fa-home  fa-fw"></i><span>Home</span></a>
+                <a  href="/"><i class="fa fa-home fa-fw"></i><span>Home</span></a>
             </li>
             <li>
-                <a  href="javascript:alert('Coming Soon :)');"><i class="fa fa-pen-alt  fa-fw"></i><span>Blog</span></a>
+                <a  href="{{ site.baseurl | absolute_url }}blog/"><i class="fa fa-pen-alt  fa-fw"></i><span>Blog</span></a>
             </li>
             <li>
                 <a  href="javascript:alert('Coming Soon :)');"><i class="fa fa-laptop-code  fa-fw"></i><span>Portfolio</span></a>
@@ -27,7 +50,7 @@
             <li class="divider"></li>
             <li >
                 <a href="javascript:alert('Sadly, this one is also coming soon. :(');"><i class="fa fa-user  fa-fw"></i><span>About</span></a>
-            </li>
+            </li> -->
     </ul>
     <!-- END SIDEBAR MENU -->
 </nav>
