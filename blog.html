@@ -1,0 +1,21 @@
+---
+layout: page
+title: Blog
+permalink: /blog/
+---
+
+	{% for post in site.posts %}
+		<div class="row">
+			<article class="page">
+
+				<h1>{{ post.title }}</h1>
+				<h3>Lorem ipsum.</h2>
+				<div class="entry">
+					<p>{{ post.excerpt }}</p>	    
+				</div>
+
+			<a href="{{ site.baseurl }}{{ post.url }}" class="read-more float-right">Read More</a>
+					</article>
+		</div>
+		<br>
+	{% endfor %}
