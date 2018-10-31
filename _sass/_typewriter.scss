@@ -6,23 +6,22 @@
     color: #F2A30F;
   }
   
+
+#greeter{
+   h1{
+      font-size: 9vh;
+      color: #F2A30F;
+      font-family: "Anonymous Pro", monospace;
+    }
+}
+
   .typewrite{
+   
     color: #EBF4F7;
     font-family: "Anonymous Pro", monospace;
   }
   
-  .typewriter{
-    margin-top: 30vh;
-    @media only screen and (min-width: $mobile_width) {
-      margin-top: 50vh;
-    }
-  }
   
-  h1{
-    font-size: 9vh;
-    color: #F2A30F;
-    font-family: "Anonymous Pro", monospace;
-  }
   
   .typewriter:after {
     content: "|";

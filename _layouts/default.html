@@ -14,8 +14,10 @@
 
     {% seo %}
 </head>
-<body >
+<body {% if page.url != "/" %} style="background-color: #E9EEFC" {% endif %} >
+    {% if page.url == "/" %}
     <div id="particles-js"></div>
+    {% endif %}
     
     <div class="overlay"></div>    
     <div id="page-container">

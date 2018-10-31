@@ -19,8 +19,7 @@ $icon-font-path:   "/fonts/bootstrap";
 // Syntax highlighting @import is at the bottom of this file
 
 
-$mobile_width: '750px';
-$topbar_height: '1ex';
+
 
 /**************/
 /* BASE RULES */
@@ -31,11 +30,13 @@ body{
 }
 
 
-#particles-js canvas{
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
+#particles-js {
+  canvas{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }
 }
 
 .overlay {
@@ -59,8 +60,8 @@ body{
 
 
 #page-leftbar{
-  width: 100vh;
-  height: $topbar_height;
+  width: 5ex;
+  height: 100vh;
   z-index:9999;
   overflow:hidden;
   position:fixed;
@@ -69,16 +70,16 @@ body{
   -webkit-transition:250ms ease;
   transition:250ms ease;
   background-color: #f4f4f4;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  @media only screen and (min-device-width: $mobile_width ) {
-    width: 5ex;
-    height: 100vh;
-    margin-top: 0;
+  @include mobile {
+    width: 100vh !important;
+    height: 5ex !important;
   }
 
   header{
     span{
-      font-family: 'Teko', cursive;
+      font-family: $teko;
     }
   }
 
@@ -103,7 +104,7 @@ body{
   #sidebar{
     //white-space:normal;
 
-    @media only screen and (max-device-width: $mobile_width) {   
+    @include mobile {   
       margin:0 0 0 0;
     }
     padding-left:0!important;
@@ -116,7 +117,7 @@ body{
     }
   
     .divider{
-      @media  only screen and (max-device-width: $mobile_width) {
+      @include mobile {
         height: 100%;
         width: 1px;
       }
@@ -141,7 +142,7 @@ body{
   
   
     li, header{
-      @media  only screen and (max-device-width: $mobile_width) {
+      @include mobile {
         display: inline-block;
       }
       a{
@@ -170,7 +171,7 @@ body{
     }
 
 
-  @media only screen and (max-device-width: $mobile_width) {
+  @include mobile {
     header{
       left: 200vh;
       float: right;
@@ -220,10 +221,51 @@ body{
 }
 
 #wrap{
-  @media only screen and (min-device-width: $mobile_width) {
-    margin-left: 3rem !important;
+  padding-top : 1rem;
+  padding-left: 0rem;
+  @include mobile {
+    padding-left: 0rem !important;
+    padding-top : 4rem !important;
   }
 }
+
+#greeter{
+  margin-top: 50vh;
+  @include mobile {
+    margin-top: 20vh !important;
+  }
+}
+
+#my_information{margin-top: 8vh;}
+
+#page{
+  font-family: $helveticaNeue;
+  color: #1C3B59;
+  
+  h1, h2, h3, h4, h5{
+    margin: 0.6rem auto 0.6rem auto;
+    font-family: $oswald;
+  }
+
+  p{
+    font-family: $montserrat;
+    font-size: 1.125rem;
+  }
+
+
+  .breadcrumb{
+    font-family: $teko;
+    font-size: 1rem;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+  }
+
+  .read-more{
+    font-size: 1.125rem;
+  }
+}
+
 
 @import "typewriter.scss";
 

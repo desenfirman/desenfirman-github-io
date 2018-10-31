@@ -4,7 +4,7 @@
 //
 
 // Colors
-$blue: #4183C4;
+$blue: #1C3B59;
 
 // Grays
 $black: #000;
@@ -18,10 +18,17 @@ $white: #fff;
 $helvetica: Helvetica, Arial, sans-serif;
 $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
+$teko: 'Teko', cursive;
+$montserrat: 'Montserrat', sans-serif;
+$oswald: 'Oswald', sans-serif;
+$anonymous_pro: '' ; 
+
+$mobile_width: 750px;
+$topbar_height: '1ex';
 
 // Mobile breakpoints
 @mixin mobile {
-  @media screen and (max-width: 640px) {
+  @media screen and (max-device-width: $mobile_width) {
     @content;
   }
 }
