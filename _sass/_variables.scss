@@ -28,7 +28,7 @@ $topbar_height: '1ex';
 
 // Mobile breakpoints
 @mixin mobile {
-  @media screen and (max-device-width: $mobile_width) {
+  @media screen and (max-width: $mobile_width) {
     @content;
   }
 }

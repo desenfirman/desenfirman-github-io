@@ -1,21 +1,34 @@
 ---
 layout: page
 title: Blog
+categories: blog
 permalink: /blog/
 ---
 
 	{% for post in site.posts %}
 		<div class="row">
-			<article class="page">
-
-				<h1>{{ post.title }}</h1>
-				<h3>Lorem ipsum.</h2>
-				<div class="entry">
-					<p>{{ post.excerpt }}</p>	    
+			<article class="page row">
+				{% if post.thumbnail %}
+				<div class="col-md-3">
+					<img class="thumbnail" src="{{ post.thumbnail }}" alt="">
 				</div>
-
-			<a href="{{ site.baseurl }}{{ post.url }}" class="read-more float-right">Read More</a>
-					</article>
+				{% endif %}
+				{% if post.thumbnail %}<div class="col-md-9">{% else %}<div class="col-md-12">{% endif %}
+					<br>
+					<div class="date">Written on {{ post.date | date: "%B %e, %Y" }}</div >	
+					<h1>{{ post.title }}</h1>
+					<div class="entry">
+						<p>{{ post.excerpt }}</p>	    
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<a href="{{ site.baseurl }}{{ post.url }}" class=" btn-link read-more float-right">Keep Reading</a>
+						</div>
+					</div>
+				{% if post.thumbnail %}</div>{% endif %}
+			</article>
 		</div>
+		<div class=" divider"></div>
 		<br>
+
 	{% endfor %}
