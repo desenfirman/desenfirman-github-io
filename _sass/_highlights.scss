@@ -1,19 +1,49 @@
 
-.highlight {
-  background-color: #efefef;
-  padding: 7px 7px 7px 10px;
-  border: 1px solid #ddd;
-  -moz-box-shadow: 3px 3px rgba(0,0,0,0.1);
-  -webkit-box-shadow: 3px 3px rgba(0,0,0,0.1);
-  box-shadow: 3px 3px rgba(0,0,0,0.1);
-  margin: 20px 0 20px 0;
-  overflow: scroll;
+
+
+// code {
+//   font-family:'Bitstream Vera Sans Mono','Courier', monospace;
+// }
+#page{
+	.highlight {
+	  background-color: desaturate(lighten(#1C3B59, 67%), 25%) ;
+	  padding: 7px 7px 7px 10px;
+	  // border: 1px solid #ddd;
+	  // -moz-box-shadow: 3px 3px rgba(0,0,0,0.1);
+	  // -webkit-box-shadow: 3px 3px rgba(0,0,0,0.1);
+	  // box-shadow: 3px 3px rgba(0,0,0,0.1);
+	  margin: 20px 0 20px 0;
+
+	 -moz-border-radius: 6px; 
+	 border-radius: 6px;
+	
+	  pre {
+	    font-family: "Courier 10 Pitch", Courier, monospace;
+	    font-size: 95%;
+	    line-height: 140%;
+	    white-space: pre;
+	    white-space: pre-wrap;
+	    white-space: -moz-pre-wrap;
+	    white-space: -o-pre-wrap;
+
+	  }       
+	    
+	  code {
+	    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	    font-size: 95%;
+	    line-height: 140%;
+	    white-space: pre;
+	    white-space: pre-wrap;
+	    white-space: -moz-pre-wrap;
+	    white-space: -o-pre-wrap;
+	  }
+	}
+
+
+
 }
 
-code {
-  font-family:'Bitstream Vera Sans Mono','Courier', monospace;
-}
-
+#page{
 .highlight .c { color: #586E75 } /* Comment */
 .highlight .err { color: #93A1A1 } /* Error */
 .highlight .g { color: #93A1A1 } /* Generic */
@@ -82,3 +112,4 @@ code {
 .highlight .vg { color: #268BD2 } /* Name.Variable.Global */
 .highlight .vi { color: #268BD2 } /* Name.Variable.Instance */
 .highlight .il { color: #2AA198 } /* Literal.Number.Integer.Long */
+}

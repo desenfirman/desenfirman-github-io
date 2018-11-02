@@ -30,8 +30,6 @@ body{
 }
 
 
-
-
 #particles-js {
   canvas{
     position: absolute;
@@ -243,7 +241,7 @@ body{
   background-color: rgba(255, 255, 255, 0); 
   box-shadow: none; 
   color: #EBF4F7; 
-  font-size:0.68rem;
+  font-size:0.7rem;
 }
 
 #page{
@@ -257,6 +255,14 @@ body{
     margin: 0.6rem auto 0.6rem auto;
     font-family: $oswald;
   }
+
+  // ol{
+  //   list-style: inherit;
+  // } 
+
+  // ul{
+  //   list-style: inherit;
+  // }
 
  
 
@@ -296,6 +302,8 @@ body{
       object-fit: cover;
     }
   }
+
+
 }
 
 

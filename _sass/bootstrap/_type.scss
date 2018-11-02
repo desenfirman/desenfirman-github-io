@@ -109,10 +109,33 @@ mark,
 }
 
 // Blockquotes
-.blockquote {
-  margin-bottom: $spacer;
+.blockquote, blockquote {
+  margin: $spacer;
   font-size: $blockquote-font-size;
+  /* Negate theme styles */
+  
+  background: none;
+  color: gray;
+  font-family: Georgia, serif;
+  font-style: italic;
+  line-height: 1.4 !important;
+  position: relative;
+  text-shadow: 0 1px white;
+  z-index: 600;
+  p:first-child:before {
+    content: '\201C';
+    color: #81bedb;
+    font-size: 7.5em;
+    font-weight: 700;
+    opacity: .3;
+    position: absolute;
+    top: -.35em;
+    left: -.3em;    
+    text-shadow: none;
+    z-index: -300;
 }
+}
+
 
 .blockquote-footer {
   display: block;

@@ -1,5 +1,5 @@
 .fun-highlight {
-    color: #1A2A40;
+    color: #8478EA;
   }
   
   .string-highlight {
@@ -11,14 +11,14 @@
    h1{
       font-size: 9vh;
       color: #F2A30F;
-      font-family: "Anonymous Pro", monospace;
+      font-family: $anonymous_pro;
     }
 }
 
   .typewrite{
    
     color: #EBF4F7;
-    font-family: "Anonymous Pro", monospace;
+    font-family: $anonymous_pro;
   }
   
   

@@ -95,6 +95,8 @@ Reference-style:
 
 # Code and Syntax Highlighting
 
+Inline `code` has `back-ticks around` it.
+
 ```javascript
 var s = "JavaScript syntax highlighting";
 alert(s);

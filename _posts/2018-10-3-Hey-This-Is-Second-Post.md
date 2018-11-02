@@ -4,7 +4,9 @@ title: Hey, This is Second Post!
 categories: blog
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ex voluptates, neque odit repellendus in rem ea. Nemo sequi enim, quam neque, sed quia distinctio facere cum explicabo voluptatibus qui.Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ex voluptates, neque odit repellendus in rem ea. Nemo sequi enim, quam neque, sed quia distinctio facere cum explicabo voluptatibus qui.
+<!--more-->
+Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
 
 ![_config.yml]({{ site.baseurl }}/images/config.png)
 

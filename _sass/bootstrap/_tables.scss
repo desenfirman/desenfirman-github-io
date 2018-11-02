@@ -2,7 +2,7 @@
 // Basic Bootstrap table
 //
 
-.table {
+.table, table {
   width: 100%;
   margin-bottom: $spacer;
   background-color: $table-bg; // Reset for nesting within parents with `background-color`.
@@ -45,7 +45,7 @@
 //
 // Add or remove borders all around the table and between all the columns.
 
-.table-bordered {
+.table-bordered, table {
   border: $table-border-width solid $table-border-color;
 
   th,
@@ -85,7 +85,7 @@
 //
 // Placed here since it has to come after the potential zebra striping
 
-.table-hover {
+.table-hover, table {
   tbody tr {
     @include hover {
       background-color: $table-hover-bg;
@@ -111,8 +111,8 @@
 // Same table markup, but inverted color scheme: dark background and light text.
 
 // stylelint-disable-next-line no-duplicate-selectors
-.table {
-  .thead-dark {
+.table, table {
+  .thead-dark, thead {
     th {
       color: $table-dark-color;
       background-color: $table-dark-bg;
