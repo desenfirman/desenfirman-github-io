@@ -10,9 +10,8 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, necessitati
 
 <!--more-->
 
-#Header
+# Header
 
-# H1
 ## H2
 ### H3
 #### H4
@@ -27,7 +26,7 @@ Alt-H1
 Alt-H2
 ------
 
-#Emphasis
+# Emphasis
 
 Emphasis, aka italics, with *asterisks* or _underscores_.
 
@@ -37,7 +36,7 @@ Combined emphasis with **asterisks and _underscores_**.
 
 Strikethrough uses two tildes. ~~Scratch this.~~
 
-#Lists
+# Lists
 
 1. First ordered list item
 2. Another item
@@ -57,7 +56,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 + Or pluses
 
 
-#Links
+# Links
 
 [I'm an inline-style link](https://www.google.com)
 
@@ -81,7 +80,7 @@ Some text to show that the reference links can follow later.
 [1]: http://slashdot.org
 [link text itself]: http://www.reddit.com
 
-#Image
+# Image
 
 Here's our logo (hover to see the title text):
 
@@ -94,7 +93,7 @@ Reference-style:
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
 
 
-#Code and Syntax Highlighting
+# Code and Syntax Highlighting
 
 ```javascript
 var s = "JavaScript syntax highlighting";
@@ -111,7 +110,7 @@ No language indicated, so no syntax highlighting.
 But let's throw in a <b>tag</b>.
 ```
 
-#Tables
+# Tables
 
 Colons can be used to align columns.
 
@@ -131,7 +130,7 @@ Markdown | Less | Pretty
 1 | 2 | 3
 
 
-#Blockquotes
+# Blockquotes
 
 > Blockquotes are very handy in email to emulate reply text.
 > This line is part of the same quote.
@@ -140,7 +139,7 @@ Quote break.
 
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
 
-#HTML Inline
+# HTML Inline
 
 <dl>
   <dt>Definition list</dt>
@@ -150,7 +149,7 @@ Quote break.
   <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
 </dl>
 
-#Horizontal Rule
+# Horizontal Rule
 
 Three or more...
 
@@ -166,7 +165,7 @@ ___
 
 Underscores
 
-#Line Breaks
+# Line Breaks
 
 Here's a line for us to start with.
 
@@ -176,6 +175,6 @@ This line is also a separate paragraph, but...
 This line is only separated by a single newline, so it's a separate line in the *same paragraph*.
 
 
-#YouTube Videos
+# YouTube Videos
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
