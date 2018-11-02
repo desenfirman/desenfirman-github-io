@@ -119,11 +119,11 @@ body{
     .divider{
       @include mobile {
         height: 100%;
-        width: 1px;
+        width: 1.5px;
       }
-      height:1px;
+      height:1.5px;
       width:100%;
-      margin:10px 0;
+      margin:5px 0;
       overflow:hidden;
       box-shadow:inset -1px 0 0 0 rgba(0,0,0,0.1);
       background-color:darken(#D1DCF5, 8%);
@@ -145,6 +145,15 @@ body{
       @include mobile {
         display: inline-block;
       }
+      
+      #leftmenu-notrigger{
+        display: none;
+      }
+
+      #leftmenu-trigger{
+        display: block;
+      }
+
       a{
         color:darken(#1C3B59, 2%);
         display:block;
@@ -171,10 +180,21 @@ body{
     }
 
 
+
+
   @include mobile {
     header{
       padding-right: 12ex;
       float: right;
+
+      #leftmenu-trigger{
+        display: none;
+      }
+
+      #leftmenu-notrigger{
+        display: block;
+      }
+
       i{
         display: none;
       }
@@ -182,6 +202,7 @@ body{
         visibility: visible;
         //display: inline;
       }
+
     }
   }
 
@@ -250,6 +271,10 @@ body{
     background-color: #E9EEFC;  
     color: #1C3B59;
   }
+
+  .post{
+     color: #1C3B59;
+  }
   
   h1, h2, h3, h4, h5{
     margin: 0.6rem auto 0.6rem auto;
@@ -278,7 +303,7 @@ body{
     margin: 0;
   }
 
-  .read-more{
+  .read-more, .prev, .next{
       font-family: $oswald;    
   }
 
@@ -305,6 +330,33 @@ body{
 
 
 }
+
+  hr.style1{
+    height: 6px;
+    background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
+    border: 0;
+    color: #1C3B59;
+
+  }
+
+  hr.style2 {
+    height: 6px;
+    background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
+    border: 0;
+    text-align: center;
+    color: #1C3B59;
+
+  }
+  hr.style2:after {
+    content: '\002665';
+    display: inline-block;
+    position: relative;
+    top: -15px;
+    padding: 0 10px;
+    background: #E9EEFC;
+    color: #1C3B59;
+    font-size: 18px;
+  }
 
 
 @import "typewriter.scss";

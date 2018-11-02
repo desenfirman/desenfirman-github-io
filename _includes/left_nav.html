@@ -5,6 +5,9 @@
                 <li>  
                     <a id="leftmenu-trigger" class="pull-left" data-toggle="tooltip" title="Toggle Left Sidebar"><i class="fa fa-grip-vertical fa-fw"></i><span>DESENFIRMAN.ME</span></a>
                 </li>
+                <li>  
+                    <a id="leftmenu-notrigger" href="/"><span>DESENFIRMAN.ME</span></a>
+                </li>
             </header>
             <li class="divider" ></li>            
             <li id="search">
@@ -23,7 +26,7 @@
                         class="active"
                     {% endif %} 
                 >
-                    <a href="{{ n.permalink }}"><i class="fa {{ n.icon }} fa-fw"></i><span>{{ page.categories }}</span></a>
+                    <a href="{{ n.permalink }}"><i class="fa {{ n.icon }} fa-fw"></i><span>{{ n.page }}</span></a>
                 </li>
                 {% endif %}
             {% endfor %}
