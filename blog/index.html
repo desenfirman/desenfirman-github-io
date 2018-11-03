@@ -14,11 +14,9 @@ categories: blog
 				{% endif %}
 				{% if post.thumbnail %}<div class="col-md-9">{% else %}<div class="col-md-12">{% endif %}
 					<br>
-					<div class="date">Written on {{ post.date | date: "%B %e, %Y" }}</div >	
+					<time class="date">Written on {{ post.date | date: "%B %e, %Y" }}</time>	
 					<a class="title" href="{{ site.baseurl }}{{ post.url }}"><h1>{{ post.title }}</h1></a>
-					<div class="entry">
-						<p>{{ post.excerpt }}</p>	    
-					</div>
+					<div class="entry">{{ post.excerpt }}</div>
 					<div class="row">
 						<div class="col-md-12">
 							<a href="{{ site.baseurl }}{{ post.url }}" class=" btn-link read-more float-right">Keep Reading</a>
@@ -29,7 +27,6 @@ categories: blog
 		</div>
 		<div class=" divider"></div>
 		<br>
-
 	{% endfor %}
 </main>
 
