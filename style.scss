@@ -318,9 +318,15 @@ body{
     margin: 0;
   }
 
-  .read-more, .prev, .next{
+  .read-more, .prev, .next, .page-number{
       font-family: $oswald;    
   }
+
+  .page-number{
+    width: 100%;
+  }
+
+
 
   .date{
     font-family: $oswald;
