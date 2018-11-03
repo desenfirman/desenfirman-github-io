@@ -259,6 +259,7 @@ body{
 
 #page{
   font-family: $helveticaNeue;
+  color: #1C3B59;
   min-height: 100vh;
   .container, .post{
     background-color: #E9EEFC;  
@@ -266,8 +267,6 @@ body{
   }
 
   .post{
-     color: #1C3B59;
-
      figure{
         img{
           max-width: 50vw;
