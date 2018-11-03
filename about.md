@@ -19,7 +19,7 @@ My name is **Dese Narfa Firmansyah**. You can call me **Dese**. I'm studying at 
 
 <div class="row" style="width: 100%">
 	<div class="col-md-4">
-<section id="contact" markdown="1" class="container"  style="border-right:1px dashed #CFCFCF;" >
+<section id="contact" markdown="1" class="container"  style="" >
 
 ## Contact me
 
@@ -63,7 +63,7 @@ Postcode: 65145
 ## Credit & tools I use to make this website. 
 
 ##### Web technology & tools I use
-- **Jekyll ([https://jekyll.com](https://jekyll.com))**: Jekyll is static page generator. Rather than taking data from database, Jekyll is compiling content from some template, layout and some text into ready static page. 
+- **Jekyll ([https://jekyllrb.com](https://jekyllrb.com))**: Jekyll is static page generator. Rather than taking data from database, Jekyll is compiling content from some template, layout and some text into ready static page. 
 - **GitHub Pages ([https://pages.github.com](https://pages.github.com))**: GitHub Pages is service that allow you to host a website (especially Jekyll's website) into your repository. Just push your Jekyll's site to your page repository (yourusername.github.io) and your website will be hosted. 
 - **Bootstrap ([https://getbootstrap.com](https://getbootstrap.com))**: Bootstrap is awesome open-source front-end framework. With Bootstrap, you'll get some good design of layout, typograph, button and some other component rather than designing from the stratch.
 - **Font Awesome ([https://fontawesome.com](https://fontawesome.com))**: Font Awesome is a toolkit font with more option of icon and style over 15.000+. 
