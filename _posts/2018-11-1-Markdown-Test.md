@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Hey, This is Second Post!
+title: Markdown Test!
 categories: blog
 tag: [tag1, tag2, tag3, tag4]
+comments: true
 ---
 
 

@@ -2,6 +2,7 @@
 layout: post
 title: Hey, This is Second Post!
 categories: blog
+comments: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ex voluptates, neque odit repellendus in rem ea. Nemo sequi enim, quam neque, sed quia distinctio facere cum explicabo voluptatibus qui.
