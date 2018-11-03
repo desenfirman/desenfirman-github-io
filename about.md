@@ -19,7 +19,7 @@ My name is **Dese Narfa Firmansyah**. You can call me **Dese**. I'm studying at 
 
 <div class="row" style="width: 100%">
 	<div class="col-lg-4">
-<section markdown="1" class="container"  style="border-right:1px dashed #CFCFCF;" >
+<section id="contact" markdown="1" class="container"  style="border-right:1px dashed #CFCFCF;" >
 
 ## Contact me
 
@@ -41,7 +41,7 @@ Postcode: 65145
 	</div>
 	<div  class="col-lg-8">
 
-<section markdown="1" class="container" >
+<section markdown="1" class="container" id="workexp" >
 
 ## Work Experience
 
@@ -58,7 +58,7 @@ Postcode: 65145
 
 <div class="row">
 	<div class="col">
-		<section markdown="1" class="container" id="summary" style="border-top:1px dashed #CFCFCF;">
+		<section markdown="1" class="container" id="credit" style="border-top:1px dashed #CFCFCF;">
 
 ## Credit & tools I use to make this website. 
 
