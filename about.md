@@ -18,7 +18,7 @@ My name is **Dese Narfa Firmansyah**. You can call me **Dese**. I'm studying at 
 </div>
 
 <div class="row" style="width: 100%">
-	<div class="col-lg-4">
+	<div class="col-md-4">
 <section id="contact" markdown="1" class="container"  style="border-right:1px dashed #CFCFCF;" >
 
 ## Contact me
@@ -32,14 +32,14 @@ Jln. Sumbersari Dalam No. 292G, RT:09 RW:01, Kec. Lowokwaru
 Postcode: 65145
 
 ##### Email
-[desenfirman@gmail.com](mailto:desenfirman@gmail.com)
+[desenfirman [at] gmail [dot] com](mailto:desenfirman@gmail.com)
 
 ##### Telephone (WhatsApp ready)
 [+62 896-0738-2786](tel:+6289607382786)
 
 </section>
 	</div>
-	<div  class="col-lg-8">
+	<div  class="col-md-8">
 
 <section markdown="1" class="container" id="workexp" >
 
@@ -70,7 +70,7 @@ Postcode: 65145
 - **Google Fonts ([https://fonts.google.com/](https://fonts.google.com/))**: Just a repository form Google that hosted so many popular fonts. You also can get some good combinaton of using fonts here.
 
 ##### Credits 
-- **jekyll-now ([https://github.com/barryclark/jekyll-now](https://github.com/barryclark/jekyll-now))**: jekyll-now is helping me especially for preparing first building blocks of this website. With jekyll-now, you'll get some ready basic functional of your blog, rather than preparing the setup when using 'raw Jekyll'. Just forked it, change the name of repository and you'll reafy for writing your blog.
+- **jekyll-now ([https://github.com/barryclark/jekyll-now](https://github.com/barryclark/jekyll-now))**: jekyll-now is helping me especially for preparing first building blocks of this website. With jekyll-now, you'll get some ready basic functional of your blog, rather than preparing the setup when using 'raw Jekyll'. Just forked it, change the name of repository and you'll ready for writing your blog.
 </section>
 	</div>
 </div>

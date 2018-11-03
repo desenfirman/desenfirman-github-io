@@ -313,15 +313,6 @@ body{
     }
   }
 
-  ul{
-    list-style-type: decimal;
-    ul{
-      list-style-type: disc;
-      padding-left: 2ex;
-    }
-  }
-
-  
 
 
   .breadcrumb{
@@ -329,6 +320,21 @@ body{
     background-color: transparent;
     padding: 0;
     margin: 0;
+  }
+
+  @include mobile{
+    #contact{
+      border-right: none !important;
+      border-bottom:1px dashed #CFCFCF;
+    }
+  }
+
+  ul{
+    list-style-type: decimal;
+    ul{
+      list-style-type: disc;
+      padding-left: 2ex;
+    }
   }
 
   .read-more, .prev, .next, .page-number{
