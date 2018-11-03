@@ -30,6 +30,8 @@ body{
 }
 
 
+
+
 #particles-js {
   canvas{
     position: absolute;
@@ -210,17 +212,7 @@ body{
   
     &>li.active{
       &>a{
-        background:darken(#1C3B59, 2%);color:#fff;box-shadow:inset -1px 0 0 0 rgba(0,0,0,0.1);
-        &:after{
-          width:0;
-          height:0;
-          border-style:solid;
-          border-width:9px 9px 9px 0;
-          border-color:transparent #f7f8fa transparent transparent;
-          content:"";
-          position:absolute;
-          top:50%;margin-top:-9px;right:0;
-        }
+        background:darken(#1C3B59, 2%);color:#D1DCF5;box-shadow:inset -1px 0 0 0 rgba(0,0,0,0.1);
       }
     }
   
@@ -267,29 +259,52 @@ body{
 
 #page{
   font-family: $helveticaNeue;
-  .container{
+  min-height: 100vh;
+  .container, .post{
     background-color: #E9EEFC;  
     color: #1C3B59;
   }
 
   .post{
      color: #1C3B59;
+
+     figure{
+        img{
+          max-width: 50vw;
+          height: auto;
+          display: block;
+          margin: 5ex auto 2ex auto;
+        }
+        figcaption{
+          width: 100%;
+          display: block; 
+          text-align: center;
+          margin-bottom: 5ex;
+         
+        }
+     }
+     
   }
+
+  a{
+    text-decoration: none;
+    -o-transition:color .2s ease-out, background 1s ease-in;
+    -ms-transition:color .2s ease-out, background 1s ease-in;
+    -moz-transition:color .2s ease-out, background 1s ease-in;
+    -webkit-transition:color .2s ease-out, background 1s ease-in;
+    /* ...and now override with proper CSS property */
+    transition:color .2s ease-out, background 1s ease-in;
+    &:hover{
+      color: lighten(saturate(#1C3B59, 30), 30);
+    }
+  }
+
+  
   
   h1, h2, h3, h4, h5{
     margin: 0.6rem auto 0.6rem auto;
     font-family: $oswald;
   }
-
-  // ol{
-  //   list-style: inherit;
-  // } 
-
-  // ul{
-  //   list-style: inherit;
-  // }
-
- 
 
   p{
     font-family: $montserrat;
@@ -309,6 +324,7 @@ body{
 
   .date{
     font-family: $oswald;
+    color: lighten(desaturate(#1C3B59, 30), 20);
   }
 
   .divider{
@@ -327,37 +343,51 @@ body{
       object-fit: cover;
     }
   }
-
-
 }
 
-  hr.style1{
-    height: 6px;
-    background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
-    border: 0;
-    color: #1C3B59;
+  hr{
+    &.style1{
+      height: 6px;
+      background: url(/assets/hr-11.png) repeat-x 0 0;
+      border: 0;
+      color: #1C3B59;
 
+    }
+
+    &.style2 {
+      height: 6px;
+      background: url(/assets/hr-11.png) repeat-x 0 0;
+      border: 0;
+      text-align: center;
+      color: #1C3B59;
+
+    }
+    &.style2:after {
+      font: serif;
+      content: '\002665';
+      display: inline-block;
+      position: relative;
+      top: -13px;
+      padding: 0 10px;
+      background: #E9EEFC;
+      color: #1C3B59;
+      font-size: 18px;
+    }
   }
 
-  hr.style2 {
-    height: 6px;
-    background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
-    border: 0;
-    text-align: center;
-    color: #1C3B59;
 
-  }
-  hr.style2:after {
-    content: '\002665';
-    display: inline-block;
-    position: relative;
-    top: -15px;
-    padding: 0 10px;
-    background: #E9EEFC;
-    color: #1C3B59;
-    font-size: 18px;
-  }
+  footer{
+    padding: 3ex 10vw 7ex 10vw;
+    margin-top: 4ex;
+    background-color: desaturate(darken(#E9EEFC, 2%), 10%);
+    color: desaturate(darken(#E9EEFC, 30%), 50%);
+    p{
+      margin: auto;
+      display: block;
+      text-align: center;
 
+    }
+  }
 
 @import "typewriter.scss";
 

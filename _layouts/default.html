@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-
 
     <meta charset="utf-8">
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" type="text/css" href='{{ "/style.css" | absolute_url }}'>
@@ -15,9 +15,7 @@
     {% seo %}
 </head>
 <body {% if page.url != "/" %} style="background-color: #E9EEFC" {% endif %} >
-    {% if page.url == "/" %}
     <div id="particles-js"></div>
-    {% endif %}
     
     <div class="overlay"></div>    
     <div id="page-container">
