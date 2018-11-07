@@ -271,16 +271,15 @@ body{
   .post{
      figure{
         img{
-          max-width: 50vw;
           height: auto;
           display: block;
-          margin: 5ex auto 2ex auto;
+          margin: 4ex auto 2ex auto;
         }
         figcaption{
           width: 100%;
           display: block; 
           text-align: center;
-          margin-bottom: 5ex;     
+          margin-bottom: 4ex;     
         }
      }
      
@@ -331,12 +330,35 @@ body{
     }
   }
 
-  ul{
-    list-style-type: decimal;
+  .post{
+    ul, ol{
+      font-family: $montserrat;
+      padding-left: 2ex;
+      li{
+        padding-left: 1ex;
+      }
+      ul, ol{
+        padding-left: 2ex;
+      }
+    }
+
+    ol{
+      list-style-type: decimal;
+      ol{
+        list-style-type: lower-alpha;
+      }
+    }
+
     ul{
       list-style-type: disc;
-      padding-left: 2ex;
+      ul{
+        list-style-type: circle;
+      }
     }
+  }
+
+  em{
+    font-style: italic;
   }
 
   .read-more, .prev, .next, .page-number{
