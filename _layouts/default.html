@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" type="text/css" href='{{ "/style.css" | absolute_url }}'>
 
-    <link rel="stylesheet" type="text/css" href='{{ "/css/all.min.css" | absolute_url }}'>
+    <link rel="stylesheet" type="text/css" href='{{ "assets/css/all.min.css" | absolute_url }}'>
     
 
     {% seo %}
@@ -47,13 +47,15 @@
 
     </div>
 
-    <script src='{{ "js/jquery-3.2.1.min.js" | absolute_url }}'></script>
-    <script src='{{ "js/popper.min.js" | absolute_url }}'></script>
-    <script src='{{ "js/bootstrap.min.js" | absolute_url }}'></script>
+    {% include algolia.html %}
+    
+    <script src='{{ "assets/js/jquery-3.2.1.min.js" | absolute_url }}'></script>
+    <script src='{{ "assets/js/popper.min.js" | absolute_url }}'></script>
+    <script src='{{ "assets/js/bootstrap.min.js" | absolute_url }}'></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src='{{ "js/particle.js" | absolute_url }}'></script>
-    <script src='{{ "js/typewriter.js" | absolute_url }}'></script>
-    <script src='{{ "js/script.js" | absolute_url }}'></script>
+    <script src='{{ "assets/js/particle.js" | absolute_url }}'></script>
+    <script src='{{ "assets/js/typewriter.js" | absolute_url }}'></script>
+    <script src='{{ "assets/js/script.js" | absolute_url }}'></script>
     {% include analytics.html %}
 </body>
 </html>
