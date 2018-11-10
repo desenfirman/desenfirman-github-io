@@ -93,6 +93,7 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - [vendor]
 
 excerpt_separator: <!--more-->
 
