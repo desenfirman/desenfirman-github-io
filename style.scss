@@ -438,6 +438,7 @@ body{
     }
   }
 
+@import "algolia";
 @import "typewriter.scss";
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

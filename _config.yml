@@ -11,6 +11,11 @@ description: a Web Developer from Somewhere
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
 
+algolia:
+  application_id: AF6ZI7TO0E
+  index_name:  desenfirman.me
+  search_only_api_key: 92e72c997ec2c4ffdd6ea9c3e3a620b0
+
 #
 # Flags below are optional
 #
@@ -79,6 +84,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-algolia
 
 # Exclude these files from your production _site
 exclude:

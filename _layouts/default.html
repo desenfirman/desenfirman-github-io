@@ -17,7 +17,28 @@
 <body {% if page.url != "/" %} style="background-color: #E9EEFC" {% endif %} >
     <div id="particles-js"></div>
     
-    <div class="overlay"></div>    
+    <div id="sidebar_overlay" class="overlay"></div>
+
+    <div id="search_overlay" class="overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a id="close_button" class="float-right" style="color: #f4f4f4; cursor: pointer;"  title="Close Search"><i class="fa fa-times-circle fa-lg"></i></a>
+                </div>
+            </div>  
+            <div class="row">
+                    <div class="col-md-6">
+                        <div id="search-searchbar"></div>
+                        <div id="search-hits">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>or browse by tags</h4>
+                    </div>
+            </div>
+      </div>
+    </div>
+
     <div id="page-container">
         {% include left_nav.html %}
         <div id="page-content">
