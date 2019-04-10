@@ -13,7 +13,7 @@ avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/je
 
 algolia:
   application_id: AF6ZI7TO0E
-  index_name:  desenfirman.me
+  index_name:  desenfirman.github.io
   search_only_api_key: 92e72c997ec2c4ffdd6ea9c3e3a620b0
 
 #
@@ -46,7 +46,7 @@ google_analytics: UA-128555718-1
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: https://desenfirman.me
+url: https://desenfirman.github.io
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)

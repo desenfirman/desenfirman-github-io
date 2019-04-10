@@ -12,7 +12,7 @@ layout: default
 			<nav aria-label="breadcrumb" style="width: 100%;">
 				<div class="float-right">
 					<ol  class="breadcrumb">
-						<li class="breadcrumb-item"><a href="/">desenfirman.me</a></li>
+						<li class="breadcrumb-item"><a href="/">desenfirman.github.io</a></li>
 					{% for crumb in crumbs offset: 1 %}
 						{% if forloop.last %}<li class="breadcrumb-item active" aria-current="page">{{ page.title | downcase | truncatewords: 4," ..." }}</li>{% else %}<li class="breadcrumb-item"><a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | downcase }}</a></li>{% endif %}
 					{% endfor %}

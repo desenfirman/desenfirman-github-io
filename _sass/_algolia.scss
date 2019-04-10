@@ -15,6 +15,12 @@
 
 #search_overlay{
   color: #E9EEFC;
+  #tags{
+    margin: 0.2ex auto 7ex auto;
+    @include mobile(){
+      margin-top: 1ex;
+    }
+  }
 }
 
 #search-hits{
