@@ -186,7 +186,7 @@ body{
 
   @include mobile {
     header{
-      padding-right: 12ex;
+      padding-right: 16ex;
       float: right;
 
       #leftmenu-trigger{
@@ -285,8 +285,7 @@ body{
      
   }
 
-  a{
-    text-decoration: none;
+  a{    
     -o-transition:color .2s ease-out, background 1s ease-in;
     -ms-transition:color .2s ease-out, background 1s ease-in;
     -moz-transition:color .2s ease-out, background 1s ease-in;
@@ -299,14 +298,21 @@ body{
   }
 
   
-  
-  h1, h2, h3, h4, h5{
+  h1{
     margin: 0.6rem auto 0.6rem auto;
     font-family: $oswald;
   }
 
+  h2, h3, h4, h5{
+    margin: 2.5rem auto 0.8rem auto;
+    font-family: $oswald;
+  }
+
   p{
-    font-family: $montserrat;
+    font-family: $tinos;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    letter-spacing: -.003em;
     &:has(> a){
       margin: 0 !important;
     }
@@ -331,8 +337,15 @@ body{
   }
 
   .post{
+    
+    a{
+      text-decoration: underline;
+    }
     ul, ol{
-      font-family: $montserrat;
+      font-family: $tinos;
+      font-size: 1.5rem;
+      line-height: 1.7;
+      letter-spacing: -.003em;
       padding-left: 2ex;
       li{
         padding-left: 1ex;
@@ -391,6 +404,7 @@ body{
       height: 100%;
       object-fit: cover;
     }
+
   }
 }
 
@@ -436,6 +450,10 @@ body{
       text-align: center;
 
     }
+  }
+
+  a.title#postTitle{
+    text-decoration: none;
   }
 
 @import "algolia";

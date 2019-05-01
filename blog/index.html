@@ -15,7 +15,7 @@ categories: blog
 				{% if post.thumbnail %}<div class="col-md-9">{% else %}<div class="col-md-12">{% endif %}
 					<br>
 					<time class="date">Written on {{ post.date | date: "%B %e, %Y" }}</time>	
-					<a class="title" href="{{ site.baseurl }}{{ post.url }}"><h1>{{ post.title }}</h1></a>
+					<a id="postTitle" class="title" href="{{ site.baseurl }}{{ post.url }}"><h1>{{ post.title }}</h1></a>
 					<div class="entry">{{ post.excerpt }}</div>
 					<div class="row">
 						<div class="col-md-12">
