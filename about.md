@@ -6,7 +6,7 @@ permalink: /about/
 ---
 
 <div class="row" style="width: 100%">
-	<div class="col">
+	<div class="">
 <section markdown="1" class="container" id="summary" style="border-bottom:1px dashed #CFCFCF;">
 
 ## Summary

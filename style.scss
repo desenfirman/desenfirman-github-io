@@ -337,10 +337,13 @@ body{
   }
 
   .post{
-    
-    a{
-      text-decoration: underline;
+
+    .entry{
+      a{
+        text-decoration: underline;
+      }
     }
+
     ul, ol{
       font-family: $tinos;
       font-size: 1.5rem;
@@ -375,7 +378,8 @@ body{
   }
 
   .read-more, .prev, .next, .page-number{
-      font-family: $oswald;    
+      font-family: $oswald;
+      text-decoration: none;    
   }
 
   .page-number{
