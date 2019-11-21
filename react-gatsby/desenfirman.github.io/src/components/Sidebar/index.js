@@ -9,21 +9,23 @@ const pic = require('../../assets/images/avatar.png');
 export default function SideBar({ sections = [] }) {
   const [headerOpen, toggleHeader] = useState(false);
   return (
-    <div className={`${headerOpen ? 'header-visible' : ' '}`}>
+    <div
+      className={`${headerOpen ? 'header-visible' : ' '}`}>
       <TopNav
         title={config.authorName}
         onMenuClick={() => toggleHeader(!headerOpen)}
       />
       <div id="header">
         <div className="top">
-          <Header
-            avatar={pic}
-            title={config.authorName}
-            heading={config.heading}
+          <Header 
+
+            // avatar={pic}
+            // title={config.authorName}
+            // heading={config.heading}
           />
           <Nav sections={sections} />
         </div>
-        <Footer socialLinks={config.socialLinks} />
+        {/* <Footer socialLinks={config.socialLinks} /> */}
       </div>
 
       {/* <section id="header">
