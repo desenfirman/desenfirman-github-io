@@ -3,6 +3,9 @@ import Scrollspy from 'react-scrollspy';
 import Scroll from '../Scroll';
 import {Link} from 'gatsby';
 
+import {Container, Row, Col} from 'react-bootstrap';
+
+
 export default function Nav({ sections = [] }) {
   return (
     <nav id="nav">

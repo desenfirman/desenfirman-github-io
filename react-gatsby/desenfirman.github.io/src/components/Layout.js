@@ -50,7 +50,11 @@ class Layout extends Component {
             >
               <html lang="en" />
             </Helmet>
-            <div className={isPreloaded ? 'main-body is-preload' : 'main-body'}>
+            <div
+              style={{
+                marginLeft: '4vw'
+              }} 
+              className={isPreloaded ? 'main-body is-preload' : 'main-body'}>
               {children}
             </div>
           </>

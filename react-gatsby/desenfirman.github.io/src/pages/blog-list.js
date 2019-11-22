@@ -2,7 +2,9 @@ import React from 'react'
 import Layout from '../components/Layout'
 import {Link, graphql} from 'gatsby'
 import SideBar from '../components/Sidebar';
+import PageFooter from '../components/PageFooter';
 
+import {Container, Row, Col} from 'react-bootstrap';
 
 
 
@@ -22,66 +24,72 @@ class BlogIndex extends React.Component {
 
         <SideBar />
 
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: 1 / 4,
-                }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            listStyle: 'none',
-            padding: 0,
-          }}
-        >
-          {!isFirst && (
-            <Link to={prevPage} rel="prev">
-              ← Previous Page
-            </Link>
-          )}
-          {Array.from({ length: numPages }, (_, i) => (
-            <li
-              key={`pagination-number${i + 1}`}
-              style={{
-                margin: 0,
-              }}
-            >
-              <Link
-                to={'blog' + `/${i === 0 ? '' : i + 1}`}
-                style={{
-                  padding: 1 / 4,
-                  textDecoration: 'none',
-                  color: i + 1 === currentPage ? '#ffffff' : '',
-                  background: i + 1 === currentPage ? '#007acc' : '',
-                }}
-              >
-                {i + 1}
+        <Container fluid={true}>
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <Row key={node.fields.slug}>
+                <h3
+                  style={{
+                    marginBottom: 1 / 4,
+                  }}
+                >
+                  <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </h3>
+                <small>{node.frontmatter.date}</small>
+                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              </Row>
+            )
+          })}
+          <ul
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              listStyle: 'none',
+              padding: 0,
+            }}
+          >
+            {!isFirst && (
+              <Link to={prevPage} rel="prev">
+                ← Previous Page
               </Link>
-            </li>
-          ))}
-          {!isLast && (
-            <Link to={nextPage} rel="next">
-              Next Page →
-            </Link>
-          )}
-        </ul>
+            )}
+            {Array.from({ length: numPages }, (_, i) => (
+              <li
+                key={`pagination-number${i + 1}`}
+                style={{
+                  margin: 0,
+                }}
+              >
+                <Link
+                  to={'blog' + `/${i === 0 ? '' : i + 1}`}
+                  style={{
+                    padding: 1 / 4,
+                    textDecoration: 'none',
+                    color: i + 1 === currentPage ? '#ffffff' : '',
+                    background: i + 1 === currentPage ? '#007acc' : '',
+                  }}
+                >
+                  {i + 1}
+                </Link>
+              </li>
+            ))}
+            {!isLast && (
+              <Link to={nextPage} rel="next">
+                Next Page →
+              </Link>
+            )}
+          </ul>
+          
+          <PageFooter></PageFooter>
+        
+        </Container>
 
+            
       </Layout>
 
     )
