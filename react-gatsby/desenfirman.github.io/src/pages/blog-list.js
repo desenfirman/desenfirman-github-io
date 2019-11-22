@@ -1,6 +1,9 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import {Link, graphql} from 'gatsby'
+import SideBar from '../components/Sidebar';
+
+
 
 
 class BlogIndex extends React.Component {
@@ -12,10 +15,12 @@ class BlogIndex extends React.Component {
     const { currentPage, numPages } = this.props.pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? 'post/' : (currentPage - 1).toString()
-    const nextPage = (currentPage + 1).toString()
+    const prevPage = currentPage - 1 === 1 ? 'blog/' : 'blog/' + (currentPage - 1).toString()
+    const nextPage = 'blog/' + (currentPage + 1).toString()
     return (
       <Layout location={this.props.location} title={siteTitle}>
+
+        <SideBar />
 
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
@@ -58,7 +63,7 @@ class BlogIndex extends React.Component {
               }}
             >
               <Link
-                to={`/${i === 0 ? '' : i + 1}`}
+                to={'blog' + `/${i === 0 ? '' : i + 1}`}
                 style={{
                   padding: 1 / 4,
                   textDecoration: 'none',

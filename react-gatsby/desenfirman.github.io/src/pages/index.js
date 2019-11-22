@@ -16,13 +16,6 @@ import pic7 from '../assets/images/pic07.jpg';
 import pic8 from '../assets/images/pic08.jpg';
 import Scroll from '../components/Scroll';
 
-const sections = [
-  { id: '/', name: 'Intro', icon: 'fa-home' },
-  { id: '/post', name: 'Posts', icon: 'fa-pen' },
-  { id: '/portfolio', name: 'Portfolio', icon: 'fa-th' },
-  { id: '/about', name: 'About Me', icon: 'fa-user' },
-];
-
 const typewriter_content = [ 
   "I am on my 4th year of studies in Universitas Brawijaya.", 
   "Taking Computer Science major degree and...", 
@@ -40,7 +33,7 @@ const IndexPage = () => (
         left: 0,
         width: "100%",
         height: "100%",
-        backgroundColor: "#2474A6",
+        backgroundColor: "#1C3B59",
         zIndex: -1,
       }}
       params={{
@@ -107,7 +100,7 @@ const IndexPage = () => (
         retina_detect: true
       }}
     />
-    <SideBar sections={sections} />
+    <SideBar/>
     
     <Container
       style={{

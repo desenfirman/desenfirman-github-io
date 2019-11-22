@@ -6,7 +6,14 @@ import TopNav from './TopNav';
 import config from '../../../config';
 const pic = require('../../assets/images/avatar.png');
 
-export default function SideBar({ sections = [] }) {
+const sections_data = [
+  { id: '/', name: 'Intro', icon: 'fa-home' },
+  { id: '/blog', name: 'Posts', icon: 'fa-pen' },
+  { id: '/portfolio', name: 'Portfolio', icon: 'fa-th' },
+  { id: '/about', name: 'About Me', icon: 'fa-user' },
+];
+
+export default function SideBar({ sections = sections_data }) {
   const [headerOpen, toggleHeader] = useState(false);
   return (
     <div
