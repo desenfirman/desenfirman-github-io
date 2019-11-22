@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Markdown Test!
-categories: blog
+date: '2018-11-01'
 comments: true
 tags:
 - tags

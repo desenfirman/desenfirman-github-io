@@ -1,6 +1,7 @@
 import React from 'react';
 import Scrollspy from 'react-scrollspy';
 import Scroll from '../Scroll';
+import {Link} from 'gatsby';
 
 export default function Nav({ sections = [] }) {
   return (
@@ -14,11 +15,9 @@ export default function Nav({ sections = [] }) {
           {sections.map(s => {
             return (
               <li key={s.id}>
-                <Scroll type="id" element={s.id}>
-                  <a href={`${s.id}`} id="top-link">
+                  <Link to={`${s.id}`}>
                     <span className={`icon ${s.icon}`}><div className={`isToogle`}>{s.name}</div></span>
-                  </a>
-                </Scroll>
+                  </Link>
               </li>
             );
           })}

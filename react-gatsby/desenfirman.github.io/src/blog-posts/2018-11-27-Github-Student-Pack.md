@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GitHub Student Pack - Layanan bagi Kamu Para Programmer 'misqueen'
-categories: blog
+date: '2018-11-27'
 comments: true
 tags:
 - github

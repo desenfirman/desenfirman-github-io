@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hey, This is Second Post!
-categories: blog
+date: '2018-10-03'
 comments: true
 tags:
 - test
