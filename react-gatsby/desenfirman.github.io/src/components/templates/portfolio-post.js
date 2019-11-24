@@ -5,6 +5,8 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../Layout'
 // import SEO from '../components/seo'
 // import { rhythm, scale } from '../utils/typography'
+import ReactMarkdown from 'react-markdown'
+
 
 class PortfolioTemplate extends React.Component {
   render() {
@@ -26,7 +28,7 @@ class PortfolioTemplate extends React.Component {
         >
           {post.pushedAt}
         </p>
-        <div dangerouslySetInnerHTML={{ __html: (post.readme != null) ? post.readme.text : "No README.md file available for this repository"}} />
+        <ReactMarkdown source={(post.readme != null) ? post.readme.text : "No README.md file available for this repository"}></ReactMarkdown>
         <hr
           style={{
             marginBottom: 0.5 ,//rhythm
