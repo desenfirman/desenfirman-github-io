@@ -39,7 +39,7 @@ class PortfolioIndex extends React.Component {
                   </Link>
                 </h3>
                 <small>{node.pushedAt}</small>
-                <p dangerouslySetInnerHTML={{ __html: (node.readme !== null) ? node.readme.text : "" }} />
+                <p dangerouslySetInnerHTML={{ __html: (node.description !== null) ? node.description : "No description available" }} />
               </Row>
             )
           })}
@@ -118,9 +118,7 @@ export const portfolioQuery = graphql`
                   name
                   id
                   url
-                  readme {
-                    text
-                  }
+                  description
                   pushedAt
                 }
               }

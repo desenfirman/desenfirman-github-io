@@ -28,6 +28,7 @@ module.exports = {
                   id
                   url
                   name
+                  description
                   readme: object(expression: "master:README.md") {
                     ... on Blob {
                       oid

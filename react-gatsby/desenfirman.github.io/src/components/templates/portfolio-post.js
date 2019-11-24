@@ -6,11 +6,11 @@ import Layout from '../Layout'
 // import SEO from '../components/seo'
 // import { rhythm, scale } from '../utils/typography'
 
-class portfolioTemplate extends React.Component {
+class PortfolioTemplate extends React.Component {
   render() {
-    const post = this.props.data.githubData.data.search.edges[0].node
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    const {portfolioData, previous, next } = this.props.pageContext
+    const post = portfolioData
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -26,7 +26,7 @@ class portfolioTemplate extends React.Component {
         >
           {post.pushedAt}
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div dangerouslySetInnerHTML={{ __html: (post.readme != null) ? post.readme.text : "No README.md file available for this repository"}} />
         <hr
           style={{
             marginBottom: 0.5 ,//rhythm
@@ -62,30 +62,13 @@ class portfolioTemplate extends React.Component {
   }
 }
 
-export default portfolioTemplate
+export default PortfolioTemplate
 
 export const pageQuery = graphql`
-  query portPostBySlug($name: String!) {
+  query portfolioDataPage{
     site {
       siteMetadata {
         title
-      }
-    }
-    githubData(data: {search: {edges: {elemMatch: {node: {name: {eq: $name}}}}}}) {
-      data {
-        search {
-          edges {
-            node {
-              id
-              name
-              url
-              readme {
-                text
-              }
-              pushedAt
-            }
-          }
-        }
       }
     }
   }

@@ -52,7 +52,7 @@ function createPortfolioPages(createPage, posts, portfolioPerPage) {
       path: '/portfolio/' + post.node.name,
       component: portfolioPost,
       context: {
-        name: post.node.name,
+        portfolioData: post.node,
         previous,
         next,
       },
@@ -114,6 +114,7 @@ exports.createPages = ({ graphql, actions }) => {
                       id
                       name
                       url
+                      description
                       readme {
                         text
                       }
