@@ -8,17 +8,17 @@ import {Container, Row, Col} from 'react-bootstrap';
 
 
 
-class BlogIndex extends React.Component {
+class PortfolioIndex extends React.Component {
 
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+    const posts = data.allGithubData.edges[0].node.data.search.edges
     const { currentPage, numPages } = this.props.pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? 'blog/' : 'blog/' + (currentPage - 1).toString()
-    const nextPage = 'blog/' + (currentPage + 1).toString()
+    const prevPage = currentPage - 1 === 1 ? 'portfolio/' : 'portfolio/' + (currentPage - 1).toString()
+    const nextPage = 'portfolio/' + (currentPage + 1).toString()
     return (
       <Layout location={this.props.location} title={siteTitle}>
 
@@ -26,20 +26,20 @@ class BlogIndex extends React.Component {
 
         <Container >
           {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
+            const title = node.name || node.id
             return (
-              <Row key={node.fields.slug}>
+              <Row key={node.id}>
                 <h3
                   style={{
                     marginBottom: 1 / 4,
                   }}
                 >
-                  <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+                  <Link style={{ boxShadow: 'none' }} to={'/portfolio/' + node.name}>
                     {title}
                   </Link>
                 </h3>
-                <small>{node.frontmatter.date}</small>
-                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                <small>{node.pushedAt}</small>
+                <p dangerouslySetInnerHTML={{ __html: (node.readme !== null) ? node.readme.text : "" }} />
               </Row>
             )
           })}
@@ -66,7 +66,7 @@ class BlogIndex extends React.Component {
                 }}
               >
                 <Link
-                  to={'blog' + `/${i === 0 ? '' : i + 1}`}
+                  to={'portfolio' + `/${i === 0 ? '' : i + 1}`}
                   style={{
                     padding: 1 / 4,
                     textDecoration: 'none',
@@ -96,29 +96,38 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default PortfolioIndex
 
-export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
+export const portfolioQuery = graphql`
+  query portfolioQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+    allGithubData(
       limit: $limit
       skip: $skip
     ) {
       edges {
         node {
-          excerpt
-          fields {
-            slug
+          data {
+            search {
+              edges {
+                node {
+                  name
+                  id
+                  url
+                  readme {
+                    text
+                  }
+                  pushedAt
+                }
+              }
+            }
           }
-          frontmatter {
-            date(formatString: "DD MMMM, YYYY")
-            title
+          internal {
+            type
           }
         }
       }
