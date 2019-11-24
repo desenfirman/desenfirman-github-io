@@ -9,7 +9,7 @@
 // Create blog post list pages
 
 function createPostPages(createPage, posts, postsPerPage) {
-  const blogPost = path.resolve(`./src/pages/blog-post.js`)
+  const blogPost = path.resolve(`./src/components/templates/blog-post.js`)
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
@@ -31,7 +31,7 @@ function createPostPages(createPage, posts, postsPerPage) {
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? '/blog' + `/` : '/blog' + `/${i + 1}`,
-      component: path.resolve('./src/pages/blog-list.js'),
+      component: path.resolve('./src/components/templates/blog-list.js'),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
@@ -43,7 +43,7 @@ function createPostPages(createPage, posts, postsPerPage) {
 }
 
 function createPortfolioPages(createPage, posts, portfolioPerPage) {
-  const portfolioPost = path.resolve(`./src/pages/portfolio-post.js`)
+  const portfolioPost = path.resolve(`./src/components/templates/portfolio-post.js`)
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
@@ -65,7 +65,7 @@ function createPortfolioPages(createPage, posts, portfolioPerPage) {
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? '/portfolio' + `/` : '/portfolio' + `/${i + 1}`,
-      component: path.resolve('./src/pages/portfolio-list.js'),
+      component: path.resolve('./src/components/templates/portfolio-list.js'),
       context: {
         limit: portfolioPerPage,
         skip: i * portfolioPerPage,
@@ -143,6 +143,8 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
+
+// Create a node slug for each post in graphQL query. Slug is Link of post  
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 

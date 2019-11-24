@@ -1,8 +1,8 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import Layout from '../Layout'
 import {Link, graphql} from 'gatsby'
-import SideBar from '../components/Sidebar';
-import PageFooter from '../components/PageFooter';
+import SideBar from '../Sidebar';
+import PageFooter from '../PageFooter';
 
 import {Container, Row, Col} from 'react-bootstrap';
 
