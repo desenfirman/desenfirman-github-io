@@ -12,7 +12,7 @@ export default function PortfolioCard({id, name, description, last_update, githu
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Last commit: {last_update}</Card.Subtitle>
-                    <Card.Text style={{minHeight: '7.25rem'}}>
+                    <Card.Text style={{minHeight: '7rem'}}>
                         { (description.length <= limit_desc) ? description : description.substring(0, limit_desc) + "..."}
                     </Card.Text>
                     

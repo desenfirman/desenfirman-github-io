@@ -50,13 +50,13 @@ class PortfolioIndex extends React.Component {
       <Layout>
         <SideBar />
 
-        <Container  >
+        <Container  style={{paddingTop: '0.25em'}}>
           <TopNav/>
           <Row className={"d-flex flex-wrap"}>
             {content}
           </Row>
         </Container>
-        <PageFooter></PageFooter>
+        <PageFooter/>
       </Layout>
 
     )

@@ -5,6 +5,10 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../Layout'
 // import SEO from '../components/seo'
 // import { rhythm, scale } from '../utils/typography'
+import SideBar from '../Sidebar';
+import PageFooter from '../PageFooter';
+import TopNav from '../TopNav'
+import { Row, Container } from 'react-bootstrap'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -15,6 +19,11 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         {/* <SEO title={post.frontmatter.title} description={post.excerpt} /> */}
+        <SideBar/>
+        <Container style={{paddingTop: '0.25em'}}>
+        <TopNav/>
+        <Row>
+        <Container fluid={true}>
         <h1>{post.frontmatter.title}</h1>
         <p
           style={{
@@ -57,6 +66,9 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+        </Container>
+        </Row>
+        </Container>
       </Layout>
     )
   }

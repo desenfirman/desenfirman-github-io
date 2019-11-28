@@ -87,7 +87,7 @@ exports.createPages = ({ graphql, actions }) => {
 }
 
 
-// Create a node slug for each post in graphQL query. Slug is Link of post  
+// Create a node slug for each post in graphQL query. Slugs are for Link of post  
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
