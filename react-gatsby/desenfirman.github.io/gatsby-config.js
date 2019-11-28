@@ -8,20 +8,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-github-api`,
-      options: {
-        // token: required by the GitHub API
-        token: 'd9bf48f45bea9dc67f490d4bd8eb5f523adadbdb',
-  
-        
-        // variables: defaults to variables needed for a search query
-        variables: {
-          nFirst: 50,
-          q: "user:desenfirman topic:portfolio"
-        }
-      }
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,

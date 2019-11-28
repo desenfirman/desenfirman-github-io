@@ -1,21 +1,25 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import { Card, Button } from 'react-bootstrap'
+import { Col, Card, Button } from 'react-bootstrap'
 
-export default function PortfolioCard({name, description, last_update}) {
+export default function PortfolioCard({id, name, description, last_update, github_link, limit_desc}) {
     description = (description !== null) ? description : "No description available"
     return(
-        <Card>
-            <Card.Img/>
-            <Card.Body>
-                <Card.Title>{name}</Card.Title>
-                <Card.Text>
-                    {description}
-                </Card.Text>
-                <Button variant='primary'>See README.md</Button>
-                <Button variant='success'>Check on GitHub</Button>
-            </Card.Body>
-        </Card>
+        <Col xl={6} lg={6} md={6}>
+            <Card key={id} >
+                <Card.Img/>
+                <Card.Body>
+                    <Card.Title>{name}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Last commit: {last_update}</Card.Subtitle>
+                    <Card.Text style={{minHeight: '7.25rem'}}>
+                        { (description.length <= limit_desc) ? description : description.substring(0, limit_desc) + "..."}
+                    </Card.Text>
+                    
+                    <Button variant='outline-primary' href='#' >Open README.md</Button>
+                    {/* <Button variant='outline-success' href={github_link}>Check on GitHub</Button> */}
+                </Card.Body>
+            </Card>
+        </Col>
     )
 }

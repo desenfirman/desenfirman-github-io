@@ -9,7 +9,7 @@ const pic = require('../../assets/images/avatar.png');
 const sections_data = [
   { id: '/', name: 'Intro', icon: 'fa-home' },
   { id: '/blog', name: 'Posts', icon: 'fa-pen' },
-  { id: '/portfolio-list', name: 'Portfolio', icon: 'fa-th' },
+  { id: '/portfolios', name: 'Portfolio', icon: 'fa-th' },
   { id: '/about', name: 'About Me', icon: 'fa-user' },
 ];
 
