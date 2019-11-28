@@ -13,38 +13,10 @@ module.exports = {
         // token: required by the GitHub API
         token: 'd9bf48f45bea9dc67f490d4bd8eb5f523adadbdb',
   
-        // GraphQLquery: defaults to a search query
-        graphQLQuery: `
-        query ($q: String = "", $searchFirst: Int = 0) {
-          search(query: $q, type: REPOSITORY, first: $searchFirst) {
-            pageInfo {
-              endCursor
-              startCursor
-            }
-            repositoryCount
-            edges {
-              node {
-                ... on Repository {
-                  id
-                  url
-                  name
-                  description
-                  readme: object(expression: "master:README.md") {
-                    ... on Blob {
-                      oid
-                      text
-                    }
-                  }
-                  pushedAt
-                }
-              }
-            }
-          }
-        }`,
-  
+        
         // variables: defaults to variables needed for a search query
         variables: {
-          searchFirst: 50,
+          nFirst: 50,
           q: "user:desenfirman topic:portfolio"
         }
       }
