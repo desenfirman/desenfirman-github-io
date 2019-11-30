@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 
 // import Bio from '../components/Bio'
 import Layout from '../Layout'
-// import SEO from '../components/seo'
+import SEO from '../SEO'
 // import { rhythm, scale } from '../utils/typography'
 import ReactMarkdown from 'react-markdown'
 
@@ -15,8 +15,10 @@ class PortfolioTemplate extends React.Component {
     const post = portfolioData
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        {/* <SEO title={post.frontmatter.title} description={post.excerpt} /> */}
+      <Layout location={this.props.location}>
+        <SEO
+          title={"Blog"}
+        />
         <h1>{post.name}</h1>
         <p
           style={{

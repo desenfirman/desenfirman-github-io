@@ -1,11 +1,12 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import { Link, graphql } from 'gatsby'
+// import { Link, graphql } from 'gatsby'
 import SideBar from '../components/Sidebar';
 import PageFooter from '../components/PageFooter';
 import PortfolioCard from '../components/templates/card';
 import TopNav from '../components/TopNav';
 import axios from 'axios';
+import SEO from '../components/SEO'
 
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -48,15 +49,23 @@ class PortfolioIndex extends React.Component {
 
     return (
       <Layout>
+        <SEO
+          title={"Portfolio"}
+        />
         <SideBar />
 
-        <Container  style={{paddingTop: '0.25em'}}>
-          <TopNav/>
-          <Row className={"d-flex flex-wrap"}>
-            {content}
-          </Row>
+        <Container>
+          <Col md={8} className={'offset-md-2'}>
+            <Container style={{ paddingTop: '0.25em' }}>
+              <TopNav />
+
+              <Row className={"d-flex flex-wrap"}>
+                {content}
+              </Row>
+            </Container>
+          </Col>
         </Container>
-        <PageFooter/>
+        <PageFooter />
       </Layout>
 
     )

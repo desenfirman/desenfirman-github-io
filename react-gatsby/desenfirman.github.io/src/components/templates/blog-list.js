@@ -4,7 +4,8 @@ import { Link, graphql } from 'gatsby'
 import SideBar from '../Sidebar';
 import PageFooter from '../PageFooter';
 import TopNav from '../TopNav'
-import HLine from '../HLine'
+import {Divider, HLine} from '../HLine'
+import SEO from '../SEO'
 
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -22,8 +23,10 @@ class BlogIndex extends React.Component {
     const prevPage = currentPage - 1 === 1 ? 'blog/' : 'blog/' + (currentPage - 1).toString()
     const nextPage = 'blog/' + (currentPage + 1).toString()
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-
+      <Layout location={this.props.location}>
+        <SEO
+          title={"Blog"}
+        />
         <SideBar />
 
         <Container>
@@ -31,6 +34,7 @@ class BlogIndex extends React.Component {
             <Col md={8} className={'offset-md-2'}>
               <Container >
                 <TopNav />
+                {/* START of Post List */}
                 {posts.map(({ node }) => {
                   const title = node.frontmatter.title || node.fields.slug
                   return (
@@ -42,14 +46,18 @@ class BlogIndex extends React.Component {
                             {title}
                           </Link>
                         </h1>
-                        <p style={{ marginTop: '0.75em' }} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                        <p className={'text-body'} style={{ marginTop: '0.75em' }} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                         <Col className={'d-flex justify-content-end'}>
-                          <Link className={'float-right button-link'} to={node.fields.slug}>Keep Reading</Link>
+                          <Link className={'btn float-right'} to={node.fields.slug}>Keep Reading</Link>
                         </Col>
                       </Container>
+                      <Divider/>
                     </Row>
                   )
                 })}
+                {/* END of Post List */}
+
+                {/* START of Pagination */}
                 <HLine />
                 <ul
                   style={{
@@ -62,9 +70,7 @@ class BlogIndex extends React.Component {
                   }}
                 >
                   {!isFirst && (
-                    <Link className={"button-link"} to={prevPage} rel="prev">
-                      ← Previous Page
-              </Link>
+                    <Link className={"btn"} to={prevPage} rel="prev">« Previous Page</Link>
                   )}
                   {Array.from({ length: numPages }, (_, i) => (
                     <li
@@ -73,28 +79,19 @@ class BlogIndex extends React.Component {
                         margin: 0,
                       }}
                     >
-                      <Link className={"button-link"}
+                      <Link className={"btn " + (i + 1 === currentPage ? 'disabled' : '' )}
                         to={'blog' + `/${i === 0 ? '' : i + 1}`}
-                        style={{
-                          padding: 1 / 4,
-                          textDecoration: 'none',
-                          color: i + 1 === currentPage ? '#ffffff' : '',
-                          background: i + 1 === currentPage ? '#007acc' : '',
-                        }}
                       >
                         {i + 1}
                       </Link>
                     </li>
                   ))}
                   {!isLast && (
-                    <Link className={"button-link"} to={nextPage} rel="next">
-                      Next Page →
-              </Link>
+                    <Link className={"btn"} to={nextPage} rel="next">Next Page »</Link>
                   )}
                 </ul>
                 <HLine />
-
-
+                {/* END of Pagination */}
               </Container>
             </Col>
           </Row>
@@ -124,7 +121,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 280)
           fields {
             slug
           }

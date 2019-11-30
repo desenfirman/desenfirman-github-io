@@ -10,6 +10,7 @@
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
+  font-family: $headings-font-family;
   user-select: none;
   border: $btn-border-width solid transparent;
   @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
@@ -81,6 +82,7 @@ fieldset:disabled a.btn {
   font-weight: $font-weight-normal;
   color: $link-color;
   background-color: transparent;
+  font-size: 0.8em;
 
   @include hover {
     color: $link-hover-color;

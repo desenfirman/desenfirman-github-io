@@ -45,7 +45,12 @@
   @include text-emphasis-variant(".text-#{$color}", $value);
 }
 
-.text-body { color: $body-color !important; }
+.text-body { 
+  color: $body-color !important;  
+  line-height: 1.7;
+  letter-spacing: -.003em;
+  font-size: 1.5rem;
+}
 .text-muted { color: $text-muted !important; }
 
 .text-black-50 { color: rgba($black, .5) !important; }

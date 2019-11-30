@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Card, Button, Breadcrumb } from 'react-bootstrap'
 import { Link } from 'gatsby'
-import HLine from './HLine'
+import { HLine } from './HLine'
 
 
 export default function TopNavBar() {

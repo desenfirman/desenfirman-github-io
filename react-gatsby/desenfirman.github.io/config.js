@@ -1,36 +1,23 @@
 module.exports = {
-  siteTitle: 'Dese Narfa Firmansyah', // <title>
-  manifestName: 'desenfirman.github,io',
-  manifestShortName: 'desenfirman', // max 12 characters
-  manifestStartUrl: '/',
-  manifestBackgroundColor: '#663399',
-  manifestThemeColor: '#663399',
-  manifestDisplay: 'standalone',
-  manifestIcon: 'src/assets/img/website-icon.png',
-  pathPrefix: `/gatsby-starter-prologue/`, // This path is subpath of your hosting https://domain/portfolio
-  authorName: 'Anubhav',
-  heading: 'Web Developer',
-  // social
-  socialLinks: [
-    {
-      icon: 'fa-github',
-      name: 'Github',
-      url: 'https://github.com/anubhavsrivastava',
-    },
-    {
-      icon: 'fa-twitter',
-      name: 'Twitter',
-      url: 'https://twitter.com/onlyanubhav',
-    },
-    {
-      icon: 'fa-facebook',
-      name: 'Facebook',
-      url: 'https://facebook.com/theanubhav',
-    },
-    {
-      icon: 'fa-envelope-o',
-      name: 'Email',
-      url: 'mailto:anubhav.srivastava00@gmail.com',
-    },
-  ],
+  title: 'Dese Narfa Firmansyah · Back End Devs & Artificial Intelligence Enthusiast',
+  titleTemplate: '%s · Dese Narfa Firmansyah',
+    description:
+      'Bachelor degree of computer Science fresh graduate.',
+    url: 'https://desenfirman.github.io', // no trailing slash!
+    image: '/src/assets/images/dese-firmansyah.jpg',
+    owner: 'Dese Narfa Firmansyah',
+    twitterUsername: '@desenfirman',
+    facebookAppID: '',
+    nav: [
+      { path: '/', name: 'Home' },
+      { path: '/blog', name: 'Blog' },
+      { path: '/portfolios', name: 'Portfolio' },
+      { path: '/about', name: 'About' },
+    ],
+    // categories: [
+    //   { slug: 'confidence', name: 'Confidence' },
+    //   { slug: 'better-humans', name: 'Better Humans' },
+    //   { slug: 'business-basics', name: 'Business Basics' },
+    //   { slug: 'uncomfortable-things', name: 'Uncomfortable Things' },
+    // ],
 };
