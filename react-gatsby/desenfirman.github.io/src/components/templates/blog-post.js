@@ -8,7 +8,9 @@ import Layout from '../Layout'
 import SideBar from '../Sidebar';
 import PageFooter from '../PageFooter';
 import TopNav from '../TopNav'
-import { Row, Container } from 'react-bootstrap'
+import { Row, Container, Col } from 'react-bootstrap'
+import HLine from '../HLine'
+
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -19,55 +21,50 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         {/* <SEO title={post.frontmatter.title} description={post.excerpt} /> */}
-        <SideBar/>
-        <Container style={{paddingTop: '0.25em'}}>
-        <TopNav/>
-        <Row>
-        <Container fluid={true}>
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            ...0.5, //scale
-            display: `block`,
-            marginBottom: 0.5, //rhythm
-            marginTop: 0.5, //rhythm
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: 0.5 ,//rhythm
-          }}
-        />
+        <SideBar />
+        <Container >
+          <Row>
+            <Col md={8} className={'offset-md-2'}>
+              <Container>
+                <TopNav />
+                <Row>
+                  <Container fluid={true}>
+                    <time><p>Written on {post.frontmatter.date}</p></time>
+                    <h1>{post.frontmatter.title}</h1>
+                    <HLine />
+                    <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                    <HLine />
+                    <ul
+                      style={{
+                        display: `flex`,
+                        flexWrap: `wrap`,
+                        justifyContent: `space-between`,
+                        listStyle: `none`,
+                        padding: 0,
+                      }}
+                    >
+                      <li>
+                        {previous && (
+                          <Link style={{fontSize: '0.75em'}} className={"button-link"} to={previous.fields.slug} rel="prev">
+                            « {previous.frontmatter.title}
+                          </Link>
+                        )}
+                      </li>
+                      <li>
+                        {next && (
+                          <Link style={{fontSize: '0.75em'}} className={"button-link"} to={next.fields.slug} rel="next">
+                            {next.frontmatter.title} »
+              </Link>
+                        )}
+                      </li>
+                    </ul>
+                    <HLine />
+                  </Container>
+                </Row>
+              </Container>
+            </Col>
 
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-        </Container>
-        </Row>
+          </Row>
         </Container>
       </Layout>
     )

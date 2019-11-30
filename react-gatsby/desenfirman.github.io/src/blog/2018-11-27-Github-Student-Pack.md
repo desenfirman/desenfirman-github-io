@@ -10,7 +10,7 @@ tags:
 
 > Student pack 
 
-Mendengar kata tersebut, pasti terlintas hal yang menarik bagi yang mereka-mereka yang sedang menempuh pendidikan. Ada sesuatu hal yang  bakal menguntungkan bagi pelajar jika layanan tersebut diambil dan digunakan semaksimal mungkin.
+Mendengar kata tersebut, pasti terlintas hal yang menarik bagi yang mereka-mereka yang sedang menempuh pendidikan. Ada sesuatu hal yang  bakal menguntungkan bagi pelajar (yang demen gratisan lebih tepatnya, hehe) jika layanan tersebut diambil dan digunakan semaksimal mungkin.
 
 <!--more-->
 

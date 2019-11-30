@@ -30,8 +30,8 @@ function createPostPages(createPage, posts, postsPerPage) {
 
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? '/blog' + `/` : '/blog' + `/${i + 1}`,
-      component: path.resolve('./src/components/templates/blog-list.js'),
+      path: i === 0 ? `/blog` + `/` : `/blog` + `/${i + 1}`,
+      component: path.resolve(`./src/components/templates/blog-list.js`),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,

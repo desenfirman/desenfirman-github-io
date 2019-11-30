@@ -1,11 +1,12 @@
 import React from 'react'
 import Layout from '../Layout'
-import {Link, graphql} from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import SideBar from '../Sidebar';
 import PageFooter from '../PageFooter';
 import TopNav from '../TopNav'
+import HLine from '../HLine'
 
-import {Container, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 
 
@@ -25,73 +26,82 @@ class BlogIndex extends React.Component {
 
         <SideBar />
 
-        <Container style={{paddingTop: '0.25em'}}>
-          <TopNav/>
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            return (
-              <Row key={node.fields.slug}>
-                <h3
+        <Container>
+          <Row>
+            <Col md={8} className={'offset-md-2'}>
+              <Container >
+                <TopNav />
+                {posts.map(({ node }) => {
+                  const title = node.frontmatter.title || node.fields.slug
+                  return (
+                    <Row key={node.fields.slug}>
+                      <Container fluid={true} style={{ marginBottom: '1em', marginTop: '1em' }}>
+                        <time><p>Written on {node.frontmatter.date}</p></time>
+                        <h1 >
+                          <Link to={node.fields.slug}>
+                            {title}
+                          </Link>
+                        </h1>
+                        <p style={{ marginTop: '0.75em' }} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                        <Col className={'d-flex justify-content-end'}>
+                          <Link className={'float-right button-link'} to={node.fields.slug}>Keep Reading</Link>
+                        </Col>
+                      </Container>
+                    </Row>
+                  )
+                })}
+                <HLine />
+                <ul
                   style={{
-                    marginBottom: 1 / 4,
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    listStyle: 'none',
+                    padding: 0,
                   }}
                 >
-                  <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-              </Row>
-            )
-          })}
-          <ul
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              listStyle: 'none',
-              padding: 0,
-            }}
-          >
-            {!isFirst && (
-              <Link to={prevPage} rel="prev">
-                ← Previous Page
+                  {!isFirst && (
+                    <Link className={"button-link"} to={prevPage} rel="prev">
+                      ← Previous Page
               </Link>
-            )}
-            {Array.from({ length: numPages }, (_, i) => (
-              <li
-                key={`pagination-number${i + 1}`}
-                style={{
-                  margin: 0,
-                }}
-              >
-                <Link
-                  to={'blog' + `/${i === 0 ? '' : i + 1}`}
-                  style={{
-                    padding: 1 / 4,
-                    textDecoration: 'none',
-                    color: i + 1 === currentPage ? '#ffffff' : '',
-                    background: i + 1 === currentPage ? '#007acc' : '',
-                  }}
-                >
-                  {i + 1}
-                </Link>
-              </li>
-            ))}
-            {!isLast && (
-              <Link to={nextPage} rel="next">
-                Next Page →
+                  )}
+                  {Array.from({ length: numPages }, (_, i) => (
+                    <li
+                      key={`pagination-number${i + 1}`}
+                      style={{
+                        margin: 0,
+                      }}
+                    >
+                      <Link className={"button-link"}
+                        to={'blog' + `/${i === 0 ? '' : i + 1}`}
+                        style={{
+                          padding: 1 / 4,
+                          textDecoration: 'none',
+                          color: i + 1 === currentPage ? '#ffffff' : '',
+                          background: i + 1 === currentPage ? '#007acc' : '',
+                        }}
+                      >
+                        {i + 1}
+                      </Link>
+                    </li>
+                  ))}
+                  {!isLast && (
+                    <Link className={"button-link"} to={nextPage} rel="next">
+                      Next Page →
               </Link>
-            )}
-          </ul>
-          
-        
-        </Container>
-        <PageFooter></PageFooter>
+                  )}
+                </ul>
+                <HLine />
 
-            
+
+              </Container>
+            </Col>
+          </Row>
+        </Container>
+
+        <PageFooter />
+
       </Layout>
 
     )

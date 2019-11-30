@@ -1,9 +1,13 @@
+$breadcrumb-font-family: 'Teko', cursive;
+
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
   padding: $breadcrumb-padding-y $breadcrumb-padding-x;
   margin-bottom: $breadcrumb-margin-bottom;
+  font-size: 1.5ch;
   list-style: none;
+  font-family: $breadcrumb-font-family;
   // background-color: $breadcrumb-bg;
   @include border-radius($breadcrumb-border-radius);
 }
