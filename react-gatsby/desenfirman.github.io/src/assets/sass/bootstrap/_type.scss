@@ -11,6 +11,21 @@ h1, h2, h3, h4, h5, h6,
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   color: $headings-color;
+  .text-body>&{
+    margin-top: $headings-margin-bottom * 5;
+  }
+  &>a{
+    text-decoration: none;
+    color: darken(#1c3b59, 2%);
+    // border-bottom: dotted 2.5px rgba(128, 128, 128, 0.15);
+    @include vendor("transition", ("color 0.2s ease-in-out", "border-bottom-color 0.2s ease-in-out"));
+    outline: 0;
+
+    &:hover {
+      color: lighten(saturate(#1c3b59, 30), 30);
+      // border-bottom-color: rgba(255, 255, 255, 0);
+    }
+  }
 }
 
 h1, .h1 { font-size: $h1-font-size; }
@@ -98,6 +113,7 @@ mark,
 }
 
 
+
 //
 // Misc
 //
@@ -112,11 +128,11 @@ mark,
 .blockquote, blockquote {
   margin: $spacer;
   font-size: $blockquote-font-size;
-  /* Negate theme styles */
+  border-left: solid 0.5em #ddd;
+  padding: 1em 0 1em 2em;
+  font-style: italic;
     grid-column: 3 / 5;
-    padding-left: 10px;
     color: $blockquote-small-color;
-    border-left: 4px solid black;
 }
 
 

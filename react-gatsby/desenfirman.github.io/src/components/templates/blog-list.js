@@ -48,7 +48,7 @@ class BlogIndex extends React.Component {
                         </h1>
                         <p className={'text-body'} style={{ marginTop: '0.75em' }} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                         <Col className={'d-flex justify-content-end'}>
-                          <Link className={'btn float-right'} to={node.fields.slug}>Keep Reading</Link>
+                          <Link className={'btn btn-link float-right'} to={node.fields.slug}>Keep Reading</Link>
                         </Col>
                       </Container>
                       <Divider/>
@@ -70,7 +70,7 @@ class BlogIndex extends React.Component {
                   }}
                 >
                   {!isFirst && (
-                    <Link className={"btn"} to={prevPage} rel="prev">« Previous Page</Link>
+                    <Link className={"btn btn-link"} to={prevPage} rel="prev">« Previous Page</Link>
                   )}
                   {Array.from({ length: numPages }, (_, i) => (
                     <li
@@ -79,7 +79,7 @@ class BlogIndex extends React.Component {
                         margin: 0,
                       }}
                     >
-                      <Link className={"btn " + (i + 1 === currentPage ? 'disabled' : '' )}
+                      <Link className={"btn btn-link " + (i + 1 === currentPage ? 'disabled' : '' )}
                         to={'blog' + `/${i === 0 ? '' : i + 1}`}
                       >
                         {i + 1}
@@ -87,7 +87,7 @@ class BlogIndex extends React.Component {
                     </li>
                   ))}
                   {!isLast && (
-                    <Link className={"btn"} to={nextPage} rel="next">Next Page »</Link>
+                    <Link className={"btn btn-link"} to={nextPage} rel="next">Next Page »</Link>
                   )}
                 </ul>
                 <HLine />

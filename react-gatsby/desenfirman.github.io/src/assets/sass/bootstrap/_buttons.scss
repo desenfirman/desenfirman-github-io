@@ -80,12 +80,16 @@ fieldset:disabled a.btn {
 // Make a button look and behave like a link
 .btn-link {
   font-weight: $font-weight-normal;
-  color: $link-color;
   background-color: transparent;
-  font-size: 0.8em;
+  font-size: $font-size-base;
+  text-decoration: none;
+  color: darken(#1c3b59, 2%);
+  // border-bottom: dotted 2.5px rgba(128, 128, 128, 0.15);
+  @include vendor("transition", ("color 0.2s ease-in-out", "border-bottom-color 0.2s ease-in-out"));
+  outline: 0;
 
   @include hover {
-    color: $link-hover-color;
+    color: lighten(saturate(#1c3b59, 30), 30);
     text-decoration: $link-hover-decoration;
     background-color: transparent;
     border-color: transparent;

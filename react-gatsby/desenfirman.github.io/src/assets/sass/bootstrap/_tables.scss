@@ -6,7 +6,8 @@
   width: 100%;
   margin-bottom: $spacer;
   background-color: $table-bg; // Reset for nesting within parents with `background-color`.
-
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: $font-size-base * .8;
   th,
   td {
     padding: $table-cell-padding;
@@ -74,7 +75,7 @@
 //
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 
-.table-striped {
+.table-striped, table {
   tbody tr:nth-of-type(#{$table-striped-order}) {
     background-color: $table-accent-bg;
   }

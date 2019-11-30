@@ -25,6 +25,21 @@ $breadcrumb-font-family: 'Teko', cursive;
     }
   }
 
+  a{
+    text-decoration: none;
+    color: darken(#1c3b59, 2%);
+    // border-bottom: dotted 2.5px rgba(128, 128, 128, 0.15);
+    @include vendor("transition", ("color 0.2s ease-in-out", "border-bottom-color 0.2s ease-in-out"));
+    outline: 0;
+
+    @include hover {
+      color: lighten(saturate(#1c3b59, 30), 30);
+      text-decoration: $link-hover-decoration;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
   // IE9-11 hack to properly handle hyperlink underlines for breadcrumbs built
   // without `<ul>`s. The `::before` pseudo-element generates an element
   // *within* the .breadcrumb-item and thereby inherits the `text-decoration`.

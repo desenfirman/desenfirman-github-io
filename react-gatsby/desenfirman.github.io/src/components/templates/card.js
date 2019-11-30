@@ -7,7 +7,7 @@ export default function PortfolioCard({id, name, description, last_update, githu
     description = (description !== null) ? description : "No description available"
     return(
         <Col xl={6} lg={6} md={6}>
-            <Card key={id} >
+            <Card key={id} style={{marginBottom: '1.75rem'}}>
                 <Card.Img/>
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>

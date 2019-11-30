@@ -52,14 +52,14 @@ class BlogPostTemplate extends React.Component {
                       >
                         <li>
                           {previous && (
-                            <Link style={{ fontSize: '0.75em' }} className={"btn"} to={previous.fields.slug} rel="prev">
+                          <Link style={{ fontSize: '0.75em' }} className={"btn btn-link"} to={previous.fields.slug} rel="prev">
                               « {previous.frontmatter.title}
                             </Link>
                           )}
                         </li>
                         <li>
                           {next && (
-                            <Link style={{ fontSize: '0.75em' }} className={"btn"} to={next.fields.slug} rel="next">
+                          <Link style={{ fontSize: '0.75em' }} className={"btn btn-link"} to={next.fields.slug} rel="next">
                               {next.frontmatter.title} »
                             </Link>
                           )}

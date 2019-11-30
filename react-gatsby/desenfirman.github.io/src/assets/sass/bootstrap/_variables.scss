@@ -322,7 +322,7 @@ $hr-margin-y:                 $spacer !default;
 $table-cell-padding:          .75rem !default;
 $table-cell-padding-sm:       .3rem !default;
 
-$table-bg:                    transparent !default;
+$table-bg:                    $white !default;
 $table-accent-bg:             rgba($black, .05) !default;
 $table-hover-bg:              rgba($black, .075) !default;
 $table-active-bg:             $table-hover-bg !default;
@@ -934,7 +934,7 @@ $close-text-shadow:                 0 1px 0 $white !default;
 
 // Code
 
-$code-font-size:                    87.5% !default;
+$code-font-size:                    $font-size-base * .8 !default;
 $code-color:                        $pink !default;
 
 $kbd-padding-y:                     .2rem !default;
