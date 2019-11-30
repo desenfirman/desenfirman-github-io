@@ -3,6 +3,7 @@ import Layout from '../Layout'
 import {Link, graphql} from 'gatsby'
 import SideBar from '../Sidebar';
 import PageFooter from '../PageFooter';
+import TopNav from '../TopNav'
 
 import {Container, Row, Col} from 'react-bootstrap';
 
@@ -24,7 +25,8 @@ class BlogIndex extends React.Component {
 
         <SideBar />
 
-        <Container >
+        <Container style={{paddingTop: '0.25em'}}>
+          <TopNav/>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (

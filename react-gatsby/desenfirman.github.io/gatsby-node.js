@@ -42,40 +42,6 @@ function createPostPages(createPage, posts, postsPerPage) {
   });
 }
 
-function createPortfolioPages(createPage, posts, portfolioPerPage) {
-  const portfolioPost = path.resolve(`./src/components/templates/portfolio-post.js`)
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
-    
-    createPage({
-      path: '/portfolio/' + post.node.name,
-      component: portfolioPost,
-      context: {
-        portfolioData: post.node,
-        previous,
-        next,
-      },
-    })
-  })
-  
-  // Create portfolio post list pages
-  const numPages = Math.ceil(posts.length / portfolioPerPage);
-  
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? '/portfolio' + `/` : '/portfolio' + `/${i + 1}`,
-      component: path.resolve('./src/components/templates/portfolio-list.js'),
-      context: {
-        limit: portfolioPerPage,
-        skip: i * portfolioPerPage,
-        numPages,
-        currentPage: i + 1
-      },
-    });
-  });
-}
-
 
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
@@ -102,30 +68,6 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-        allGithubData(
-          limit: 1000
-          ) {
-            edges {
-              node{
-              data {
-                search {
-                  edges {
-                    node {
-                      id
-                      name
-                      url
-                      description
-                      readme {
-                        text
-                      }
-                      pushedAt
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
       }
     `
   ).then(result => {
@@ -138,14 +80,14 @@ exports.createPages = ({ graphql, actions }) => {
     createPostPages(createPage, posts, 2)
 
 
-    // Create portfolio posts pages.
-    const portfolios = result.data.allGithubData.edges[0].node.data.search.edges
-    createPortfolioPages(createPage, portfolios, 2)
+    // // Create portfolio posts pages.
+    // const portfolios = result.data.allGithubData.edges[0].node.data.search.edges
+    // createPortfolioPages(createPage, portfolios, 2)
   })
 }
 
 
-// Create a node slug for each post in graphQL query. Slug is Link of post  
+// Create a node slug for each post in graphQL query. Slugs are for Link of post  
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 

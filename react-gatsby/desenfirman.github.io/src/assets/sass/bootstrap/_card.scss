@@ -51,6 +51,10 @@
   margin-bottom: 0;
 }
 
+.card-text{
+  font-size: 1.75ch;
+}
+
 .card-link {
   @include hover {
     text-decoration: none;
