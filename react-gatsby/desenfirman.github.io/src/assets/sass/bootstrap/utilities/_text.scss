@@ -48,26 +48,30 @@ em, i, .font-italic        { font-style: italic !important; }
 
 .text-body { 
   color: $body-color !important;  
-  line-height: 1.7;
+  line-height: 1.5;
   letter-spacing: -.003em;
-  font-size: $font-size-base * 1.5;
+  font-size: $font-size-base * 1.4;
 
-  
+  p{
+    margin-top: 0.8em;
+    margin-bottom: 0;
+  }
   
   ul, ol{
-    font-size: 1.5rem;
-    line-height: 1.7;
     letter-spacing: -.003em;
     padding-left: 2ex;
+    margin-top: 1em;
     li{
       padding-left: 1ex;
+
     }
     ul, ol{
+      margin-top: 1em;
+
       padding-left: 2ex;
+      
     }
-    p{
-      margin-bottom: 0;
-    }
+
   }
 
   ol{
@@ -84,6 +88,7 @@ em, i, .font-italic        { font-style: italic !important; }
     }
   }
 }
+
 .text-muted { color: $text-muted !important; }
 
 .text-black-50 { color: rgba($black, .5) !important; }

@@ -295,8 +295,8 @@ $small-font-size:             80% !default;
 
 $text-muted:                  $gray-600 !default;
 
-$blockquote-small-color:      $gray-600 !default;
-$blockquote-font-size:        ($font-size-base * 1.25) !default;
+$blockquote-small-color:      $gray-700 !default;
+$blockquote-font-size:        ($font-size-base * 1.5) !default;
 
 $hr-border-color:             rgba($black, .1) !default;
 $hr-border-width:             $border-width !default;
@@ -934,7 +934,7 @@ $close-text-shadow:                 0 1px 0 $white !default;
 
 // Code
 
-$code-font-size:                    $font-size-base * .8 !default;
+$code-font-size:                    $font-size-base !default;
 $code-color:                        $pink !default;
 
 $kbd-padding-y:                     .2rem !default;

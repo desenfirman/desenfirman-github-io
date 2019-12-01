@@ -55,7 +55,7 @@ class PortfolioIndex extends React.Component {
         <SideBar />
 
         <Container>
-          <Col md={8} className={'offset-md-2'}>
+          <Col md={10} lg={8} className={'offset-md-1 offset-lg-2'}>
             <Container style={{ paddingTop: '0.25em' }}>
               <TopNav />
 

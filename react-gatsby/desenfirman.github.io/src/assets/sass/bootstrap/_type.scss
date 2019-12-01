@@ -126,13 +126,12 @@ mark,
 
 // Blockquotes
 .blockquote, blockquote {
-  margin: $spacer;
   font-size: $blockquote-font-size;
-  border-left: solid 0.5em #ddd;
-  padding: 1em 0 1em 2em;
+  padding: 0.5em 0 0.5em 0.7em;
   font-style: italic;
-    grid-column: 3 / 5;
-    color: $blockquote-small-color;
+  grid-column: 3 / 5;
+  color: $blockquote-small-color;
+  border-left: solid 0.15em $gray-600;
 }
 
 
@@ -143,5 +142,16 @@ mark,
 
   &::before {
     content: "\2014 \00A0"; // em dash, nbsp
+  }
+}
+
+.text-body{
+  .blockquote, blockquote{
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    font-size: $font-size-base * 1.4;
+    p{
+      margin-top: 0;
+    }
   }
 }
