@@ -16,7 +16,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    const { previous, next, prefix_page } = this.props.pageContext
 
     return (
       <Layout location={this.props.location}>
@@ -32,11 +32,11 @@ class BlogPostTemplate extends React.Component {
           <Row>
             <Col md={10} lg={8} className={'offset-md-1 offset-lg-2'}>
               <Container>
-                <TopNav />
+                <TopNav level_1={{link: prefix_page, name: 'Blog'}} level_2={{link: post.fields.slug, name: post.frontmatter.title}} />
                 <Row>
                   <Container fluid={true}>
                     <main>
-                      <time><p>Written on {post.frontmatter.date}</p></time>
+                    <p className={'time'}>Written on <time>{post.frontmatter.date}</time></p>
                       <h1>{post.frontmatter.title}</h1>
                       <HLine />
                       <article className={'text-body'} dangerouslySetInnerHTML={{ __html: post.html }} />

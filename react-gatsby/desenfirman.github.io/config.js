@@ -11,7 +11,7 @@ module.exports = {
     nav: [
       { path: '/', name: 'Home' },
       { path: '/blog', name: 'Blog' },
-      { path: '/portfolios', name: 'Portfolio' },
+      { path: '/portfolio', name: 'Portfolio' },
       { path: '/about', name: 'About' },
     ],
     // categories: [

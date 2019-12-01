@@ -16,7 +16,7 @@ export default function PortfolioCard({id, name, description, last_update, githu
                         { (description.length <= limit_desc) ? description : description.substring(0, limit_desc) + "..."}
                     </Card.Text>
                     
-                    <Button variant='outline-primary' href='#' >Open README.md</Button>
+                    <Button variant='outline-primary float-right' href='#' >Open README.md</Button>
                     {/* <Button variant='outline-success' href={github_link}>Check on GitHub</Button> */}
                 </Card.Body>
             </Card>

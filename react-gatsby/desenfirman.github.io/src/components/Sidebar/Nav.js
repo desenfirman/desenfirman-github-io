@@ -10,15 +10,15 @@ export default function Nav({ sections = [] }) {
     <nav id="nav">
       <ul>
         <Scrollspy
-          items={sections.map(s => s.id)}
+          items={sections.map(s => s.path)}
           currentClassName="active"
           offset={-300}
         >
           {sections.map(s => {
             return (
-              <li key={s.id}>
-                  <Link to={`${s.id}`}>
-                    <span className={`icon ${s.icon}`}><div className={`isToogle`}>{s.name}</div></span>
+              <li key={s.path}>
+                  <Link to={`${s.path}`}>
+                    <span className={`icon `}><div className={`isToogle`}>{s.name}</div></span>
                   </Link>
               </li>
             );

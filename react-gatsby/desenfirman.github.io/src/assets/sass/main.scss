@@ -947,13 +947,11 @@ button,
   }
 }
 
-time {
+.time {
   font-family: $headings-font-family;
   color: lighten(desaturate(#1c3b59, 30), 20);
   font-size: $small-font-size;
-  p {
-    margin-bottom: 1rem;
-  }
+  margin-bottom: 1rem;
 }
 
 footer {

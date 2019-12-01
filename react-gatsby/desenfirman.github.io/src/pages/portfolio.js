@@ -33,7 +33,7 @@ class PortfolioIndex extends React.Component {
 
   render() {
     const { items } = this.state.portfolio
-    const content = this.state.loading ? (<p>Please hold on!</p>) : items.length > 0 ? (
+    const content = this.state.loading ? (<Container><p>Please hold on!</p></Container>) : items.length > 0 ? (
       items.map(node =>
         <PortfolioCard
           key={node.id}
@@ -44,7 +44,7 @@ class PortfolioIndex extends React.Component {
           limit_desc={160}
         />
       )
-    ) : (<p>Oh noes, something error :(</p>)
+    ) : (<Container><p>Oh noes, something error :(</p></Container>)
 
 
     return (
@@ -57,7 +57,7 @@ class PortfolioIndex extends React.Component {
         <Container>
           <Col md={10} lg={8} className={'offset-md-1 offset-lg-2'}>
             <Container style={{ paddingTop: '0.25em' }}>
-              <TopNav />
+              <TopNav level_1={{link: '/portfolio', name: 'Portfolio'}} level_2={{link: '', name: 'Index'}} />
 
               <Row className={"d-flex flex-wrap"}>
                 {content}

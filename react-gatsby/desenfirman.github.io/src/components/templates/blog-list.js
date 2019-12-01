@@ -15,13 +15,12 @@ class BlogIndex extends React.Component {
 
   render() {
     const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
-    const { currentPage, numPages } = this.props.pageContext
+    const { currentPage, numPages, prefix_page } = this.props.pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? 'blog/' : 'blog/' + (currentPage - 1).toString()
-    const nextPage = 'blog/' + (currentPage + 1).toString()
+    const prevPage = currentPage - 1 === 1 ? prefix_page + '/' : prefix_page + '/' + (currentPage - 1).toString()
+    const nextPage = prefix_page + '/' + (currentPage + 1).toString()
     return (
       <Layout location={this.props.location}>
         <SEO
@@ -33,14 +32,14 @@ class BlogIndex extends React.Component {
           <Row>
             <Col md={10} lg={8} className={'offset-md-1 offset-lg-2'}>
               <Container >
-                <TopNav />
+                <TopNav level_1={{link: prefix_page, name: 'Blog'}} level_2={{link: '', name: 'Index'}}/>
                 {/* START of Post List */}
                 {posts.map(({ node }) => {
                   const title = node.frontmatter.title || node.fields.slug
                   return (
                     <Row key={node.fields.slug}>
                       <Container fluid={true} style={{ marginBottom: '1em', marginTop: '1em' }}>
-                        <time><p>Written on {node.frontmatter.date}</p></time>
+                      <p className={'time'}>Written on <time>{node.frontmatter.date}</time></p>
                         <h1 >
                           <Link to={node.fields.slug}>
                             {title}
@@ -126,7 +125,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "MMMM DD, YYYY")
             title
           }
         }
