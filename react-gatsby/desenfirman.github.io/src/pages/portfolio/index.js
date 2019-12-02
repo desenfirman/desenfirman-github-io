@@ -86,7 +86,6 @@ class PortfolioIndex extends React.Component {
       .get("https://api.github.com/search/repositories?q=topic:" + this.query_data.topic + "+user:" + this.query_data.user)
       .then(api_req => {
         const items = api_req.data.items
-        console.log(items)
         this.setState({
           loading: false,
           portfolio: {
