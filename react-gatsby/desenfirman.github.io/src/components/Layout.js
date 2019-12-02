@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+import PortfolioTemplate from '../pages/portfolio/repo';
+import { Router } from "@reach/router";
+
 
 import '../assets/sass/main.scss';
 
@@ -53,6 +56,10 @@ class Layout extends Component {
               className={isPreloaded ? 'main-body is-preload' : 'main-body'}>
               {children}
             </div>
+
+            <Router>
+              <PortfolioTemplate path={`/portfolio/repo/:name`} />
+            </Router>
           </>
         )}
       />

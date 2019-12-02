@@ -1,12 +1,16 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import Layout from '../../components/Layout'
 // import { Link, graphql } from 'gatsby'
-import SideBar from '../components/Sidebar';
-import PageFooter from '../components/PageFooter';
-import PortfolioCard from '../components/templates/card';
-import TopNav from '../components/TopNav';
+import SideBar from '../../components/Sidebar';
+import PageFooter from '../../components/PageFooter';
+import PortfolioCard from '../../components/templates/card';
+import TopNav from '../../components/TopNav';
 import axios from 'axios';
-import SEO from '../components/SEO'
+import SEO from '../../components/SEO';
+
+import { Router, Link as ReachLink } from "@reach/router";
+import PortfolioTemplate from '../../pages/portfolio/repo';
+
 
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -66,6 +70,11 @@ class PortfolioIndex extends React.Component {
           </Col>
         </Container>
         <PageFooter />
+
+        <Router>
+                <PortfolioTemplate path={'portfolio/repo/:name'} />
+        </Router>
+        
       </Layout>
 
     )
