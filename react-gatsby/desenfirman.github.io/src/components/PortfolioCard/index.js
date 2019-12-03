@@ -1,10 +1,7 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-
+import { Link as ReachLink } from "@reach/router";
 import { Col, Card, Button } from 'react-bootstrap'
 
-import { Link as ReachLink } from "@reach/router";
-import PortfolioTemplate from '../templates/portfolio-post';
 
 export default function PortfolioCard({ id, name, description, last_update, github_link, limit_desc }) {
     description = (description !== null) ? description : "No description available"
@@ -19,7 +16,7 @@ export default function PortfolioCard({ id, name, description, last_update, gith
                         {(description.length <= limit_desc) ? description : description.substring(0, limit_desc) + "..."}
                     </Card.Text>
 
-                    <ReachLink className={'btn btn-outline-primary float-right'} to={'/portfolio/repo/' + name}>Open README.md</ReachLink>
+                    <ReachLink className={'btn btn-outline-primary float-right'} to={'/portfolio/r/' + name}>Open README.md</ReachLink>
                     {/* <Button variant='outline-success' href={github_link}>Check on GitHub</Button> */}
                 </Card.Body>
             </Card>

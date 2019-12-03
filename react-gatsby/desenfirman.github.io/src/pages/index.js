@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from '../components/Layout';
+import {CoreLayout as Layout} from '../components/Layout/CoreLayout';
 import SideBar from '../components/Sidebar';
 import Particles from 'react-particles-js';
 

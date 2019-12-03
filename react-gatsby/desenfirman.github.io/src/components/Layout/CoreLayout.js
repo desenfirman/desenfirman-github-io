@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import PortfolioTemplate from '../pages/portfolio/repo';
-import { Router } from "@reach/router";
 
 
-import '../assets/sass/main.scss';
+import '../../assets/sass/main.scss';
 
-class Layout extends Component {
+
+class CoreLayout extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -57,9 +56,7 @@ class Layout extends Component {
               {children}
             </div>
 
-            <Router>
-              <PortfolioTemplate path={`/portfolio/repo/:name`} />
-            </Router>
+            
           </>
         )}
       />
@@ -67,8 +64,8 @@ class Layout extends Component {
   }
 }
 
-Layout.propTypes = {
+CoreLayout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Layout;
+export { CoreLayout };

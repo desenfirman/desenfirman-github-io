@@ -9,7 +9,7 @@
 // Create blog post list pages
 
 function createPostPages(createPage, posts, postsPerPage) {
-  const blogPost = path.resolve(`./src/components/templates/blog-post.js`)
+  const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const prefix_page = `/blog`
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
@@ -32,7 +32,7 @@ function createPostPages(createPage, posts, postsPerPage) {
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? prefix_page + `/` : prefix_page + `/${i + 1}`,
-      component: path.resolve(`./src/components/templates/blog-list.js`),
+      component: path.resolve(`./src/templates/blog-list.js`),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
@@ -104,14 +104,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 
 //Create a meta page for portfolio repo
+
+
+
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage } = actions
 
   // page.matchPath is a special key that's used for matching pages
   // only on the client.
-  if (page.path.match(/^\/portfolio\/repo/)) {
-    page.matchPath = "/portfolio/repo/*"
-
+  if (page.path.match(/^\/portfolio\/r/)) {
+    page.matchPath = "/portfolio/r/*"
+    
     // Update the page.
     createPage(page)
   }

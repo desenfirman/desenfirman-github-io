@@ -1,20 +1,10 @@
 import React from 'react'
-import Layout from '../../components/Layout'
-// import { Link, graphql } from 'gatsby'
-import SideBar from '../../components/Sidebar';
-import PageFooter from '../../components/PageFooter';
-import PortfolioCard from '../../components/templates/card';
-import TopNav from '../../components/TopNav';
+import { ContentLayout as Layout } from '../../components/Layout/ContentLayout';
+import PortfolioCard from '../../components/PortfolioCard'
 import axios from 'axios';
 import SEO from '../../components/SEO';
 
-import { Router, Link as ReachLink } from "@reach/router";
-import PortfolioTemplate from '../../pages/portfolio/repo';
-
-
 import { Container, Row, Col } from 'react-bootstrap';
-
-
 
 class PortfolioIndex extends React.Component {
   state = {
@@ -37,7 +27,7 @@ class PortfolioIndex extends React.Component {
 
   render() {
     const { items } = this.state.portfolio
-    const content = this.state.loading ? (<Container><p>Please hold on!</p></Container>) : items.length > 0 ? (
+    const content = this.state.loading ? (<Container><p style={{textAlign: `center`, marginTop:`28vh`, marginBottom:`28vh`}}>Please hold on!</p></Container>) : items.length > 0 ? (
       items.map(node =>
         <PortfolioCard
           key={node.id}
@@ -48,33 +38,21 @@ class PortfolioIndex extends React.Component {
           limit_desc={160}
         />
       )
-    ) : (<Container><p>Oh noes, something error :(</p></Container>)
+    ) : (<Container><p style={{textAlign: `center`, marginTop:`28vh`, marginBottom:`28vh`}}>Oh noes, something error :(</p></Container>)
 
 
     return (
-      <Layout>
+      <Layout breadcrumb_items={[
+        {link: '/portfolio', name: 'Portfolio'},
+      ]}>
         <SEO
           title={"Portfolio"}
         />
-        <SideBar />
-
         <Container>
-          <Col md={10} lg={8} className={'offset-md-1 offset-lg-2'}>
-            <Container style={{ paddingTop: '0.25em' }}>
-              <TopNav level_1={{link: '/portfolio', name: 'Portfolio'}} level_2={{link: '', name: 'Index'}} />
-
-              <Row className={"d-flex flex-wrap"}>
-                {content}
-              </Row>
-            </Container>
-          </Col>
+        <Row className={"d-flex flex-wrap"}>
+          {content}
+        </Row>
         </Container>
-        <PageFooter />
-
-        <Router>
-                <PortfolioTemplate path={'portfolio/repo/:name'} />
-        </Router>
-        
       </Layout>
 
     )
