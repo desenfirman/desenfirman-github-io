@@ -3,6 +3,8 @@ import { ContentLayout as Layout } from '../../components/Layout/ContentLayout';
 import PortfolioCard from '../../components/PortfolioCard'
 import axios from 'axios';
 import SEO from '../../components/SEO';
+import {toLocalTime} from '../../components/utils'
+
 
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -33,7 +35,7 @@ class PortfolioIndex extends React.Component {
           key={node.id}
           name={node.name}
           description={node.description}
-          last_update={node.pushed_at}
+          last_update={toLocalTime(node.pushed_at)}
           github_link={node.html_url}
           limit_desc={160}
         />
