@@ -1,17 +1,22 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
-export default function Footer({ title, heading, avatar }) {
+export default function Header({bar_text, onMenuClick = () => {} }) {
   return (
-    <div id="logo">
-      <Link to="/">
-        <span className="image avatar48">
-          <img height="128px" src={avatar} alt="" />
-        </span>
-
-        <h1 id="title">{title}</h1>
-        <p>{heading}</p>
-      </Link>
+    <div className='nav'>
+    <ul>
+      <li>
+        <a href='#'
+           onClick={e => {
+            e.preventDefault();
+            onMenuClick();
+          }}
+        >
+          <FontAwesomeIcon icon='bars' fixedWidth/><span id='bar-text'>{bar_text}</span>
+        </a>
+      </li>
+    </ul>
     </div>
-  );
+  )
 }

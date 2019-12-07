@@ -51,7 +51,7 @@ class ContentRenderer extends React.Component {
               <>
               <TopNavBar breadcrumb_items={
                 [
-                  {link: prefix_page, name:'Blog'},
+                  {link: prefix_page, name:'Portfolio'},
                   {link: prefix_page + 'r/' + this.props.name, name:this.props.name},
                 ]
               }/>

@@ -3,16 +3,16 @@ module.exports = {
   titleTemplate: '%s · Dese Narfa Firmansyah',
     description:
       'Bachelor degree of computer Science fresh graduate.',
-    url: 'https://desenfirman.github.io', // no trailing slash!
+    url: 'desenfirman.github.io', // no trailing slash!
     image: '/src/assets/images/dese-firmansyah.jpg',
     owner: 'Dese Narfa Firmansyah',
     twitterUsername: '@desenfirman',
     facebookAppID: '',
     nav: [
-      { path: '/', name: 'Home' },
-      { path: '/blog', name: 'Blog' },
-      { path: '/portfolio', name: 'Portfolio' },
-      { path: '/about', name: 'About' },
+      { path: '/', name: 'Home', icon: 'home', },
+      { path: '/blog', name: 'Blog', icon: 'pen-alt', },
+      { path: '/portfolio', name: 'Portfolio', icon: 'laptop-code', },
+      { path: '/about', name: 'About', icon: 'user', },
     ],
     // categories: [
     //   { slug: 'confidence', name: 'Confidence' },

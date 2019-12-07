@@ -8,7 +8,7 @@ export default function TopNavBar({breadcrumb_items}) {
     const limit = 20
     return (
         <Row>
-            <nav className={`container`} aria-label="breadcrumb" style={{ marginTop: '0.75em' }}>
+            <nav id="breadcrumb-nav" className={`container`} aria-label="breadcrumb">
                 <div className={`d-flex justify-content-end`}>
                     <Breadcrumb >
                         <li className={`breadcrumb-item`}><Link to={`/`}>Home</Link></li>

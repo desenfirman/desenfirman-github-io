@@ -1,16 +1,15 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function TopNav({ title, onMenuClick = () => {} }) {
+
+export default function TopNav({ title, }) {
   return (
     <div id="headerToggle">
       <a
         href="/#"
         className="toggle"
-        onClick={e => {
-          e.preventDefault();
-          onMenuClick();
-        }}
       >
+        <FontAwesomeIcon icon='bars'/>
         {' '}
       </a>
     </div>
