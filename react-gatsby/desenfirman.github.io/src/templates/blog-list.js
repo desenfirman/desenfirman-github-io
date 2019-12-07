@@ -71,7 +71,7 @@ class BlogIndex extends React.Component {
                 }}
               >
                 <Link className={"btn btn-link " + (i + 1 === currentPage ? 'disabled' : '')}
-                  to={`blog/` + (i === 0) ? '' : i + 1}
+                  to={`blog/` + ((i === 0) ? '' : i + 1)}
                 >
                   {i + 1}
                 </Link>
