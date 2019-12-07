@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 export default function Header({bar_text, onMenuClick = () => {} }) {

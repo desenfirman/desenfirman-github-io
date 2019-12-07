@@ -9,10 +9,6 @@ import PageFooter from '../PageFooter'
 
 
 class ContentLayout extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const {breadcrumb_items, children} = this.props
         return (

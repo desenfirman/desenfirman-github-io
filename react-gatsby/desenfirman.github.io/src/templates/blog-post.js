@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 
 import { ContentLayout as Layout } from '../components/Layout/ContentLayout'
 import SEO from '../components/SEO'
-import { Row, Container, Col } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import { HLine } from '../components/HLine'
 
 

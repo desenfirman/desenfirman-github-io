@@ -1,13 +1,11 @@
 import React from 'react'
 
 import { CoreLayout as Layout } from '../../components/Layout/CoreLayout'
-import SEO from '../../components/SEO'
 import TopNavBar from '../../components/TopNav'
 import SideBar from '../../components/Sidebar'
 import PageFooter from '../../components/PageFooter'
 import {toLocalTime} from '../../components/utils'
 
-// import { rhythm, scale } from '../utils/typography'
 import ReactMarkdown from 'react-markdown'
 import axios from 'axios';
 import { Row, Container, Col } from 'react-bootstrap'

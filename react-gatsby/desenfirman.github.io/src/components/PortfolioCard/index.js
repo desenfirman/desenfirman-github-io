@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link as ReachLink } from "@reach/router";
-import { Col, Card, Button } from 'react-bootstrap'
+import { Col, Card } from 'react-bootstrap'
 
 
 export default function PortfolioCard({ id, name, description, last_update, github_link, limit_desc }) {

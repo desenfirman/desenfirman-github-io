@@ -6,7 +6,7 @@ import SEO from '../../components/SEO';
 import {toLocalTime} from '../../components/utils'
 
 
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 
 class PortfolioIndex extends React.Component {
   state = {
@@ -25,7 +25,6 @@ class PortfolioIndex extends React.Component {
     user: "desenfirman",
     topic: "portfolio"
   }
-
 
   render() {
     const { items } = this.state.portfolio

@@ -4,8 +4,6 @@ import React, { useState } from 'react';
 import  Header  from './Header';
 import { StaticQuery } from 'gatsby';
 import Nav from './Nav';
-import TopNav from './TopNav';
-import config from '../../../config';
 // const pic = require('../../assets/images/dese-firmansyah.jpg');
 
 

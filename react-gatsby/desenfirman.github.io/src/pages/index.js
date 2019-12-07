@@ -116,7 +116,7 @@ const IndexPage = () => (
                 fontSize: '3em'
               }}>Hi, <br></br>I'm Dese,
             </h1>
-            <h3 class="typewrite" data-period="2000" data-type=''></h3>
+            <h3 class="typewrite" data-period="2000" data-type={typewriter_content}></h3>
           </Container>
         </Col>
         <Col lg={5} className="pt-3">
