@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { CoreLayout as Layout } from '../../components/Layout/CoreLayout'
-import TopNavBar from '../../components/TopNav'
+import BreadcrumbNav from '../../components/BreadcrumbNav'
 import SideBar from '../../components/Sidebar'
 import PageFooter from '../../components/PageFooter'
 import {toLocalTime} from '../../components/utils'
@@ -47,7 +47,7 @@ class ContentRenderer extends React.Component {
           : repo_name && repo_description && repo_readme
             ? (
               <>
-              <TopNavBar breadcrumb_items={
+              <BreadcrumbNav breadcrumb_items={
                 [
                   {link: prefix_page, name:'Portfolio'},
                   {link: prefix_page + 'r/' + this.props.name, name:this.props.name},

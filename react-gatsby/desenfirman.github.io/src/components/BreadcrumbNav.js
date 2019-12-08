@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import { HLine } from './HLine'
 
 
-export default function TopNavBar({breadcrumb_items}) {
+export default function BreadcrumbNav({breadcrumb_items}) {
     const limit = 20
     return (
         <Row>
@@ -24,7 +24,7 @@ export default function TopNavBar({breadcrumb_items}) {
                         }
                     </Breadcrumb>
                 </div>
-                <HLine />
+                <HLine w_love={true} />
             </nav>
         </Row>
     )
