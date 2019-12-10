@@ -1,10 +1,8 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
 
 import { ContentLayout as Layout } from '../../components/Layout/ContentLayout'
 import SEO from '../../components/SEO'
 import { Row, Col, Container } from 'react-bootstrap'
-import { HLine } from '../../components/HLine'
 import ReactMarkdown from 'react-markdown'
 
 import summary from 'raw-loader!./summary.md';

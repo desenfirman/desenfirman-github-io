@@ -1,11 +1,13 @@
 import React from 'react';
 
-import {CoreLayout as Layout} from '../components/Layout/CoreLayout';
+import { CoreLayout as Layout } from '../components/Layout/CoreLayout';
 import SideBar from '../components/Sidebar';
 import Particles from 'react-particles-js';
 
-import {Container, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import SEO from '../components/SEO';
+
+import { H3Typewriter, H1Typewriter, SequentialTypewriter } from '../components/Typewriter'
 
 // import pic2 from '../assets/images/pic02.jpg';
 // import pic3 from '../assets/images/pic03.jpg';
@@ -16,18 +18,25 @@ import SEO from '../components/SEO';
 // import pic8 from '../assets/images/pic08.jpg';
 // import Scroll from '../components/Scroll';
 
-const typewriter_content = [ 
-  "I am on my 4th year of studies in Universitas Brawijaya.", 
-  "Taking Computer Science major degree and...", 
-  "focusing at Artificial Intelligence & Machine Learning interdisciplinary field.", 
-  "But, I also loved Web Development both front-end and back-end" , ""  
+const typewriter_heading = [
+  "Hi,",
+   <br key={'tybr1'}/>,
+   "I'm Dese",
+]
+
+const typewriter_summary = [
+  "I am on my 4th year of studies in Universitas Brawijaya.",
+  "Taking Computer Science major degree and...",
+  "focusing at Artificial Intelligence & Machine Learning interdisciplinary field.",
+  "But, I also loved Web Development both front-end and back-end",
+  "",
 ];
 
 
 const IndexPage = () => (
   <Layout>
-    <SEO/>
-    <Particles 
+    <SEO />
+    <Particles
       style={{
         position: "absolute",
         top: 0,
@@ -101,8 +110,8 @@ const IndexPage = () => (
         retina_detect: true
       }}
     />
-    <SideBar/>
-    
+    <SideBar />
+
     <Container
       style={{
         marginTop: '7vh'
@@ -111,27 +120,24 @@ const IndexPage = () => (
       <Row>
         <Col lg={7} md={7} className="pt-3">
           <Container fluid={true}>
-            <h1 style={{
+            <H1Typewriter
+              style={{
                 marginTop: '50vh',
                 fontSize: '3em'
-              }}>Hi, <br></br>I'm Dese,
-            </h1>
-            <h3 class="typewrite" data-period="2000" data-type={typewriter_content}></h3>
+              }}
+              content={typewriter_heading} />
+            <H3Typewriter is_repeat={true} content={typewriter_summary} />
           </Container>
         </Col>
         <Col lg={5} className="pt-3">
           <Container fluid={true}>
-              y
+            y
           </Container>
         </Col>
       </Row>
     </Container>
-
-
-    
-    
-    {/* <PageFooter /> */}
   </Layout>
 );
+
 
 export default IndexPage;
