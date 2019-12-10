@@ -54,7 +54,9 @@ class CoreLayout extends Component {
               <html lang="en" />
             </Helmet>
             <div
-              className={isPreloaded ? 'main-body is-preload' : 'main-body'}>
+              className={isPreloaded ? 'main-body is-preload' : 'main-body'}
+              style={this.props.style}>
+              
               {children}
             </div>
 

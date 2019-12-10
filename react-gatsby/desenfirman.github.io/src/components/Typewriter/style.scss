@@ -23,12 +23,22 @@
   }
 }
 
-.h1-typewriter{
-    font-family: 'Anonymous Pro', 'Courier New', Courier, monospace;
-    color: #F2A30F;
+.h1-typewriter {
+  font-family: "Anonymous Pro", "Courier New", Courier, monospace;
+  color: #f2a30f;
 }
 
-.h3-typewriter{
-    font-family: 'Anonymous Pro', 'Courier New', Courier, monospace;
-    color: #E9EEFC;
+.h3-typewriter {
+  font-family: "Anonymous Pro", "Courier New", Courier, monospace;
+}
+
+.pre-typewriter,
+.h3-typewriter {
+  color: #e9eefc;
+  background-color: transparent;
+}
+
+.pre-typewriter {
+  font-size: 0.75rem;
+  margin-top: 0.70rem;
 }

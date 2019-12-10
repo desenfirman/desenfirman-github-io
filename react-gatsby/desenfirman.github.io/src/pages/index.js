@@ -7,7 +7,7 @@ import Particles from 'react-particles-js';
 import { Container, Row, Col } from 'react-bootstrap';
 import SEO from '../components/SEO';
 
-import { H3Typewriter, H1Typewriter, SequentialTypewriter } from '../components/Typewriter'
+import { H3Typewriter, H1Typewriter, CodeTypewriter } from '../components/Typewriter'
 
 // import pic2 from '../assets/images/pic02.jpg';
 // import pic3 from '../assets/images/pic03.jpg';
@@ -20,8 +20,8 @@ import { H3Typewriter, H1Typewriter, SequentialTypewriter } from '../components/
 
 const typewriter_heading = [
   "Hi,",
-   <br key={'tybr1'}/>,
-   "I'm Dese",
+  <br key={'tybr1'} />,
+  "I'm Dese",
 ]
 
 const typewriter_summary = [
@@ -32,9 +32,36 @@ const typewriter_summary = [
   "",
 ];
 
+const sc_information = [
+  "import SomeDBConnector as db \n\n" +
+  "class MyInformation: \n" +
+  "   conn = db.connect('SOMEHOST', 'guest', \n" +
+  "               '*******', 'SOMEDATABASE') \n" +
+  "   cursor = conn.cursor() \n\n" +
+  "   query = 'SELECT email, instagram, twitter, \n" +  
+  "               linkedin, github FROM user_table \n" + 
+  "               WHERE username=\"desenfirman\"' \n\n" +
+  "   def __init__(self): \n" +
+  "      cursor.execute(query) \n" +
+  "      self.__result = cursor.fetchone() \n\n" +
+  "   def getEmailData(): \n" +
+  "      return self.__result[0] \n\n" +
+  "   def getInstagramData(): \n" +
+  "      return self.__result[1] \n\n" +
+  "   def getTwitterData(): \n" +
+  "      return self.__result[2] \n\n" +
+  "   def getLinkedInData(): \n" +
+  "      return self.__result[3] \n\n" +
+  "   def getGithubData(): \n" +
+  "      return self.__result[4]"
+]
+
 
 const IndexPage = () => (
-  <Layout>
+  <Layout style={{
+    backgroundColor: "#1C3B59",
+    zIndex: -2
+  }}>
     <SEO />
     <Particles
       style={{
@@ -43,8 +70,8 @@ const IndexPage = () => (
         left: 0,
         width: "100%",
         height: "100%",
+        zIndex: 0,
         backgroundColor: "#1C3B59",
-        zIndex: -1,
       }}
       params={{
         particles: {
@@ -113,9 +140,7 @@ const IndexPage = () => (
     <SideBar />
 
     <Container
-      style={{
-        marginTop: '7vh'
-      }}
+      
       fluid={false}>
       <Row>
         <Col lg={7} md={7} className="pt-3">
@@ -131,7 +156,7 @@ const IndexPage = () => (
         </Col>
         <Col lg={5} className="pt-3">
           <Container fluid={true}>
-            y
+            <CodeTypewriter type_speed={10} speed_variance={50} content={sc_information} />
           </Container>
         </Col>
       </Row>

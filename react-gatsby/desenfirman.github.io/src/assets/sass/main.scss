@@ -516,19 +516,9 @@ button,
   }
 }
 
-/* Narrower */
-
-#headerToggle {
-  display: none;
-}
 
 @include breakpoint("<=narrower") {
-  /* Basic */
-
-  html,
-  body {
-    overflow-x: hidden;
-  }
+  
 
   header {
     br {
