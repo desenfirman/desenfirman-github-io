@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GitHub Student Pack - Layanan bagi Kamu Para Programmer 'misqueen'
+title: GitHub Student Pack - Layanan Free dengan Benefit Premium untuk Mahasiswa IT
 categories: blog
 comments: true
 tags:
@@ -10,7 +10,7 @@ tags:
 
 > Student pack 
 
-Mendengar kata tersebut, pasti terlintas hal yang menarik bagi yang mereka-mereka yang sedang menempuh pendidikan. Ada sesuatu hal yang  bakal menguntungkan bagi pelajar jika layanan tersebut diambil dan digunakan semaksimal mungkin.
+Mendengar kata tersebut, pasti terlintas hal yang menarik bagi yang mereka-mereka yang sedang menempuh pendidikan. Ada sesuatu hal yang  bakal menguntungkan bagi pelajar (khususnya yang demen gratisan, hehe) jika layanan tersebut diambil dan digunakan semaksimal mungkin.
 
 <!--more-->
 
