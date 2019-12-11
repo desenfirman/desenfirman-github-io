@@ -147,7 +147,7 @@ const IndexPage = () => (
           <Container fluid={true}>
             <H1Typewriter
               style={{
-                marginTop: '50vh',
+                marginTop: '53vh',
                 fontSize: '3em'
               }}
               content={typewriter_heading} />
