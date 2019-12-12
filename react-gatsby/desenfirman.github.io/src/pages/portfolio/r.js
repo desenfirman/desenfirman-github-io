@@ -15,7 +15,7 @@ import { Router } from "@reach/router";
 
 
 
-class ContentRenderer extends React.Component {
+class PortfolioRenderer extends React.Component {
   state = {
     loading: false,
     errors: false,
@@ -117,7 +117,7 @@ const PortfolioTemplate = () => {
           <Col md={10} lg={8} className={'offset-md-1 offset-lg-2'}>
             <Container >
               <Router>
-                <ContentRenderer path={`/portfolio/r/:name`} />
+                <PortfolioRenderer path={`/portfolio/r/:name`} />
               </Router>
             </Container>
           </Col>

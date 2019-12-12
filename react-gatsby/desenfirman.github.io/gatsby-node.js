@@ -6,11 +6,11 @@
 
 // You can delete this file if you're not using it
 
+const blog_prefix_page = `/blog`
 // Create blog post list pages
 
 function createPostPages(createPage, posts, postsPerPage) {
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const prefix_page = `/blog`
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
@@ -22,7 +22,7 @@ function createPostPages(createPage, posts, postsPerPage) {
         slug: post.node.fields.slug,
         previous,
         next,
-        prefix_page
+        blog_prefix_page
       },
     })
   })
@@ -31,14 +31,14 @@ function createPostPages(createPage, posts, postsPerPage) {
   const numPages = Math.ceil(posts.length / postsPerPage);
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? prefix_page + `/` : prefix_page + `/${i + 1}`,
+      path: i === 0 ? blog_prefix_page + `/` : blog_prefix_page + `/${i + 1}`,
       component: path.resolve(`./src/templates/blog-list.js`),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
-        prefix_page
+        blog_prefix_page
       },
     });
   });
@@ -94,7 +94,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const value = blog_prefix_page + createFilePath({ node, getNode })
+    console.log(value)
     createNodeField({
       name: `slug`,
       node,
@@ -117,5 +118,5 @@ exports.onCreatePage = async ({ page, actions }) => {
     
     // Update the page.
     createPage(page)
-  }
+  } 
 }

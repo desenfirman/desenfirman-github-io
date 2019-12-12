@@ -3,11 +3,13 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {Link} from 'gatsby'
 
 export default function Header({bar_text, onMenuClick = () => {} }) {
+  
+  
   return (
     <div className='nav'>
     <ul>
       <li>
-        <Link href='#'
+        <Link to={'#'}
            onClick={e => {
             e.preventDefault();
             onMenuClick();
@@ -19,4 +21,5 @@ export default function Header({bar_text, onMenuClick = () => {} }) {
     </ul>
     </div>
   )
+
 }

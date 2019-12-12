@@ -5,18 +5,26 @@ import { ContentLayout as Layout } from '../components/Layout/ContentLayout'
 import SEO from '../components/SEO'
 import { Container } from 'react-bootstrap'
 import { HLine } from '../components/HLine'
+import { DiscussionEmbed } from 'disqus-react';
 
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
+    const disqus_shortname = this.props.data.site.siteMetadata.disqusShortname
+    const base_url = window.location.origin
+    const disqus_config = {
+      url: base_url + post.fields.slug,
+      identifier: post.fields.slug,
+      title: post.frontmatter.title,
+    }
     const prefix_page = '/blog'
     const { previous, next } = this.props.pageContext
 
     return (
       <Layout breadcrumb_items={[
-        {link: prefix_page, name:'Blog'},
-        {link: post.fields.slug, name:post.frontmatter.title},
+        { link: prefix_page, name: 'Blog' },
+        { link: post.fields.slug, name: post.frontmatter.title },
 
       ]}>
         <SEO
@@ -59,6 +67,9 @@ class BlogPostTemplate extends React.Component {
               </li>
             </ul>
             <HLine />
+            <Container fluid={true}>
+              <DiscussionEmbed shortname={disqus_shortname} config={disqus_config} />
+            </Container>
           </main>
         </Container>
       </Layout>
@@ -72,7 +83,8 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
-        title
+        title,
+        disqusShortname
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
