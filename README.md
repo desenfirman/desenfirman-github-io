@@ -3,12 +3,12 @@
 
 ## To do
 [x] add disqus
-[] add pagination in portfolio list
+[x] add pagination in portfolio list
 [] edit credit & tools in about page
 [x] modify 404 not found
 [] add overlay, algolia
 [x] add browse by tag
-[] add repo detail and message
+[x] add repo detail and message
 [] fix header margin on mobile site
 
 ## Stuff to add (probably)
