@@ -146,10 +146,7 @@ const IndexPage = () => (
         <Col lg={7} md={7} className="pt-3">
           <Container fluid={true}>
             <H1Typewriter
-              style={{
-                marginTop: '53vh',
-                fontSize: '3em'
-              }}
+              className={'main-typewriter'}
               content={typewriter_heading} />
             <H3Typewriter is_repeat={true} content={typewriter_summary} />
           </Container>

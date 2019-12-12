@@ -9,11 +9,13 @@
 [] add overlay, algolia
 [x] add browse by tag
 [x] add repo detail and message
-[] fix header margin on mobile site
+[x] fix header margin on mobile site
+
 
 ## Stuff to add (probably)
 - add render tag to source code typewriter
 - disqus comment count
+- sort post list
 
 ## Bug to Fixes
 - not dynamically navigation through portfolio page

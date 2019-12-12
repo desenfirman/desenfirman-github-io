@@ -43,11 +43,13 @@ class BlogPostTemplate extends React.Component {
             <h1>{post.frontmatter.title}</h1>
             <HLine />
             <article className={'text-body'} dangerouslySetInnerHTML={{ __html: post.html }} />
+            <Container style={{marginTop: '6rem'}} fluid={true}>
             {
               post.frontmatter.tags.map(tag => {
-                return( <Link to={prefix_page + "/tags/" + tag} class="badge badge-dark">{tag}</Link>)
+                return( <Link to={prefix_page + "/tags/" + tag} class="badge badge-secondary">{tag}</Link>)
               })
             }
+            </Container>
             <HLine />
             <ul
               style={{
@@ -100,7 +102,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "DD MMMM YYYY")
         tags
       }
       fields {

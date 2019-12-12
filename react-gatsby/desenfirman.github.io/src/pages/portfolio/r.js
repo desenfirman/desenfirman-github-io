@@ -77,10 +77,10 @@ class PortfolioRenderer extends React.Component {
 
                     <HLine />
                     <Alert variant={'info'}>
-                      You are now viewing repository readme, - <a href={html_url}>View repo on GitHub</a>
+                      You are now viewing README.md's repository, - <a href={html_url}>View repo on GitHub</a>
                     </Alert>
                     <HLine />
-                    <article className={'text-body'}>
+                    <article style={{marginBottom: '6rem'}}  className={'text-body'}>
                       <ReactMarkdown source={readme} />
                     </article>
                     <HLine />

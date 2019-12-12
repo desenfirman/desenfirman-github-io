@@ -7,7 +7,7 @@ const toLocalTime = (utc_timestamp) => {
         hour: "2-digit", 
         minute: "2-digit"
     };
-    return timestamp.toLocaleString('en-us', options)
+    return timestamp.toLocaleString('en-gb', options)
 }
 
 export default toLocalTime
