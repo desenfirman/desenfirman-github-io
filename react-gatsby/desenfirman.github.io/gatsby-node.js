@@ -7,6 +7,7 @@
 // You can delete this file if you're not using it
 
 const blog_prefix_page = `/blog`
+const lodash = require('lodash')
 // Create blog post list pages
 
 function createPostPages(createPage, posts, postsPerPage) {
@@ -38,21 +39,42 @@ function createPostPages(createPage, posts, postsPerPage) {
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
-        blog_prefix_page
+        prefix_page: blog_prefix_page,
       },
     });
   });
+}
+
+function createPostByTagsPages(createPage, tags, postsPerPage) {
+  tags.forEach(tag => {
+    const numPages = Math.ceil(tag.totalCount / postsPerPage);
+    Array.from({ length: numPages }).forEach((_, i) => {
+      const tag_path = lodash.kebabCase(tag.fieldValue)
+      createPage({
+        path: i === 0 ? blog_prefix_page + `/tags/${tag_path}` : blog_prefix_page + `/tags/${tag_path}/${i + 1}`,
+        component: path.resolve(`./src/templates/blog-list.js`),
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
+          blog_prefix_page,
+          tag: tag.fieldValue
+        },
+      });
+    });
+  })
 }
 
 
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  
 
-  return graphql(
+
+  return await graphql(
     `
       {
         allMarkdownRemark(
@@ -66,9 +88,14 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                tags
               }
             }
           }
+            group(field: frontmatter___tags) {
+              fieldValue
+              totalCount
+            }
         }
       }
     `
@@ -81,6 +108,9 @@ exports.createPages = ({ graphql, actions }) => {
     const posts = result.data.allMarkdownRemark.edges
     createPostPages(createPage, posts, 2)
 
+    // Creat post by tags page
+    const tags = result.data.allMarkdownRemark.group
+    createPostByTagsPages(createPage, tags, 2)
 
     // // Create portfolio posts pages.
     // const portfolios = result.data.allGithubData.edges[0].node.data.search.edges
@@ -115,8 +145,8 @@ exports.onCreatePage = async ({ page, actions }) => {
   // only on the client.
   if (page.path.match(/^\/portfolio\/r/)) {
     page.matchPath = "/portfolio/r/*"
-    
+
     // Update the page.
     createPage(page)
-  } 
+  }
 }

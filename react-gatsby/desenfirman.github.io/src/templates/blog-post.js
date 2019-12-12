@@ -21,6 +21,8 @@ class BlogPostTemplate extends React.Component {
     const prefix_page = '/blog'
     const { previous, next } = this.props.pageContext
 
+    
+
     return (
       <Layout breadcrumb_items={[
         { link: prefix_page, name: 'Blog' },
@@ -41,6 +43,11 @@ class BlogPostTemplate extends React.Component {
             <h1>{post.frontmatter.title}</h1>
             <HLine />
             <article className={'text-body'} dangerouslySetInnerHTML={{ __html: post.html }} />
+            {
+              post.frontmatter.tags.map(tag => {
+                return( <Link to={prefix_page + "/tags/" + tag} class="badge badge-dark">{tag}</Link>)
+              })
+            }
             <HLine />
             <ul
               style={{
@@ -94,6 +101,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        tags
       }
       fields {
         slug
