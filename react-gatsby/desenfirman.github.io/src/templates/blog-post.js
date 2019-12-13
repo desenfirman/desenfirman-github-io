@@ -40,6 +40,7 @@ class BlogPostTemplate extends React.Component {
         <Container fluid={true}>
           <main>
             <p className={'time'}>Written on <time>{post.frontmatter.date}</time></p>
+            <p>{post.fields.readingTime.text}</p>
             <h1>{post.frontmatter.title}</h1>
             <HLine />
             <article className={'text-body'} dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -107,6 +108,9 @@ export const pageQuery = graphql`
       }
       fields {
         slug
+        readingTime{
+          text
+        }
       }
     }
   }

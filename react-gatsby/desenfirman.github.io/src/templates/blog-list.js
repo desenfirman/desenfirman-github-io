@@ -37,6 +37,7 @@ class BlogIndex extends React.Component {
               <Row key={node.fields.slug}>
                 <Container fluid={true} style={{ marginBottom: '1em', marginTop: '1em' }}>
                   <p className={'time'}>Written on <time>{node.frontmatter.date}</time></p>
+                  <p>{node.fields.readingTime.text}</p>
                   <h1 >
                     <Link to={node.fields.slug}>
                       {title}
@@ -117,6 +118,9 @@ export const pageQuery = graphql`
           excerpt(pruneLength: 280)
           fields {
             slug
+            readingTime{
+              text
+            }
           }
           frontmatter {
             date(formatString: "DD MMMM YYYY")
