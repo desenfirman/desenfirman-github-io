@@ -1,0 +1,78 @@
+{
+  "name": "desenfirman.github.io",
+  "version": "2.0.0",
+  "description": "My personal website build and developed using React and Gatsby JS",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desenfirman/desenfirman.github.io.git"
+  },
+  "author": {
+    "name": "Dese Narfa Firmansyah",
+    "email": "desenfirman@gmail.com"
+  },
+  "forkedFrom": "gatsby-starter-prologue",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
+    "algoliasearch": "^3.35.1",
+    "axios": "^0.19.0",
+    "disqus-react": "^1.0.7",
+    "dotenv": "^8.2.0",
+    "gatsby": "^2.18.10",
+    "gatsby-image": "^2.2.36",
+    "gatsby-plugin-algolia": "^0.5.0",
+    "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-offline": "^2.1.0",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sass": "^2.0.11",
+    "gatsby-plugin-sharp": "^2.3.2",
+    "gatsby-remark-reading-time": "^1.1.0",
+    "gatsby-source-filesystem": "^2.1.38",
+    "gatsby-source-graphql": "^2.1.25",
+    "gatsby-transformer-remark": "^2.6.37",
+    "gatsby-transformer-sharp": "^2.3.5",
+    "github-pagination": "^0.1.0",
+    "graphql": "^14.5.8",
+    "graphql-anywhere": "^4.2.4",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.12.0",
+    "qs": "^6.9.1",
+    "raw-loader": "^4.0.0",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.15",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "react-instantsearch-dom": "^6.0.0",
+    "react-markdown": "^4.2.2",
+    "react-particles-js": "^2.7.0",
+    "react-scrollspy": "^3.4.0",
+    "smoothscroll-polyfill": "^0.4.4",
+    "styled-components": "^4.4.1"
+  },
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "npm run clean && gatsby build",
+    "deploy": "npm run clean && gatsby build --prefix-paths && gh-pages -d public",
+    "serve": "gatsby serve",
+    "clean": "rimraf .cache public",
+    "format": "prettier --write '**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1",
+    "prettier": "^1.17.0",
+    "rimraf": "^2.6.3"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-starter",
+    "gatsby-starter-prologue",
+    "desenfirman.github.io"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/desenfirman/desenfirman.github.io/issues"
+  },
+  "homepage": "https://github.com/desenfirman/desenfirman.github.io#readme"
+}
