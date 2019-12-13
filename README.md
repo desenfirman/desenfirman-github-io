@@ -6,11 +6,11 @@
 [x] add pagination in portfolio list
 [] edit credit & tools in about page
 [x] modify 404 not found
-[] add overlay, algolia
+[x] add overlay, algolia
 [x] add browse by tag
 [x] add repo detail and message
 [x] fix header margin on mobile site
-
+[] add reading time
 
 ## Stuff to add (probably)
 - add render tag to source code typewriter

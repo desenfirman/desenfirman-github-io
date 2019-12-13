@@ -1,0 +1,11 @@
+.ais-SearchBox-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .ais-SearchBox-input {
+    // outline: none;
+    // border: none;
+    font-size: 1em;
+    background: transparent;
+  }
+}

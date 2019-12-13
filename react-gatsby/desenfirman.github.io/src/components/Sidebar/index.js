@@ -5,12 +5,14 @@ import  Header  from './Header';
 import { StaticQuery } from 'gatsby';
 import Nav from './Nav';
 // const pic = require('../../assets/images/dese-firmansyah.jpg');
-
+// import SearchOverlay from '../Search'
 
 
 
 export default function SideBar() {
   const [headerOpen, toggleHeader] = useState(false);
+  // const [isOverlayShow, showOverlay] = useState(false);
+
 
   const sidebar = <StaticQuery query={graphql`
     query sectionsQuery {
@@ -39,6 +41,7 @@ export default function SideBar() {
 
 
     return (
+      <>
       <div
         className={`${headerOpen ? 'header-visible' : ' '}`}>
         {/* <TopNav
@@ -48,12 +51,16 @@ export default function SideBar() {
           <div className="top">
             <Header 
               bar_text={bar_text}
-              onMenuClick={() => toggleHeader(!headerOpen)}/>
+              onMenuClick={() => toggleHeader(!headerOpen)}
+              // onSearchClick={() => showOverlay(!isOverlayShow)}
+              />
             <Nav sections={sections} />
           </div>
           {/* <Footer socialLinks={config.socialLinks} /> */}
         </div>
       </div>
+      {/* {isOverlayShow ? <SearchOverlay /> : null} */}
+      </>
     );
   }} />
 
