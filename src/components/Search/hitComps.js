@@ -3,7 +3,7 @@ import { Highlight, Snippet } from "react-instantsearch-dom"
 import { Link } from "gatsby"
 // import { Calendar } from "styled-icons/octicons/Calendar"
 // import { Tags } from "styled-icons/fa-solid/Tags"
-import { Container, Row } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const PageHit = clickHandler => ({ hit }) => (
@@ -20,7 +20,7 @@ export const PageHit = clickHandler => ({ hit }) => (
 export const PostHit = clickHandler => ({ hit }) => (
   <Row>
     <div style={{marginTop: '1.25em'}}>
-    <Link to={`/blog` + hit.slug} onClick={clickHandler}>
+    <Link to={hit.slug} onClick={clickHandler}>
       <h4>
         <Highlight attribute="title" hit={hit} tagName="mark" />
       </h4>

@@ -1,11 +1,12 @@
 ---
 layout: post
-title: GitHub Student Pack - Layanan bagi Kamu Para Programmer 'misqueen'
+title: GitHub Student Pack - Layanan Free dengan Benefit Premium untuk Mahasiswa IT
 date: '2018-11-27'
 comments: true
 tags:
 - github
-- student pack
+- services
+- tips and trick
 ---
 
 > Student pack 
