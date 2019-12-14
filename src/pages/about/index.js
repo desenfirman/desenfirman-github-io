@@ -31,7 +31,7 @@ class About extends React.Component {
                     <Row >
                         <Col md={4} >
                             <section className={'text-body'}>
-                                <ReactMarkdown  source={contact_me} />
+                                <ReactMarkdown source={contact_me} />
                             </section>
                         </Col>
                         <Col md={8} >

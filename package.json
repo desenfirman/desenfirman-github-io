@@ -47,8 +47,7 @@
     "react-markdown": "^4.2.2",
     "react-particles-js": "^2.7.0",
     "react-scrollspy": "^3.4.0",
-    "smoothscroll-polyfill": "^0.4.4",
-    "styled-components": "^4.4.1"
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "scripts": {
     "develop": "gatsby develop",

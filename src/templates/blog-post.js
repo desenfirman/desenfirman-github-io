@@ -12,7 +12,8 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const disqus_shortname = this.props.data.site.siteMetadata.disqusShortname
-    const base_url = window.location.origin
+    const base_url = this.props.location.origin
+    // console.log(this.props.location)
     const disqus_config = {
       url: base_url + post.fields.slug,
       identifier: post.fields.slug,
@@ -40,14 +41,14 @@ class BlogPostTemplate extends React.Component {
         <Container fluid={true}>
           <main>
             <p className={'time'}>Written on <time>{post.frontmatter.date}</time></p>
-            <p>{post.fields.readingTime.text}</p>
+            <p className={'rd-t'}>{post.fields.readingTime.text}</p>
             <h1>{post.frontmatter.title}</h1>
             <HLine />
             <article className={'text-body'} dangerouslySetInnerHTML={{ __html: post.html }} />
             <Container style={{marginTop: '6rem'}} fluid={true}>
             {
               post.frontmatter.tags.map(tag => {
-                return( <Link to={prefix_page + "/tags/" + tag} class="badge badge-secondary">{tag}</Link>)
+                return( <Link to={prefix_page + "/tags/" + tag} className="badge badge-secondary">{tag}</Link>)
               })
             }
             </Container>

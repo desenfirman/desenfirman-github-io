@@ -12,13 +12,13 @@ class Typewriter extends React.Component {
     arr_index = 0;
     rafId = null;
     timeoutId = null;
-    prev_time = performance.now()
+    prev_time = new Date().getMilliseconds()
 
 
 
     timer = duration => {
         return new Promise(resolve => {
-            window.setTimeout(resolve, duration);
+            setTimeout(resolve, duration);
         });
     };
 
@@ -36,7 +36,7 @@ class Typewriter extends React.Component {
 
     animationFrame = (callback, ...args) => {
         return new Promise(resolve => {
-            window.requestAnimationFrame(time => {
+            requestAnimationFrame(time => {
                 callback(time, ...args);
             });
         });

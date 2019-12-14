@@ -20,10 +20,12 @@ export default function Header({ bar_text, onMenuClick = () => { } }) {
           </li>
           <li>
             <Link to={'/search'}
-              // onClick={e => {
-              //   e.preventDefault();
-              //   onSearchClick();
-              // }}
+              activeClassName="active"
+
+            // onClick={e => {
+            //   e.preventDefault();
+            //   onSearchClick();
+            // }}
             >
               <FontAwesomeIcon icon='search' fixedWidth /><span>Search</span>
             </Link>

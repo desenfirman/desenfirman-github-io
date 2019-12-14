@@ -56,7 +56,7 @@
     // },
     {
       query: postQuery,
-      // transformer: ({ data }) => flatten(data.posts.edges),
+      transformer: ({ data }) => flatten(data.posts.edges),
       indexName: `Blog`,
       settings,
     },

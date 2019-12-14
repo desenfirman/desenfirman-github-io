@@ -9,3 +9,14 @@
     background: transparent;
   }
 }
+
+.ais-Hits-list{
+  list-style-type: none;
+  li{
+    padding-left: 0;
+  }
+}
+
+.ais-Highlight-highlighted, .ais-Snippet-highlighted{
+  background-color: darken($color: #E9EEFC, $amount: 10%)
+}

@@ -27,7 +27,7 @@ class BlogIndex extends React.Component {
         <Container>
           {
             (this.props.pageContext.tag) ? 
-              <><h3>List of posts by tag: {this.props.pageContext.tag}</h3><HLine/></>
+              <><h5>List of posts by tag: {this.props.pageContext.tag}</h5><HLine/></>
             : <></>
           }
           {/* START of Post List */}
@@ -37,7 +37,7 @@ class BlogIndex extends React.Component {
               <Row key={node.fields.slug}>
                 <Container fluid={true} style={{ marginBottom: '1em', marginTop: '1em' }}>
                   <p className={'time'}>Written on <time>{node.frontmatter.date}</time></p>
-                  <p>{node.fields.readingTime.text}</p>
+                  <p className="rd-t">{node.fields.readingTime.text}</p>
                   <h1 >
                     <Link to={node.fields.slug}>
                       {title}

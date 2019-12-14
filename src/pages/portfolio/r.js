@@ -42,7 +42,7 @@ class PortfolioRenderer extends React.Component {
 
   render() {
     // console.log(this.data)
-    const base_url = window.location.origin
+    const base_url = this.props.location.origin
     const prefix_page = 'portfolio/'
     const disqus_shortname = 'desenfirman'
     const disqus_config = {
