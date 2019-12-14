@@ -3,7 +3,7 @@ import { Highlight, Snippet } from "react-instantsearch-dom"
 import { Link } from "gatsby"
 // import { Calendar } from "styled-icons/octicons/Calendar"
 // import { Tags } from "styled-icons/fa-solid/Tags"
-import { Container, Row } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const PageHit = clickHandler => ({ hit }) => (
