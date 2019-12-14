@@ -1,3 +1,0 @@
-## Summary
-
-My name is **Dese Narfa Firmansyah**. You can call me **Dese**. I'm studying at Universitas Brawijaya, taking Computer Science - Informatic Engineering Major Degree. I loved programming and things about recent technology since High School. I loved Web Development both front-end and back-end development. But now, I'm focusing on Artificial Intelligence, Machine Learning and Neural Network interdisciplinary field. 
