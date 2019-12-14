@@ -9,7 +9,7 @@ import {
     // Index,
     // SearchBox,
     Hits,
-    connectStateResults,
+    // connectStateResults,
 } from "react-instantsearch-dom"
 import algoliasearch from "algoliasearch/lite"
 
@@ -18,15 +18,15 @@ import Input from "./input"
 import * as hitComps from "./hitComps"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Results = connectStateResults(
-    ({ searchState: state, searchResults: res, children }) =>
-        res && res.nbHits > 0 ? children : `No results for '${state.query}'`
-)
+// const Results = connectStateResults(
+//     ({ searchState: state, searchResults: res, children }) =>
+//         res && res.nbHits > 0 ? children : `No results for '${state.query}'`
+// )
 
-const Stats = connectStateResults(
-    ({ searchResults: res }) =>
-        res && res.nbHits > 0 && `${res.nbHits} result${res.nbHits > 1 ? `s` : ``}`
-)
+// const Stats = connectStateResults(
+//     ({ searchResults: res }) =>
+//         res && res.nbHits > 0 && `${res.nbHits} result${res.nbHits > 1 ? `s` : ``}`
+// )
 
 const useClickOutside = (ref, handler, events) => {
     if (!events) events = [`mousedown`, `touchstart`]
