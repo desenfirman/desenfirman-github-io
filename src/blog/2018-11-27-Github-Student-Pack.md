@@ -18,7 +18,7 @@ Mendengar kata tersebut, pasti terlintas hal yang menarik bagi yang mereka-merek
 
 ## Preamble
 
-Ya begitulah dari gambaran yang akan dibahas di tulisan kali ini. Berawal dari teman satu kelompok pada saat kuliah yang memberitahuku, aku akhirnya berlangganan layanan spesial yang dikhususkan untuk kalian sobat-sobat programmer misqueen. 
+Ya begitulah dari gambaran yang akan dibahas di tulisan kali ini. Berawal dari teman satu kelompok pada saat kuliah yang memberitahuku, aku akhirnya berlangganan layanan spesial yang dikhususkan untuk kalian yang sedang menempuh pendidikan di bidang IT. 
 
 GitHub Student Pack, sebuah layanan yang berisi *membership* gratis untuk beberapa *tools-tools* pemrograman dan teknologi dengan fasilitas *premium*.  Sesuai namanya, layanan ini dibuat oleh GitHub dan telah bekerja sama dengan kurang lebih 30 perusahaan IT yang menyediakan layanan *premium*-nya secara cuma-cuma untuk kalian yang sedang berkuliah di jurusan yang berhubungan dengan *programming*. Hal ini cukup berguna bagi kalian untuk mempersiapkan kalian agar terbiasa dengan *tools premium* saat sudah bekerja.
 

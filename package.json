@@ -27,6 +27,7 @@
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sharp": "^2.3.2",
+    "gatsby-plugin-sitemap": "^2.2.24",
     "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-source-filesystem": "^2.1.38",
     "gatsby-source-graphql": "^2.1.25",
@@ -52,7 +53,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "npm run clean && gatsby build",
-    "deploy": "npm run clean && gatsby build  && gh-pages -d public -b master",
+    "deploy": "npm run clean && gatsby build  && cp README.md public && gh-pages -d public -b master",
     "serve": "gatsby serve",
     "clean": "rimraf .cache public",
     "format": "prettier --write '**/*.js'",

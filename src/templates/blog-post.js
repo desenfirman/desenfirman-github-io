@@ -6,6 +6,7 @@ import SEO from '../components/SEO'
 import { Container } from 'react-bootstrap'
 import { HLine } from '../components/HLine'
 import { DiscussionEmbed } from 'disqus-react';
+const lodash = require('lodash')
 
 
 class BlogPostTemplate extends React.Component {
@@ -48,7 +49,7 @@ class BlogPostTemplate extends React.Component {
             <Container style={{marginTop: '6rem'}} fluid={true}>
             {
               post.frontmatter.tags.map(tag => {
-                return( <Link to={prefix_page + "/tags/" + tag} className="badge badge-secondary">{tag}</Link>)
+                return( <Link to={prefix_page + "/tags/" + lodash.kebabCase(tag)} className="badge badge-secondary">{tag}</Link>)
               })
             }
             </Container>

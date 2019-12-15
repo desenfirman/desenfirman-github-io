@@ -9,6 +9,20 @@
             "problemMatcher": [
                 "$eslint-compact"
             ]
+        },
+        {
+            "type": "npm",
+            "script": "develop",
+            "problemMatcher": [
+                "$eslint-compact"
+            ]
+        },
+        {
+            "type": "npm",
+            "script": "serve",
+            "problemMatcher": [
+                "$eslint-compact"
+            ]
         }
     ]
 }

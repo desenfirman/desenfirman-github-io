@@ -50,7 +50,7 @@ class PortfolioRenderer extends React.Component {
       identifier: prefix_page + 'r/' + this.props.name,
       title: this.props.name,
     }
-    console.log(disqus_config)
+    // console.log(disqus_config)
     const { name, description, created_at, pushed_at, language, license, html_url, readme } = this.state.repo
     const content = this.props.name ?
       (
@@ -77,7 +77,7 @@ class PortfolioRenderer extends React.Component {
 
                     <HLine />
                     <Alert variant={'info'}>
-                      You are now viewing README.md's repository, - <a href={html_url}>View repo on GitHub</a>
+                      You are now viewing README.md's repository, - <a href={html_url} target="_blank" rel="noopener noreferrer">View repo on GitHub</a>
                     </Alert>
                     <HLine />
                     <article style={{marginBottom: '6rem'}}  className={'text-body'}>
@@ -99,27 +99,27 @@ class PortfolioRenderer extends React.Component {
   }
 
   fetchPortfolioData = async () => {
-    this.setState({ loading: true })
+    await this.setState({ loading: true })
     if (this.props.name) {
       let repo_data = "https://api.github.com/repos/" + this.state.username + "/" + this.props.name
       let readme_data = "https://api.github.com/repos/" + this.state.username + "/" + this.props.name + "/readme"
 
-      const reqRepoData = axios.get(repo_data)
-      const reqReadmeData = axios.get(readme_data)
+      const reqRepoData = await axios.get(repo_data)
+      const reqReadmeData = await axios.get(readme_data)
       let repo = {}
 
       await axios
         .all([reqRepoData, reqReadmeData])
         .then(
           axios.spread((respRepoData, respReadmeData) => {
-            console.log(respReadmeData)
+            // console.log(respReadmeData)
             const { name, description, created_at, pushed_at, language, license, html_url } = respRepoData.data
             const readme = atob(respReadmeData.data.content)
             repo = {
               name: (name) ? name : '<no name provided>',
               description: (description) ? description : '<no description provided>',
-              created_at: (created_at) ? created_at : '<no date provided>',
-              pushed_at: (pushed_at) ? pushed_at : '<no date provided>',
+              created_at: (created_at) ? created_at : '<no date time provided>',
+              pushed_at: (pushed_at) ? pushed_at : '<no date time provided>',
               language: (language) ? language : '<no language provided>',
               license: (license) ? license.name : '<no license provided>',
               html_url: (html_url) ? html_url : '#',
@@ -134,7 +134,7 @@ class PortfolioRenderer extends React.Component {
           })
         })
         .catch(errors => {
-          console.log(errors)
+          // console.log(errors)
           this.setState({ loading: false, errors })
         })
     }

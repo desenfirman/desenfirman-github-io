@@ -29,12 +29,8 @@ class About extends React.Component {
                         </Col>
                     </Row>
                     <Row >
-                        <Col md={4} >
-                            <section className={'text-body'}>
-                                <ReactMarkdown source={contact_me} />
-                            </section>
-                        </Col>
-                        <Col md={8} >
+
+                        <Col >
                             <section className={'text-body'}>
                                 <ReactMarkdown source={work} />
                             </section>
@@ -44,6 +40,13 @@ class About extends React.Component {
                         <Col>
                             <section className={'text-body'}>
                                 <ReactMarkdown source={credit} />
+                            </section>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <section className={'text-body'}>
+                                <ReactMarkdown source={contact_me} />
                             </section>
                         </Col>
                     </Row>

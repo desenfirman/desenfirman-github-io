@@ -615,11 +615,12 @@ button,
 
 .time {
   font-family: $headings-font-family;
-  color: lighten(desaturate(#1c3b59, 30), 20);
+  color: lighten(desaturate(#1c3b59, 30), 10);
   font-size: 1rem;
   margin-bottom: 1rem;
 }
-//
+
 .rd-t{
+  color: lighten(desaturate(#1c3b59, 30), 20);
   font-family: 'Oswald', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }

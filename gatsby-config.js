@@ -6,6 +6,7 @@ module.exports = {
   siteMetadata: config,
   plugins: [
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -52,13 +53,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: config.manifestName,
-        short_name: config.manifestShortName,
+        name: config.title,
+        short_name: config.shortTitle,
         start_url: config.pathPrefix || config.manifestStartUrl,
-        background_color: config.manifestBackgroundColor,
-        theme_color: config.manifestThemeColor,
-        display: config.manifestDisplay,
-        icon: config.manifestIcon, // This path is relative to the root of the site.
+        // background_color: config.manifestBackgroundColor,
+        // theme_color: config.manifestThemeColor,
+        // display: config.manifestDisplay,
+        icon: config.icon, // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-sass',

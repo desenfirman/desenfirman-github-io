@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from 'gatsby'
 // import { Container, Logo } from "./styles"
 // import Nav from "../Nav"
 import { ContentLayout as Layout } from '../components/Layout/ContentLayout'
@@ -9,6 +10,7 @@ const searchIndices = [
     //   { name: `Pages`, title: `Pages`, hitComp: `PageHit` },
     { name: `Blog`, title: `Blog Posts`, hitComp: `PostHit` },
 ]
+const lodash = require('lodash')
 
 const SearchPages = (props) => {
     const groups = props.data.allMarkdownRemark.group
@@ -30,7 +32,7 @@ const SearchPages = (props) => {
                         <h3>Or Browse by Tag</h3>
                         {
                             groups.map(tag => {
-                                return (<Link to={'/blog' + "/tags/" + tag.fieldValue} className="badge badge-secondary">{tag.fieldValue} <span className="badge badge-light">{tag.totalCount}</span></Link>)
+                                return (<Link to={`/blog/tags/` + lodash.kebabCase(tag.fieldValue)} className="badge badge-secondary">{tag.fieldValue} <span className="badge badge-light">{tag.totalCount}</span></Link>)
                             })
                         }
                     </Container>

@@ -47,8 +47,7 @@ class CoreLayout extends Component {
           <>
             <Helmet
               meta={[
-                { name: 'description', content: 'Eventually' },
-                { name: 'keywords', content: 'site, web' },
+                { name: 'keywords', content: 'desenfirman, developer, backend dev, data scientist, machine learning' },
               ]}
             >
               <html lang="en" />

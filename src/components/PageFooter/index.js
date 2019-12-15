@@ -7,7 +7,7 @@ export default function PageFooter() {
         <p>
           Copyright © 2018 - Created with ♥ by desenfirman
         <br />
-          <span className="credit">Powered by <a href="https://pages.github.com">Jekyll x GitHub Pages</a> | For more, more and more credit <a href="/about#credit">just click here</a></span>
+          <span className="credit">Powered by <a href="https://pages.github.com">Gatsby JS x GitHub Pages</a> | For more, more and more credit <a href="/about#credit">just click here</a></span>
         </p>
       </footer>
   );
