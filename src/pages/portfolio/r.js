@@ -11,9 +11,11 @@ import ReactMarkdown from 'react-markdown'
 import axios from 'axios';
 import { Row, Container, Col, Alert } from 'react-bootstrap'
 import { HLine } from '../../components/HLine'
-import { Router } from "@reach/router";
+// import { Router } from "@reach/router";
 import { DiscussionEmbed } from 'disqus-react';
 
+
+const qs = require('qs')
 
 
 
@@ -42,7 +44,8 @@ class PortfolioRenderer extends React.Component {
 
   render() {
     // console.log(this.data)
-    const base_url = this.props.location.origin
+    // console.log(this.props)
+    const base_url = this.props.base_url
     const prefix_page = 'portfolio/'
     const disqus_shortname = 'desenfirman'
     const disqus_config = {
@@ -67,13 +70,15 @@ class PortfolioRenderer extends React.Component {
                 <Row>
                   <main className='container-fluid'>
                     <table className={'detail'}>
-                      <tr><td>Repository Name </td><td> : </td> <td>{name}</td></tr>
-                      <tr><td>Created At      </td><td> : </td> <td>{toLocalTime(created_at)}</td></tr>
-                      <tr><td>Last Commit     </td><td> : </td> <td>{toLocalTime(pushed_at)}</td></tr>
-                      <tr><td>Language        </td><td> : </td> <td>{language}</td></tr>
-                      <tr><td>License         </td><td> : </td> <td>{license}</td></tr>
-                      <tr><td>Forked Repository         </td><td> : </td> <td>{(fork) ? 'Yes' : 'No'}</td></tr>
-                      <tr><td>Description     </td><td> : </td> <td>{description}</td></tr>
+                      <tbody>
+                        <tr><td>Repository Name</td><td>:</td><td>{name}</td></tr>
+                        <tr><td>Created At</td><td>:</td><td>{toLocalTime(created_at)}</td></tr>
+                        <tr><td>Last Commit</td><td>:</td><td>{toLocalTime(pushed_at)}</td></tr>
+                        <tr><td>Language</td><td>:</td><td>{language}</td></tr>
+                        <tr><td>License</td><td>:</td><td>{license}</td></tr>
+                        <tr><td>Forked Repository</td><td>:</td><td>{(fork) ? 'Yes' : 'No'}</td></tr>
+                        <tr><td>Description</td><td>:</td><td>{description}</td></tr>
+                      </tbody>
                     </table>
 
                     <HLine />
@@ -81,7 +86,7 @@ class PortfolioRenderer extends React.Component {
                       You are now viewing README.md's repository, - <a href={html_url} target="_blank" rel="noopener noreferrer">View repo on GitHub</a>
                     </Alert>
                     <HLine />
-                    <article style={{marginBottom: '6rem'}}  className={'text-body'}>
+                    <article style={{ marginBottom: '6rem' }} className={'text-body'}>
                       <ReactMarkdown source={readme} />
                     </article>
                     <HLine />
@@ -108,38 +113,47 @@ class PortfolioRenderer extends React.Component {
       let repo = {}
 
       await axios
-        .get(repo_data)
-        .then(( respRepoData ) => {
+        .get(repo_data, {
+          headers: {
+            Authorization: `Bearer ${process.env.GATSBY_GITHUB_TOKEN}`,
+          }
+        })
+        .then((respRepoData) => {
           const { name, description, created_at, pushed_at, language, license, html_url, fork } = respRepoData.data
           repo = {
-              name: (name) ? name : '<no name provided>',
-              description: (description) ? description : '<no description provided>',
-              created_at: (created_at) ? created_at : '<no date time provided>',
-              pushed_at: (pushed_at) ? pushed_at : '<no date time provided>',
-              language: (language) ? language : '<no language provided>',
-              license: (license) ? license.name : '<no license provided>',
-              html_url: (html_url) ? html_url : '#',
-              fork,
+            name: (name) ? name : '<no name provided>',
+            description: (description) ? description : '<no description provided>',
+            created_at: (created_at) ? created_at : '<no date time provided>',
+            pushed_at: (pushed_at) ? pushed_at : '<no date time provided>',
+            language: (language) ? language : '<no language provided>',
+            license: (license) ? license.name : '<no license provided>',
+            html_url: (html_url) ? html_url : '#',
+            fork,
           }
         })
         .then(
           await axios
-            .get(readme_data)
-            .then( (respReadmeData ) => {
+            .get(readme_data, {
+              headers: {
+                Authorization: `Bearer ${process.env.GATSBY_GITHUB_TOKEN}`,
+              }
+            })
+            .then((respReadmeData) => {
               repo = {
                 ...repo,
                 readme: atob(respReadmeData.data.content),
               }
             })
             .catch(errors => {
+              console.log(errors)
               repo = {
                 ...repo,
                 readme: '<No README.md provided>'
               }
             })
         )
-        .then(() => {
-          this.setState({
+        .then(async () => {
+          await this.setState({
             loading: false,
             repo
           })
@@ -151,7 +165,9 @@ class PortfolioRenderer extends React.Component {
   }
 }
 
-const PortfolioTemplate = () => {
+const PortfolioTemplate = (props) => {
+  const name = (props.location.search) ? qs.parse(props.location.search, { ignoreQueryPrefix: true }).name : 1
+  const base_url = props.location.origin
   return (
     <Layout>
       <SideBar />
@@ -159,9 +175,7 @@ const PortfolioTemplate = () => {
         <Row>
           <Col md={10} lg={8} className={'offset-md-1 offset-lg-2'}>
             <Container >
-              <Router>
-                <PortfolioRenderer path={`/portfolio/r/:name`} />
-              </Router>
+                <PortfolioRenderer name={name} base_url={base_url} />
             </Container>
           </Col>
         </Row>
