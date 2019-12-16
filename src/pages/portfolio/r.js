@@ -51,7 +51,7 @@ class PortfolioRenderer extends React.Component {
       title: this.props.name,
     }
     // console.log(disqus_config)
-    const { name, description, created_at, pushed_at, language, license, html_url, readme } = this.state.repo
+    const { name, description, created_at, pushed_at, language, license, html_url, readme, fork } = this.state.repo
     const content = this.props.name ?
       (
         this.state.loading ? (<p style={{ textAlign: `center`, marginTop: `35vh`, marginBottom: `35vh` }}>Please Hold on!</p>)
@@ -72,6 +72,7 @@ class PortfolioRenderer extends React.Component {
                       <tr><td>Last Commit     </td><td> : </td> <td>{toLocalTime(pushed_at)}</td></tr>
                       <tr><td>Language        </td><td> : </td> <td>{language}</td></tr>
                       <tr><td>License         </td><td> : </td> <td>{license}</td></tr>
+                      <tr><td>Forked Repository         </td><td> : </td> <td>{(fork) ? 'Yes' : 'No'}</td></tr>
                       <tr><td>Description     </td><td> : </td> <td>{description}</td></tr>
                     </table>
 
@@ -104,18 +105,13 @@ class PortfolioRenderer extends React.Component {
       let repo_data = "https://api.github.com/repos/" + this.state.username + "/" + this.props.name
       let readme_data = "https://api.github.com/repos/" + this.state.username + "/" + this.props.name + "/readme"
 
-      const reqRepoData = await axios.get(repo_data)
-      const reqReadmeData = await axios.get(readme_data)
       let repo = {}
 
       await axios
-        .all([reqRepoData, reqReadmeData])
-        .then(
-          axios.spread((respRepoData, respReadmeData) => {
-            // console.log(respReadmeData)
-            const { name, description, created_at, pushed_at, language, license, html_url } = respRepoData.data
-            const readme = atob(respReadmeData.data.content)
-            repo = {
+        .get(repo_data)
+        .then(( respRepoData ) => {
+          const { name, description, created_at, pushed_at, language, license, html_url, fork } = respRepoData.data
+          repo = {
               name: (name) ? name : '<no name provided>',
               description: (description) ? description : '<no description provided>',
               created_at: (created_at) ? created_at : '<no date time provided>',
@@ -123,9 +119,24 @@ class PortfolioRenderer extends React.Component {
               language: (language) ? language : '<no language provided>',
               license: (license) ? license.name : '<no license provided>',
               html_url: (html_url) ? html_url : '#',
-              readme: (readme) ? readme : '<no readme provided>',
-            }
-          })
+              fork,
+          }
+        })
+        .then(
+          await axios
+            .get(readme_data)
+            .then( (respReadmeData ) => {
+              repo = {
+                ...repo,
+                readme: atob(respReadmeData.data.content),
+              }
+            })
+            .catch(errors => {
+              repo = {
+                ...repo,
+                readme: '<No README.md provided>'
+              }
+            })
         )
         .then(() => {
           this.setState({
@@ -134,7 +145,6 @@ class PortfolioRenderer extends React.Component {
           })
         })
         .catch(errors => {
-          // console.log(errors)
           this.setState({ loading: false, errors })
         })
     }

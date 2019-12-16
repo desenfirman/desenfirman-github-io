@@ -89,6 +89,7 @@ class PortfolioListRenderer extends React.Component {
         "https://api.github.com/search/repositories?q=" +
         "user:" + this.user +
         "+topic:" + this.topic +
+        "+fork:true" +
         "&page=" + page_number +
         "&per_page=" + this.per_page + ""
       ),
