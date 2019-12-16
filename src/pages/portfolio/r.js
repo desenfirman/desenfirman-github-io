@@ -97,7 +97,7 @@ class PortfolioRenderer extends React.Component {
                 </Row>
               </>
 
-            ) : (<p style={{ textAlign: `center`, marginTop: `35vh`, marginBottom: `35vh` }}>Oh noes, something error :(</p>)
+            ) : (<p style={{ textAlign: `center`, marginTop: `35vh`, marginBottom: `35vh` }}>Oh noes, something error :( <a href="javascript:window.location.href=window.location.href">Try Again</a></p>)
       )
       : ''
 
