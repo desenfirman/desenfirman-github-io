@@ -113,11 +113,7 @@ class PortfolioRenderer extends React.Component {
       let repo = {}
 
       await axios
-        .get(repo_data, {
-          headers: {
-            Authorization: `Bearer ${process.env.GATSBY_GITHUB_TOKEN}`,
-          }
-        })
+        .get(repo_data)
         .then((respRepoData) => {
           const { name, description, created_at, pushed_at, language, license, html_url, fork } = respRepoData.data
           repo = {
@@ -133,11 +129,7 @@ class PortfolioRenderer extends React.Component {
         })
         .then(
           await axios
-            .get(readme_data, {
-              headers: {
-                Authorization: `Bearer ${process.env.GATSBY_GITHUB_TOKEN}`,
-              }
-            })
+            .get(readme_data)
             .then((respReadmeData) => {
               repo = {
                 ...repo,
