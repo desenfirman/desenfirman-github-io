@@ -42,6 +42,19 @@ class PortfolioRenderer extends React.Component {
     this.fetchPortfolioData();
   }
 
+  componentWillUnmount() {
+    this.setState({
+      loading: false,
+      errors: false,
+      username: '',
+      repo: {}
+    })
+  }
+
+  shouldComponentUpdate() {
+    return (!this.state.repo.html_url || !this.state.repo.readme) || this.state.loading || this.state.errors
+  }
+
   render() {
     // console.log(this.data)
     // console.log(this.props)
@@ -54,17 +67,18 @@ class PortfolioRenderer extends React.Component {
       title: this.props.name,
     }
     // console.log(disqus_config)
+    // console.log(this.state)
     const { name, description, created_at, pushed_at, language, license, html_url, readme, fork } = this.state.repo
     const content = this.props.name ?
       (
         this.state.loading ? (<p style={{ textAlign: `center`, marginTop: `35vh`, marginBottom: `35vh` }}>Please Hold on!</p>)
-          : name && description && readme
+          : name && html_url
             ? (
               <>
                 <BreadcrumbNav breadcrumb_items={
                   [
                     { link: prefix_page, name: 'Portfolio' },
-                    { link: prefix_page + 'r/' + this.props.name, name: this.props.name },
+                    { link: prefix_page + 'r/?name=' + this.state.repo.name, name: this.state.repo.name },
                   ]
                 } />
                 <Row>
@@ -92,7 +106,7 @@ class PortfolioRenderer extends React.Component {
                     <HLine />
                   </main>
                   <Container fluid={true}>
-                    <DiscussionEmbed shortname={disqus_shortname} config={disqus_config} />
+                    {(this.state.repo.html_url) && <DiscussionEmbed shortname={disqus_shortname} config={disqus_config} />}
                   </Container>
                 </Row>
               </>
@@ -105,55 +119,68 @@ class PortfolioRenderer extends React.Component {
   }
 
   fetchPortfolioData = async () => {
-    await this.setState({ loading: true })
-    if (this.props.name) {
-      let repo_data = "https://api.github.com/repos/" + this.state.username + "/" + this.props.name
-      let readme_data = "https://api.github.com/repos/" + this.state.username + "/" + this.props.name + "/readme"
+    await this.setState({
+      loading: true,
+      repo: {
+        ...this.state.repo,
+        name: this.props.name
+      }
+    })
 
-      let repo = {}
+    let repo_data = "https://api.github.com/repos/" + this.state.username + "/" + this.state.repo.name
+    let readme_data = "https://api.github.com/repos/" + this.state.username + "/" + this.state.repo.name + "/readme"
 
-      await axios
-        .get(repo_data)
-        .then((respRepoData) => {
-          const { name, description, created_at, pushed_at, language, license, html_url, fork } = respRepoData.data
-          repo = {
-            name: (name) ? name : '<no name provided>',
-            description: (description) ? description : '<no description provided>',
-            created_at: (created_at) ? created_at : '<no date time provided>',
-            pushed_at: (pushed_at) ? pushed_at : '<no date time provided>',
-            language: (language) ? language : '<no language provided>',
-            license: (license) ? license.name : '<no license provided>',
-            html_url: (html_url) ? html_url : '#',
-            fork,
+    let repo = {}
+
+    await axios
+      .get(repo_data)
+      .then((respRepoData) => {
+        const { name, description, created_at, pushed_at, language, license, html_url, fork } = respRepoData.data
+        repo = {
+          name: (name) ? name : '<no name provided>',
+          description: (description) ? description : '<no description provided>',
+          created_at: (created_at) ? created_at : '<no date time provided>',
+          pushed_at: (pushed_at) ? pushed_at : '<no date time provided>',
+          language: (language) ? language : '<no language provided>',
+          license: (license) ? license.name : '<no license provided>',
+          html_url: (html_url) ? html_url : '#',
+          fork,
+          readme: ''
+        }
+      })
+      .then(() => {
+        this.setState({
+          loading: false,
+          repo
+        })
+      })
+      .catch(errors => {
+        this.setState({ loading: false, errors })
+      })
+    await this.setState({
+      loading: true,
+    })
+    await axios
+      .get(readme_data)
+      .then((respReadmeData) => {
+        this.setState({
+          loading: false,
+          repo: {
+            ...this.state.repo,
+            readme: atob(respReadmeData.data.content)
+          }
+
+        })
+      })
+      .catch(errors => {
+        this.setState({
+          loading: false,
+          repo: {
+            ...this.state.repo,
+            readme: '<No README.md provided>'
           }
         })
-        .then(
-          await axios
-            .get(readme_data)
-            .then((respReadmeData) => {
-              repo = {
-                ...repo,
-                readme: atob(respReadmeData.data.content),
-              }
-            })
-            .catch(errors => {
-              console.log(errors)
-              repo = {
-                ...repo,
-                readme: '<No README.md provided>'
-              }
-            })
-        )
-        .then(async () => {
-          await this.setState({
-            loading: false,
-            repo
-          })
-        })
-        .catch(errors => {
-          this.setState({ loading: false, errors })
-        })
-    }
+      })
   }
 }
 
@@ -167,7 +194,7 @@ const PortfolioTemplate = (props) => {
         <Row>
           <Col md={10} lg={8} className={'offset-md-1 offset-lg-2'}>
             <Container >
-                <PortfolioRenderer name={name} base_url={base_url} />
+              <PortfolioRenderer name={name} base_url={base_url} />
             </Container>
           </Col>
         </Row>

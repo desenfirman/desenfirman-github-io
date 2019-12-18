@@ -7,6 +7,7 @@ import { toLocalTime } from '../../components/utils'
 import { HLine } from '../../components/HLine'
 import { Container, Row } from 'react-bootstrap';
 import PropTypes from "prop-types";
+import { Link } from 'gatsby'
 
 // import { Link as ReachLink, Router, Redirect } from '@reach/router';
 
@@ -17,12 +18,12 @@ class PortfolioListRenderer extends React.Component {
   state = {
     loading: false,
     error: false,
+    page_number: null,
     url: "",
     next: null,
     prev: null,
     last: null,
     items: [],
-
   }
   per_page = 4
   user = "desenfirman"
@@ -30,7 +31,27 @@ class PortfolioListRenderer extends React.Component {
 
 
   componentDidMount() {
-    this.fetchPortfolioList()
+    this.fetchPortfolioList(null)
+  }
+
+  componentWillUnmount(){
+    this.setState({
+      loading: false,
+      error: false,
+      page_number: null,
+      url: "",
+      next: null,
+      prev: null,
+      last: null,
+      items: [],
+    })
+  }
+
+
+  componentWillUpdate(nextProps, nextState){
+    if (this.props.page_number !== nextProps.page_number){      
+      this.fetchPortfolioList(nextProps)
+    }
   }
 
   render() {
@@ -43,7 +64,7 @@ class PortfolioListRenderer extends React.Component {
           name={node.name}
           description={node.description}
           last_update={toLocalTime(node.pushed_at)}
-          github_link={node.html_url}
+          thumbnail_url={node.homepage}
           limit_desc={160}
         />
       )
@@ -66,14 +87,14 @@ class PortfolioListRenderer extends React.Component {
           }}
         >
           <li>
-            <a className={"btn btn-link " + (!this.state.prev ? "disabled" : "")} href={'/portfolio?p=' + this.state.prev} >
+            <Link className={"btn btn-link " + (!this.state.prev ? "disabled" : "")} to={'/portfolio?p=' + this.state.prev} >
               « Previous
-              </a>
+              </Link>
           </li>
           <li>
-            <a className={"btn btn-link " + (!this.state.next ? "disabled" : "")} href={'/portfolio?p=' + this.state.next} >
+            <Link className={"btn btn-link " + (!this.state.next ? "disabled" : "")} to={'/portfolio/?p=' + this.state.next} replace>
               Next »
-              </a>
+              </Link>
           </li>
         </ul>
         <HLine />
@@ -81,8 +102,11 @@ class PortfolioListRenderer extends React.Component {
     )
   }
 
-  fetchPortfolioList = async () => {
-    const page_number = this.props.page_number
+  fetchPortfolioList = async (nextProps) => {
+    await this.setState({
+      page_number: (nextProps) ? nextProps.page_number : this.props.page_number
+      //
+    })
     // console.log(page_number)
     await this.setState({
       url: (
@@ -90,7 +114,7 @@ class PortfolioListRenderer extends React.Component {
         "user:" + this.user +
         "+topic:" + this.topic +
         "+fork:true" +
-        "&page=" + page_number +
+        "&page=" + this.state.page_number +
         "&per_page=" + this.per_page + ""
       ),
       loading: true,

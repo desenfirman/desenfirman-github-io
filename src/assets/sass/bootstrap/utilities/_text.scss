@@ -63,7 +63,9 @@ em, i, .font-italic        { font-style: italic !important; }
     margin-top: 1em;
     li{
       padding-left: 1ex;
-
+      input{
+        margin-right: 1rem;
+      }
     }
     ul, ol{
       margin-top: 1em;

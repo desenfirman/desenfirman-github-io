@@ -13,7 +13,7 @@
 - [x] edit credit & tools in about page
 - [x] seo optimization
 - [x] robot.txt and sitemap
-- [] fetch thumbnail in portfolio
+- [ ] fetch thumbnail in portfolio
 
 ## Stuff to add (probably)
 - add render tag to source code typewriter
@@ -22,4 +22,4 @@
 - table of content in post
 
 ## Bug to Fixes
-- not dynamically navigation through portfolio page
+- [x] not dynamically navigation through portfolio page
