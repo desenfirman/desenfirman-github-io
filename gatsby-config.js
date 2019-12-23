@@ -7,6 +7,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-sitemap`,
+    // {
+    //   resolve: `gatsby-plugin-typography`,
+    //   options: {
+    //     pathToConfigModule: `src/utils/typography`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -37,6 +43,14 @@ module.exports = {
         // Plugins configs
         plugins: [
           `gatsby-remark-reading-time`,
+          {
+            resolve: `gatsby-remark-figure-caption`,
+            options: {
+              figureClassName: 'figure',
+              imageClassName: 'figure-img img-fluid rounded',
+              captionClassName: 'figure-caption',
+            },
+          },
           // ...
         ],
       },

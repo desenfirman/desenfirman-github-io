@@ -57,7 +57,7 @@
   overflow: hidden;
   position: fixed;
   top: 0;
-  width: 5ex;
+  width: 4.5ex;
   z-index: 100;
   @include vendor("transition", "cubic-bezier(.19,1,.22,1) 0.75s");
 
@@ -128,7 +128,7 @@
 @include breakpoint("<=narrower") {
   #header {
     width: 100% !important;
-    height: 5ex;
+    height: 4.5ex;
     @include vendor("transition", "height 0.5s");
   }
 

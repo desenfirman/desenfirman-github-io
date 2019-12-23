@@ -37,12 +37,12 @@ class BlogIndex extends React.Component {
               <Row key={node.fields.slug}>
                 <Container fluid={true} style={{ marginBottom: '1em', marginTop: '1em' }}>
                   <p className={'time'}>Written on <time>{node.frontmatter.date}</time></p>
-                  <p className="rd-t">{node.fields.readingTime.text}</p>
                   <h1 >
                     <Link to={node.fields.slug}>
                       {title}
                     </Link>
                   </h1>
+                  <p className="rd-t">{node.fields.readingTime.text}</p>
                   <p className={'text-body'} style={{ marginTop: '0.75em' }} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                   <Col className={'d-flex justify-content-end'}>
                     <Link className={'btn btn-link float-right'} to={node.fields.slug}>Keep Reading</Link>

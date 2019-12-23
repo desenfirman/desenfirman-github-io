@@ -28,6 +28,8 @@
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sharp": "^2.3.2",
     "gatsby-plugin-sitemap": "^2.2.24",
+    "gatsby-plugin-typography": "^2.3.20",
+    "gatsby-remark-figure-caption": "^2.0.0",
     "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-source-filesystem": "^2.1.38",
     "gatsby-source-graphql": "^2.1.25",
@@ -48,7 +50,10 @@
     "react-markdown": "^4.2.2",
     "react-particles-js": "^2.7.0",
     "react-scrollspy": "^3.4.0",
-    "smoothscroll-polyfill": "^0.4.4"
+    "remark-parse": "^7.0.2",
+    "remark-react": "^6.0.0",
+    "smoothscroll-polyfill": "^0.4.4",
+    "unified": "^8.4.2"
   },
   "scripts": {
     "develop": "gatsby develop",

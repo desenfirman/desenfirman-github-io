@@ -9,6 +9,7 @@ import { DiscussionEmbed } from 'disqus-react';
 const lodash = require('lodash')
 
 
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -45,7 +46,9 @@ class BlogPostTemplate extends React.Component {
             <p className={'rd-t'}>{post.fields.readingTime.text}</p>
             <h1>{post.frontmatter.title}</h1>
             <HLine />
-            <article className={'text-body'} dangerouslySetInnerHTML={{ __html: post.html }} />
+            {/* <TypographyStyle> */}
+              <article className={'text-body'} dangerouslySetInnerHTML={{ __html: post.html }} />
+            {/* </TypographyStyle> */}
             <Container style={{marginTop: '6rem'}} fluid={true}>
             {
               post.frontmatter.tags.map(tag => {

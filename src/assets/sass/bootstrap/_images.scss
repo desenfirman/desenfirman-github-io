@@ -37,12 +37,13 @@ img {
 }
 
 .figure-img, p > img {
-  margin-bottom: ($spacer * 1.5);
-  margin-top: ($spacer * 1.5);
+  margin-bottom: ($spacer);
+  margin-top: ($spacer);
   line-height: 1.5;
 }
 
 .figure-caption {
   font-size: $figure-caption-font-size;
   color: $figure-caption-color;
+  text-align: center;
 }

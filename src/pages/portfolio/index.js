@@ -87,7 +87,7 @@ class PortfolioListRenderer extends React.Component {
           }}
         >
           <li>
-            <Link className={"btn btn-link " + (!this.state.prev ? "disabled" : "")} to={'/portfolio?p=' + this.state.prev} >
+            <Link className={"btn btn-link " + (!this.state.prev ? "disabled" : "")} to={'/portfolio/?p=' + this.state.prev} replace>
               « Previous
               </Link>
           </li>

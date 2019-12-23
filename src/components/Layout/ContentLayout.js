@@ -14,10 +14,10 @@ class ContentLayout extends Component {
         return (
             <Layout>
                 <SideBar/>
-                <Container>
+                <Container >
                     <Row>
                         <Col md={10} lg={8} className={'offset-md-1 offset-lg-2'}>
-                            <Container >
+                            <Container>
                                 <BreadcrumbNav breadcrumb_items={breadcrumb_items} />
                                 <Row>
                                     {children}

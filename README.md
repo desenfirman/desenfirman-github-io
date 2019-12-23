@@ -1,7 +1,7 @@
 # Dese's Personal Website | desenfirman.github.io
 
-
 ## To do
+
 - [x] add disqus
 - [x] add pagination in portfolio list
 - [x] modify 404 not found
@@ -13,13 +13,16 @@
 - [x] edit credit & tools in about page
 - [x] seo optimization
 - [x] robot.txt and sitemap
-- [ ] fetch thumbnail in portfolio
+- [x] fetch thumbnail in portfolio
+- [ ] typograph js
 
 ## Stuff to add (probably)
+
 - add render tag to source code typewriter
 - disqus comment count
 - sort post list
 - table of content in post
 
 ## Bug to Fixes
+
 - [x] not dynamically navigation through portfolio page

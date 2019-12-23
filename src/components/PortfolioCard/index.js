@@ -8,7 +8,7 @@ export default function PortfolioCard({ id, name, description, last_update, thum
     return (
         <Col xl={6} lg={6} md={6}>
             <Card key={id} style={{ marginBottom: '1.75rem' }}>
-                <Card.Img variant={'top'} src={ (thumbnail_url) || 'https://via.placeholder.com/640x480'} />
+                <Card.Img variant={'top'} src={ (thumbnail_url) || 'https://via.placeholder.com/640x320'} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Last commit: {last_update}</Card.Subtitle>

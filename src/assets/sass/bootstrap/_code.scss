@@ -33,7 +33,7 @@ pre {
   display: block;
   font-size: $code-font-size;
   color: $pre-color;
-  margin: $spacer * 2.5 0 auto 0;
+  margin: 0 0 $line-height-base * 1rem 0;
 
   background-color: desaturate(lighten(#D1DCF5, 1%), 10%) ;
 

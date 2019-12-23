@@ -12,7 +12,10 @@ h1, h2, h3, h4, h5, h6,
   line-height: $headings-line-height;
   color: $headings-color;
   .text-body>&{
-    margin-top: $headings-margin-bottom * 5;
+    line-height: 2.25rem;
+    margin-top: $headings-margin-bottom * 3.8;
+    margin-bottom: $headings-margin-bottom * 1.2;
+
   }
   &>a{
     text-decoration: none;
@@ -127,11 +130,14 @@ mark,
 // Blockquotes
 .blockquote, blockquote {
   font-size: $blockquote-font-size;
-  padding: 0.5em 0 0.5em 0.7em;
+  // padding: 0.5em 0 0.5em 0.7em;
   font-style: italic;
+  font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+  font-feature-settings: "kern", "liga", "clig", "calt";
   grid-column: 3 / 5;
+
   color: $blockquote-small-color;
-  border-left: solid 0.15em $gray-600;
+  border-left: solid 0.3em $gray-600;
 }
 
 
@@ -139,7 +145,7 @@ mark,
   display: block;
   font-size: 80%; // back to default font-size
   color: $blockquote-small-color;
-
+  
   &::before {
     content: "\2014 \00A0"; // em dash, nbsp
   }
@@ -148,10 +154,12 @@ mark,
 .text-body{
   .blockquote, blockquote{
     margin-top: 0.8em;
-    margin-bottom: 0.8em;
-    font-size: $font-size-base * 1.4;
+    margin-bottom: $line-height-base * 1rem;
+    padding-left: $line-height-base * 0.75rem;
+    margin-left: $line-height-base * -1rem;
     p{
       margin-top: 0;
+      margin-bottom: 0;
     }
   }
 }

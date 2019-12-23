@@ -38,14 +38,14 @@ class About extends React.Component {
                     </Row>
                     <Row>
                         <Col>
-                            <section className={'text-body'}>
+                            <section className={'text-body'} id="credit">
                                 <ReactMarkdown source={credit} />
                             </section>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-                            <section className={'text-body'}>
+                            <section className={'text-body'} >
                                 <ReactMarkdown source={contact_me} />
                             </section>
                         </Col>

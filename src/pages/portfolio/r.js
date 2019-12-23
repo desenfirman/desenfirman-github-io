@@ -7,12 +7,15 @@ import SideBar from '../../components/Sidebar'
 import PageFooter from '../../components/PageFooter'
 import { toLocalTime } from '../../components/utils'
 
-import ReactMarkdown from 'react-markdown'
+// import ReactMarkdown from 'react-markdown'
 import axios from 'axios';
 import { Row, Container, Col, Alert } from 'react-bootstrap'
 import { HLine } from '../../components/HLine'
 // import { Router } from "@reach/router";
 import { DiscussionEmbed } from 'disqus-react';
+import unified from 'unified'
+import parse from 'remark-parse'
+import remark2react from 'remark-react'
 
 
 const qs = require('qs')
@@ -101,7 +104,12 @@ class PortfolioRenderer extends React.Component {
                     </Alert>
                     <HLine />
                     <article style={{ marginBottom: '6rem' }} className={'text-body'}>
-                      <ReactMarkdown source={readme} />
+                      {
+                        unified()
+                          .use(parse)
+                          .use(remark2react)
+                          .processSync(readme).contents
+                      }
                     </article>
                     <HLine />
                   </main>
