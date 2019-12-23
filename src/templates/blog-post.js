@@ -69,14 +69,14 @@ class BlogPostTemplate extends React.Component {
               <li>
                 {previous && (
                   <Link className={"btn btn-link"} to={previous.fields.slug} rel="prev">
-                    « {previous.frontmatter.title}
+                    « { (previous.frontmatter.title.length < 25) ? previous.frontmatter.title : previous.frontmatter.title.substring(0, 25) + ' ...'}
                   </Link>
                 )}
               </li>
               <li>
                 {next && (
                   <Link className={"btn btn-link"} to={next.fields.slug} rel="next">
-                    {next.frontmatter.title} »
+                    { (next.frontmatter.title.length < 25) ? next.frontmatter.title : next.frontmatter.title.substring(0, 25) + ' ...'} »
                             </Link>
                 )}
               </li>

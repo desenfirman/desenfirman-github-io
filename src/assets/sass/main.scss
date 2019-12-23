@@ -435,9 +435,11 @@ button,
 
 .text-body{
   .toc{
-    
-    font-size: $font-size-base * 0.8;
+    font-size: $font-size-base * 0.7;
     ul{
+      li{
+        margin: 0;
+      }
       &::before{
         content: "Table of Contents"
       }
@@ -451,9 +453,9 @@ button,
 @include breakpoint("wide"){
   .toc{
     position: fixed;
-    max-width:15rem;
+    width:15rem;
     right: 2vw;
-    top: 20vw;
+    top: 10vw;
   }
 }
 

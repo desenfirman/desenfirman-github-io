@@ -34,9 +34,14 @@ img {
 .figure  {
   // Ensures the caption's text aligns with the image.
   display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  text-align: center;
 }
 
 .figure-img, p > img {
+  max-height: 30rem;
   margin-bottom: ($spacer);
   margin-top: ($spacer);
   line-height: 1.5;
