@@ -15,6 +15,9 @@ Mendengar kata tersebut, pasti terlintas hal yang menarik bagi yang mereka-merek
 
 <!--more-->
 
+```toc
+```
+
 ## Preamble
 
 Ya begitulah dari gambaran yang akan dibahas di tulisan kali ini. Berawal dari teman satu kelompok pada saat kuliah yang memberitahuku, aku akhirnya berlangganan layanan spesial yang dikhususkan untuk kalian yang sedang menempuh pendidikan di bidang IT. 

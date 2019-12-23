@@ -24,11 +24,11 @@
 @include breakpoints(
   (
     wide: (
-      961px,
+      1171px,
       1880px
     ),
     normal: (
-      961px,
+      1171px,
       1620px
     ),
     narrow: (
@@ -433,7 +433,30 @@ button,
   margin-top: 0.75em;
 }
 
+.text-body{
+  .toc{
+    
+    font-size: $font-size-base * 0.8;
+    ul{
+      &::before{
+        content: "Table of Contents"
+      }
+      list-style: decimal;
+    }
+  }
+}
+
 /* Wide */
+
+@include breakpoint("wide"){
+  .toc{
+    position: fixed;
+    max-width:15rem;
+    right: 2vw;
+    top: 20vw;
+  }
+}
+
 
 /* Normal */
 
@@ -451,6 +474,8 @@ button,
       }
     }
   }
+
+  
 }
 
 /* Narrow */

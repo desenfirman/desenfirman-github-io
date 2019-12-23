@@ -2,7 +2,7 @@ import './style.scss'
 import React, { useState } from 'react';
 // import Footer from './Footer';
 import  Header  from './Header';
-import { StaticQuery } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import Nav from './Nav';
 // const pic = require('../../assets/images/dese-firmansyah.jpg');
 // import SearchOverlay from '../Search'
