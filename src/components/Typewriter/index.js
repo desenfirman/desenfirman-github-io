@@ -99,6 +99,12 @@ class Typewriter extends React.Component {
 
 
     backspaceAnim(time, callback) {
+        if (this.props.should_replaced){
+            this.setState({
+                content: '',
+                rendered_component: ['']
+            })
+        }
         if (this.props.is_repeat) {
             if ((time - this.prev_time) < this.props.delete_speed) {
                 this.rafId = requestAnimationFrame(time => {
@@ -121,6 +127,8 @@ class Typewriter extends React.Component {
         }else{
             return callback()
         }
+        
+        
 
     }
 
@@ -139,6 +147,7 @@ Typewriter.defaultProps = {
     type_speed_variance: 90,
     type_speed: 30,
     delete_speed: 20,
+    should_replaced: false,
     is_repeat: false,
     time_before_switch: 2000,
     content: [],
@@ -148,6 +157,7 @@ Typewriter.propTypes = {
     type_speed_variance: PropTypes.number,
     type_speed: PropTypes.number,
     delete_speed: PropTypes.number,
+    should_replaced: PropTypes.bool,
     is_repeat: PropTypes.bool,
     time_before_switch: PropTypes.number,
     content: PropTypes.array,

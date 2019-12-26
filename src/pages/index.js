@@ -9,15 +9,6 @@ import SEO from '../components/SEO';
 
 import { H3Typewriter, H1Typewriter, CodeTypewriter } from '../components/Typewriter'
 
-// import pic2 from '../assets/images/pic02.jpg';
-// import pic3 from '../assets/images/pic03.jpg';
-// import pic4 from '../assets/images/pic04.jpg';
-// import pic5 from '../assets/images/pic05.jpg';
-// import pic6 from '../assets/images/pic06.jpg';
-// import pic7 from '../assets/images/pic07.jpg';
-// import pic8 from '../assets/images/pic08.jpg';
-// import Scroll from '../components/Scroll';
-
 const typewriter_heading = [
   "Hi,",
   <br key={'tybr1'} />,
@@ -25,35 +16,50 @@ const typewriter_heading = [
 ]
 
 const typewriter_summary = [
-  "I am on my 4th year of studies in Universitas Brawijaya.",
-  "Taking Computer Science major degree and...",
-  "focusing at Artificial Intelligence & Machine Learning interdisciplinary field.",
+  "I recently graduated from Universitas Brawijaya, Computer Science Major Degree.",
+  "During college, I take AI & Machine Learning interdisciplinary field",
   "But, I also loved Web Development both front-end and back-end",
   "",
 ];
 
+const date_time = new Date().toLocaleString();
+
 const sc_information = [
-  "import SomeDBConnector as db \n\n" +
+  "import some_db_connector as db \n\n" +
   "class MyInformation: \n" +
   "   conn = db.connect('SOMEHOST', 'guest', \n" +
   "               '*******', 'SOMEDATABASE') \n" +
-  "   cursor = conn.cursor() \n\n" +
-  "   query = 'SELECT email, instagram, twitter, \n" +  
-  "               linkedin, github FROM user_table \n" + 
-  "               WHERE username=\"desenfirman\"' \n\n" +
+  "   query = 'SELECT email, twitter, linkedin, \n" +
+  "               github FROM user_table \n" + 
+  "               WHERE role=\"admin\"' \n\n" +
   "   def __init__(self): \n" +
+  "      cursor = conn.cursor() \n" +
   "      cursor.execute(query) \n" +
   "      self.__result = cursor.fetchone() \n\n" +
-  "   def getEmailData(): \n" +
-  "      return self.__result[0] \n\n" +
-  "   def getInstagramData(): \n" +
-  "      return self.__result[1] \n\n" +
-  "   def getTwitterData(): \n" +
-  "      return self.__result[2] \n\n" +
-  "   def getLinkedInData(): \n" +
-  "      return self.__result[3] \n\n" +
-  "   def getGithubData(): \n" +
-  "      return self.__result[4]"
+  "   def getInformation(self): \n" +
+  "      return self.__result \n\n" +
+  ":qs\n" +
+  "Saved as my_information.py !"
+  ,
+  "$ ipython\n" +
+  "Python 3.x.x (default, " + date_time +")\n" +
+  "IPython 7.x.x -- An enhanced Interactive Python.\n\n" +
+  "In [1]: import my_information as my_i\n" +
+  "In [2]: my_info = my_i.MyInformation()\n" +
+  "In [3]: print(my_info.getInformation())\n\n"
+  ,
+  <ul style={{listStyleType: 'none', paddingLeft: '3rem'}}>
+    <li>
+      [
+    </li>
+    <li>&nbsp; "email": <a className={'myinfo'} href="mailto:desenfirman@gmail.com">"desenfirman@gmail.com"</a>,</li>
+    <li>&nbsp; "twitter": <a className={'myinfo'} href="https://twitter.com/desenfirman">"@desenfirman"</a>,</li>
+    <li>&nbsp; "linkedin": <a className={'myinfo'} href="https://www.linkedin.com/in/desenfirman/">"Dese Narfa Firmansyah"</a>,</li>
+    <li>&nbsp; "github": <a className={'myinfo'} href="https://github.com/desenfirman">"desenfirman"</a>"</li>
+    <li>
+      ]
+    </li>
+  </ul>
 ]
 
 
@@ -140,7 +146,6 @@ const IndexPage = () => (
     <SideBar />
 
     <Container
-      
       fluid={false}>
       <Row>
         <Col lg={7} md={7} className="pt-3">
@@ -153,7 +158,7 @@ const IndexPage = () => (
         </Col>
         <Col lg={5} className="pt-3">
           <Container fluid={true}>
-            <CodeTypewriter type_speed={10} speed_variance={50} content={sc_information} />
+            <CodeTypewriter type_speed={1} speed_variance={10} content={sc_information} should_replaced={true} />
           </Container>
         </Col>
       </Row>
