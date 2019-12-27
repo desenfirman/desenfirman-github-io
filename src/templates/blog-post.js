@@ -49,10 +49,10 @@ class BlogPostTemplate extends React.Component {
             {/* <TypographyStyle> */}
               <article className={'text-body'} dangerouslySetInnerHTML={{ __html: post.html }} />
             {/* </TypographyStyle> */}
-            <Container style={{marginTop: '6rem'}} fluid={true}>
+            <Container style={{marginTop: '4rem'}} fluid={true}>
             {
               post.frontmatter.tags.map(tag => {
-                return( <Link to={prefix_page + "/tags/" + lodash.kebabCase(tag)} className="badge badge-secondary">{tag}</Link>)
+                return( <Link to={prefix_page + "/tags/" + lodash.kebabCase(tag)} className="badge badge-dark">{tag}</Link>)
               })
             }
             </Container>

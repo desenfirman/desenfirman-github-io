@@ -60,7 +60,12 @@ module.exports = {
               toHeading: 6
             },
           },
-          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              icon: `<span style="padding-left: 1rem;">#</span>`
+            }
+          },
           // ...
         ],
       },

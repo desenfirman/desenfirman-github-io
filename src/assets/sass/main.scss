@@ -433,32 +433,40 @@ button,
   margin-top: 0.75em;
 }
 
-.text-body{
-  .toc{
-    font-size: $font-size-base * 0.7;
-    ul{
-      li{
+.text-body {
+  .toc {
+    font-family: "Oswald", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: $font-size-base * 0.8;
+    ul {
+      li {
         margin: 0;
+        &:first-child {
+          padding-top: 0.25rem;
+        }
       }
-      &::before{
-        content: "Table of Contents"
+      &::before {
+        content: "Table of Contents";
       }
-      list-style: decimal;
+      list-style: square;
+      overflow-y: auto;
+      max-height: 15rem;
     }
   }
 }
 
 /* Wide */
 
-@include breakpoint("wide"){
-  .toc{
+@include breakpoint("wide") {
+  .toc {
     position: fixed;
-    width:15rem;
+    width: 15rem;
     right: 2vw;
-    top: 10vw;
+    top: 11rem;
+    ul {
+      height: 15rem;
+    }
   }
 }
-
 
 /* Normal */
 
@@ -476,8 +484,6 @@ button,
       }
     }
   }
-
-  
 }
 
 /* Narrow */
@@ -543,10 +549,7 @@ button,
   }
 }
 
-
 @include breakpoint("<=narrower") {
-  
-
   header {
     br {
       display: none;
@@ -647,14 +650,28 @@ button,
   margin-bottom: 1rem;
 }
 
-.rd-t{
+.rd-t {
   color: lighten(desaturate(#1c3b59, 30), 20);
-  font-family: 'Oswald', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  font-family: "Oswald", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
-.myinfo{
+.myinfo {
   background-color: #f4f4f4;
   text-decoration: underline;
   padding: 3px;
 }
 
+h2 {
+  a.anchor {
+    visibility: hidden;
+    span{
+      position: absolute;
+      left: -0.05rem;
+    }
+  }
+  &:hover {
+    a.anchor {
+      visibility: visible;
+    }
+  }
+}
