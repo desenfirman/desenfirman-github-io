@@ -16,8 +16,8 @@ const typewriter_heading = [
 ]
 
 const typewriter_summary = [
-  "I recently graduated from Universitas Brawijaya, Computer Science Major Degree.",
-  "During college, I take AI & Machine Learning interdisciplinary field",
+  "I recently graduated from Universitas Brawijaya as Bachelor of Computer Science.",
+  "During college, I took AI & Machine Learning interdisciplinary field",
   "But, I also loved Web Development both front-end and back-end",
   "",
 ];
