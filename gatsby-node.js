@@ -8,8 +8,8 @@
 
 const blog_prefix_page = `/blog`
 const lodash = require('lodash')
-// Create blog post list pages
 
+// Create blog post list pages
 function createPostPages(createPage, posts, postsPerPage) {
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   posts.forEach((post, index) => {

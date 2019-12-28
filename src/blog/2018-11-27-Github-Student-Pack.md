@@ -3,8 +3,8 @@ title: GitHub Student Pack - Layanan Free dengan Benefit Premium untuk Mahasiswa
 date: '2018-11-27'
 tags:
 - github
-- services
 - tips and trick
+- review
 ---
 
 > Student pack

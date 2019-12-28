@@ -50,7 +50,9 @@ Dulu waktu pelajaran agama, pernah diberi tahu hal begini (sepertinya hal ini cu
 
 > Kalau kamu dimintai tolong seseorang, jangan pernah tanggung-tanggung untuk menolong. Siapa tahu orang tersebut akan menolong kamu kembali.
 
-Quote tersebut sepertinya ada benarnya, Yang jelas setiap orang yang ditolong pasti akan memberikan pertolongan. Cuma bentuknya beragam, jika bukan pertolongan secara langsung, bisa jadi seseorang tersebut turut juga menolong dalam membentuk identitas. Sepertinya saya akan rombak *quotes* tersebut jadi:
+Quote tersebut sepertinya ada benarnya, yang jelas setiap orang yang ditolong pasti akan memberikan pertolongan. Cuma bentuknya beragam, jika bukan pertolongan secara langsung, bisa jadi seseorang tersebut turut juga menolong dalam membentuk identitas.
+
+*Well*, sepertinya saya akan rombak *quotes* tersebut jadi:
 
 > Kalau kamu dimintai tolong seseorang, jangan pernah tanggung-tanggung untuk menolong. **Jika orang tersebut tidak pernah menolong balik ke kamu, minimal feedback positifnya yang akan membentuk dan memperkuat identitas kamu dimasa depan**.  
 

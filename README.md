@@ -14,7 +14,9 @@
 - [x] seo optimization
 - [x] robot.txt and sitemap
 - [x] fetch thumbnail in portfolio
-- [ ] typograph js
+- [ ] ~~typograph js~~
+- [ ] add sort by in portfolio
+- [ ] Github code plugin in gatsby
 
 ## Stuff to add (probably)
 
