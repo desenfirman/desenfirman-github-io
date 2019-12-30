@@ -11,7 +11,7 @@ Jujur saja, dulu punya rencana untuk migrasi dari Jekyll ke *framework static we
 
 ![Bukan, yang jelas bukan Gatsby yang ini wkwk](https://i.imgur.com/Gkt2mxW.png)
 
-GatsbyJS ini adalah framework turunan ReactJS yang memang dikhususkan sebagai *static web generator*. Jika Jekyll menggunakan bahasa pemrograman Ruby on Rails sebagai *base language* untuk *compiling* *page*-nya, maka Gatsby menggunakan bahasa Node JS untuk melakukan *compiling* halaman per halaman. Karena turunan langsung dari React, maka Gatsby juga secara tidak langsung memanfaatkan teknologi *progressive web apps*-nya milik ReactJS. Kapan lagi cuy? punya blog dengan rasa *progressive web apps*, wkwk.
+GatsbyJS ini adalah framework turunan ReactJS yang memang dikhususkan sebagai *static web generator*. Jika Jekyll menggunakan Ruby on Rails sebagai *base language* untuk *compiling* *page*-nya, maka Gatsby menggunakan bahasa Node JS untuk melakukan *compiling* halaman per halaman. Karena turunan langsung dari React, maka Gatsby juga secara tidak langsung memanfaatkan teknologi *progressive web apps*-nya milik ReactJS. Kapan lagi cuy? punya blog dengan rasa *progressive web apps*, wkwk.
 
 ![Nah, ini Gatsby yang bener](https://i.imgur.com/4MYxzK7.png)
 
@@ -20,7 +20,7 @@ GatsbyJS ini adalah framework turunan ReactJS yang memang dikhususkan sebagai *s
 
 ## Motivasi
 
-Penulis sebenarnya juga kurang begitu mencoba mengamati dan menganalisis secara detail bagaimana perbandingan performa antara GatsbyJS dan Jekyll. Secara fungsional, keduanya sama-sama *static-web generator* yang berarti web bisa berjalan dan mengambil data tanpa perlu melakukan koneksi ke *database server*. Pengguna cuma tinggal *deploy*, proses *compile* dilakukan dan kemudian data halaman untuk masing-masing *post* akan disimpan di layanan *web-hosting* berbasis *storage* (dalam hal ini GitHub Pages). Namun ada beberapa dugaan awal yang menjadi motivasi awal kenapa melakukan migrasi dari Jekyll ke GatsbyJS.
+Penulis sebenarnya juga kurang begitu mencoba mengamati dan menganalisis secara detail bagaimana perbandingan performa antara GatsbyJS dan Jekyll. Secara fungsional, keduanya sama-sama *static-web generator* yang berarti web bisa berjalan dan mengambil data tanpa perlu melakukan koneksi ke *database server*. Pengguna cuma tinggal *deploy*, proses *compile* dilakukan dan kemudian data halaman untuk masing-masing *post* akan disimpan di layanan *web-hosting* berbasis *storage* (dalam hal ini GitHub Pages). Namun ada beberapa dugaan yang menjadi motivasi awal kenapa melakukan migrasi dari Jekyll ke GatsbyJS.
 
 Salah satu alasannya yakni Gatsby JS ini turunan dari ReactJS dan harapannya dengan melakukan migrasi ke *framework* yang berbasis JavaScript ini, *blog* yang dihosting dapat secara dinamis berpindah dari halaman ke halaman dalam satu alamat (kebetulan setelah dicoba memang performa navigasinya jauh lebih mendingan dibanding menggunakan Jekyll, hehe).
 
@@ -42,6 +42,7 @@ Berikut ini adalah struktur umum *static web* berbasis GatsbyJS yang diambil dar
 
 ```text
 your-gatsby-project-name/
+|
 └───content/
 |   └───blog/         # tempat meletakkan konten blog
 |   |   |   DD-MM-YY-Example-Post.md
@@ -52,7 +53,7 @@ your-gatsby-project-name/
 |       |   ...
 |
 └───src/
-|   └───components/   # tempat meletakkan komponen web (more likely, pecahannya)
+|   └───components/   # tempat meletakkan pecahan komponen web
 |   |   |   header.js
 |   |   |   image.js
 |   |   |    ...-.js
@@ -79,7 +80,7 @@ your-gatsby-project-name/
 |   README.md
 ```
 
-## Bagaimana Halaman Per Post Ditampilkan?
+## Bagaimana halaman per post ditampilkan?
 
 Jika pada Jekyll tiap halaman post akan di-*render* sesuai dengan *layout* yang sudah ditentukan dalam *format* YAML yang didefinisikan pada baris paling atas di *file* *Markdown*, maka pada GatsbyJS terdapat perbedaan dalam proses pembuatan halamannya.
 
@@ -134,10 +135,11 @@ Secara garis besar, untuk membuat halaman untuk masing-masing *post* dapat dilak
 4. Lakukan perulangan untuk tiap data postingan dan buat masing-masing halaman dengan perulangan tersebut menggunakan fungsi `createPage` pada *file* `gatbsy-node.js`.
 
    ```javascript
-   // File: src/gatsby-node.js
-   // Create blog post list pages
+    // File: src/gatsby-node.js
     function createPostPages(createPage, posts, postsPerPage) {
-      const blogPost = path.resolve(`./src/templates/blog-post.js`) // template untuk konten dari post
+      // Create blog post pages
+      // template untuk konten dari post
+      const blogPost = path.resolve(`./src/templates/blog-post.js`)
       posts.forEach((post, index) => {
         const previous = index === posts.length - 1 ? null : posts[index + 1].node
         const next = index === 0 ? null : posts[index - 1].node
@@ -159,7 +161,8 @@ Secara garis besar, untuk membuat halaman untuk masing-masing *post* dapat dilak
       Array.from({ length: numPages }).forEach((_, i) => {
         createPage({
           path: i === 0 ? blog_prefix_page + `/` : blog_prefix_page + `/${i + 1}`,
-          component: path.resolve(`./src/templates/blog-list.js`), // template untuk list dari post
+          // template untuk membuat page list dari post
+          component: path.resolve(`./src/templates/blog-list.js`),
           context: {
             limit: postsPerPage,
             skip: i * postsPerPage,
@@ -177,6 +180,7 @@ Secara garis besar, untuk membuat halaman untuk masing-masing *post* dapat dilak
 Pada section sebelumnya, sempat disinggung mengenai akses data ke sebuah local GraphQL. Namun, akses data tersebut hanya sebatas proses memetakan alamat untuk masing-masing file *Markdown*. Selanjutnya, data alamat *Markdown* — atau disebut sebagai *slug* akan menjadi pemicu awal untuk mengakses data konten dari masing-masing *Markdown*, baik itu untuk file `blog-list.js` (daftar postingan) maupun `blog-post.js` (konten dari blog itu sendiri). Normalnya, sebuah *template* minimal terdapat *syntax* berikut untuk mengakses data pada GraphQL.
 
 ```javascript
+// File: src/templates/blog-post.js
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {

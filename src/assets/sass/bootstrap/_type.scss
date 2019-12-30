@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6,
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   color: $headings-color;
-  .text-body>&{
+  .text-body > &, .text-body > div > &{
     line-height: 2.25rem;
     margin-top: $headings-margin-bottom * 3.8;
     margin-bottom: $headings-margin-bottom * 1.2;

@@ -15,11 +15,21 @@ import { HLine } from '../../components/HLine'
 import { DiscussionEmbed } from 'disqus-react';
 import unified from 'unified'
 import parse from 'remark-parse'
-import remark2react from 'remark-react'
+import rehypeCustom from "../../utils/rehype-custom";
+import remark2rehype from "remark-rehype";
+import rehype2react from "rehype-react";
 
 
 const qs = require('qs')
 
+const processor = unified()
+                    .use(parse)
+                    .use(remark2rehype)
+                    .use(rehypeCustom)
+                    .use(rehype2react, {
+                      createElement: React.createElement,
+                      fragment: React.Fragment,
+                    });
 
 
 
@@ -69,6 +79,8 @@ class PortfolioRenderer extends React.Component {
       identifier: prefix_page + 'r/' + this.props.name,
       title: this.props.name,
     }
+
+    
     // console.log(disqus_config)
     // console.log(this.state)
     const { name, description, created_at, pushed_at, language, license, html_url, readme, fork } = this.state.repo
@@ -103,14 +115,14 @@ class PortfolioRenderer extends React.Component {
                       You are now viewing README.md's repository, - <a href={html_url} target="_blank" rel="noopener noreferrer">View repo on GitHub</a>
                     </Alert>
                     <HLine />
-                    <article style={{ marginBottom: '6rem' }} className={'text-body'}>
-                      {
-                        unified()
-                          .use(parse)
-                          .use(remark2react)
-                          .processSync(readme).contents
-                      }
-                    </article>
+                      <article className={'text-body'} style={{marginBottom: '6rem'}}>
+                      <>
+                        {
+                         processor.processSync(readme).contents.props.children
+                        }
+                      </>
+                      </article>
+                   
                     <HLine />
                   </main>
                   <Container fluid={true}>

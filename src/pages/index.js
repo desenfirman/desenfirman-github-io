@@ -12,13 +12,13 @@ import { H3Typewriter, H1Typewriter, CodeTypewriter } from '../components/Typewr
 const typewriter_heading = [
   "Hi,",
   <br key={'tybr1'} />,
-  "I'm Dese",
+  "I'm Dese.",
 ]
 
 const typewriter_summary = [
   "I recently graduated from Universitas Brawijaya as Bachelor of Computer Science.",
-  "During college, I took AI & Machine Learning interdisciplinary field",
-  "But, I also loved Web Development both front-end and back-end",
+  "During my college years, I took AI & Machine Learning interdisciplinary field.",
+  "But, I also loved Web Development both front-end and back-end.",
   "",
 ];
 
