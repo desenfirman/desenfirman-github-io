@@ -14,16 +14,23 @@ import { HLine } from '../../components/HLine'
 // import { Router } from "@reach/router";
 import { DiscussionEmbed } from 'disqus-react';
 import unified from 'unified'
-import parse from 'remark-parse'
 import rehypeCustom from "../../utils/rehype-custom";
 import remark2rehype from "remark-rehype";
 import rehype2react from "rehype-react";
+// import remark2react from "remark-react";
 
-
+const parse =  require('remark-parse')
 const qs = require('qs')
 
 const processor = unified()
-                    .use(parse)
+                    .use(parse, 
+                      {
+                        gfm: true,
+                        commonmark:true,
+                        footnotes: true,
+                        pedantic: true,
+                      })
+                      // .use(remark2react);
                     .use(remark2rehype)
                     .use(rehypeCustom)
                     .use(rehype2react, {
@@ -75,13 +82,13 @@ class PortfolioRenderer extends React.Component {
     const prefix_page = 'portfolio/'
     const disqus_shortname = 'desenfirman'
     const disqus_config = {
-      url: base_url + '/' + prefix_page + 'r/' + this.props.name,
-      identifier: prefix_page + 'r/' + this.props.name,
+      url: base_url + '/' + prefix_page + 'r/?name=' + this.props.name,
+      identifier: prefix_page + 'r/?name=' + this.props.name,
       title: this.props.name,
     }
 
     
-    // console.log(disqus_config)
+    console.log(disqus_config)
     // console.log(this.state)
     const { name, description, created_at, pushed_at, language, license, html_url, readme, fork } = this.state.repo
     const content = this.props.name ?

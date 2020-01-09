@@ -84,7 +84,7 @@ your-gatsby-project-name/
 
 Jika pada Jekyll tiap halaman post akan di-*render* sesuai dengan *layout* yang sudah ditentukan dalam *format* YAML yang didefinisikan pada baris paling atas di *file* *Markdown*, maka pada GatsbyJS terdapat perbedaan dalam proses pembuatan halamannya.
 
-Pada GatsbyJS, tiap halaman akan dibuat *in programmatic ways* — begitulah jika merujuk ke dokumentasi GatsbyJS — pada sebuah *file* yang bernama `gatsby-node.js`. Dalam pembuatan halaman, diperlukan sebuah *template* yang dibuat dalam bentuk JSX Component. Selain itu juga, data *Markdown* dari sebuah post hanya dapat diakses menggunakan GraphQL, bahasa *query* utama dari GatsbyJS. Namun GraphQL disini hanya bersifat sebagai representasi data yang ada di project Gatsby mulai dari *blog* *post*, gambar dan *file*-*file* lainnya. Bbukan sebagai koneksi ke sebuah mesin database.
+Pada GatsbyJS, tiap halaman akan dibuat *in programmatic ways* — begitulah jika merujuk ke dokumentasi GatsbyJS — pada sebuah *file* yang bernama `gatsby-node.js`. Dalam pembuatan halaman, diperlukan sebuah *template* yang dibuat dalam bentuk JSX Component. Selain itu juga, data *Markdown* dari sebuah post hanya dapat diakses menggunakan GraphQL, bahasa *query* utama dari GatsbyJS. Namun GraphQL disini hanya bersifat sebagai representasi data yang ada di project Gatsby mulai dari *blog* *post*, gambar dan *file*-*file* lainnya. Bukan sebagai koneksi ke sebuah mesin database.
 
 Secara garis besar, untuk membuat halaman untuk masing-masing *post* dapat dilakukan dengan langkah-langkah berikut:
 
