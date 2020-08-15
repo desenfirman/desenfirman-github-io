@@ -1,4 +1,4 @@
 
 ## Summary
 
-My name is **Dese Narfa Firmansyah**. You can call me **Dese**. I’m recently graduated as Bachelor's of Computer Science from Brawijaya University. I loved programming and things about recent technology since High School. During my college years, I took learning specialization in the field of Artificial Intelligence and Machine Learning. I also took learning course about Cloud Technologies at Digital Talent Scholarship - A certification talent program held by Kominfo.
+My name is **Dese Narfa Firmansyah**. You can call me **Dese**. I recently graduated as Bachelor's of Computer Science from Brawijaya University with GPA 3.89. During my college years, I took a learning pathway in Artificial Intelligence and Machine Learning. After graduating from college, I took Digital Talent Scholarship training in Cloud Computing that was held from Kominfo (Indonesia’s Department of Communication and Informatics). Now, I'm taking a part-time job as a Freelance Software Engineer in Backend.

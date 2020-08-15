@@ -16,7 +16,8 @@ const typewriter_heading = [
 ]
 
 const typewriter_summary = [
-  "I recently graduated from Universitas Brawijaya as Bachelor of Computer Science.",
+  "Freelance Software Engineer in Backend with less than 1 year experience",
+  "Graduated from Universitas Brawijaya as Bachelor of Computer Science.",
   "During my college years, I took AI & Machine Learning interdisciplinary field.",
   "But, I also loved Web Development both front-end and back-end.",
   "",
