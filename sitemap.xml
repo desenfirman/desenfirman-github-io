@@ -11,9 +11,9 @@
 <url> <loc>https://desenfirman.github.io/blog/tags/review</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://desenfirman.github.io/blog/tags/self-writing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://desenfirman.github.io/blog/tags/tips-and-trick</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://desenfirman.github.io/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://desenfirman.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://desenfirman.github.io/search/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://desenfirman.github.io/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://desenfirman.github.io/portfolio/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://desenfirman.github.io/portfolio/r/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://desenfirman.github.io/search/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
