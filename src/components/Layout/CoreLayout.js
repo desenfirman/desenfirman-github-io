@@ -50,9 +50,11 @@ class CoreLayout extends Component {
             <Helmet
               meta={[
                 { name: 'keywords', content: 'desenfirman, developer, backend dev, data scientist, machine learning' },
+                
               ]}
             >
               <html lang="en" />
+              
             </Helmet>
             <div
               className={isPreloaded ? 'main-body is-preload' : 'main-body'}

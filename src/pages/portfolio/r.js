@@ -2,6 +2,7 @@ import './style.scss'
 import React from 'react'
 
 import { CoreLayout as Layout } from '../../components/Layout/CoreLayout'
+import SEO from '../../components/SEO';
 import BreadcrumbNav from '../../components/BreadcrumbNav'
 import SideBar from '../../components/Sidebar'
 import PageFooter from '../../components/PageFooter'
@@ -88,13 +89,15 @@ class PortfolioRenderer extends React.Component {
     }
 
     
-    console.log(disqus_config)
+    // console.log(disqus_config)
     // console.log(this.state)
     const { name, description, created_at, pushed_at, language, license, html_url, readme, fork } = this.state.repo
+    // console.log(processor.processSync(readme))
+    // console.log(readme, this.state.repo)
     const content = this.props.name ?
       (
         this.state.loading ? (<p style={{ textAlign: `center`, marginTop: `35vh`, marginBottom: `35vh` }}>Please Hold on!</p>)
-          : name && html_url
+          : name && html_url && readme
             ? (
               <>
                 <BreadcrumbNav breadcrumb_items={
@@ -125,11 +128,11 @@ class PortfolioRenderer extends React.Component {
                       <article className={'text-body'} style={{marginBottom: '6rem'}}>
                       <>
                         {
-                         processor.processSync(readme).contents.props.children
+                          processor.processSync(readme).result.props.children
                         }
                       </>
                       </article>
-                   
+                    
                     <HLine />
                   </main>
                   <Container fluid={true}>
@@ -138,11 +141,17 @@ class PortfolioRenderer extends React.Component {
                 </Row>
               </>
 
-            ) : (<p style={{ textAlign: `center`, marginTop: `35vh`, marginBottom: `35vh` }}>Oh noes, something error :( <a href="javascript:window.location.href=window.location.href">Try Again</a></p>)
+            ) : (<p style={{ textAlign: `center`, marginTop: `35vh`, marginBottom: `35vh` }} 
+                    dangerouslySetInnerHTML={
+                      {__html:'Oh noes, something error :( <a href="javascript:window.location.href=window.location.href">Try Again</a>'}
+                    }>
+                    
+                </p>)
       )
       : ''
 
     return (content)
+  
   }
 
   fetchPortfolioData = async () => {
@@ -190,6 +199,7 @@ class PortfolioRenderer extends React.Component {
     await axios
       .get(readme_data)
       .then((respReadmeData) => {
+        // console.log(atob(respReadmeData.data.content))
         this.setState({
           loading: false,
           repo: {
@@ -216,6 +226,7 @@ const PortfolioTemplate = (props) => {
   const base_url = props.location.origin
   return (
     <Layout>
+      <SEO title={name}/>
       <SideBar />
       <Container>
         <Row>

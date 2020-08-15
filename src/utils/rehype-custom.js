@@ -69,7 +69,6 @@ const rehypeCustom = options => {
         }
         throw err;
       }
-      console.log(result)
       node.children = result;
     }
     else if (parent && parent.tagName === 'p' && node.tagName === "img") {
@@ -94,13 +93,13 @@ const rehypeCustom = options => {
         },
         children: [{type: 'text', value: '' || node.properties.alt}]
       }
-      node.tagName = 'figure'
-      node.properties = {
+      parent.tagName = 'figure'
+      parent.properties = {
         className: [
           'figure'
         ]
       }
-      node.children = [image, figcaption]
+      parent.children = [image, figcaption]
     }
     else{
       return;

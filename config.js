@@ -18,6 +18,7 @@ module.exports = {
     { path: '/about', name: 'About', icon: 'user', },
   ],
   siteUrl: `https://desenfirman.github.io`,
+  googleAnalyticsTrackingId: 'UA-128555718-2',
   // categories: [
   //   { slug: 'confidence', name: 'Confidence' },
   //   { slug: 'better-humans', name: 'Better Humans' },

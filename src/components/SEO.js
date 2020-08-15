@@ -22,6 +22,7 @@ const SEO = ({
             defaultDescription: description
             siteUrl: url
             defaultImage: image
+            googleAnalyticsTrackingId
           }
         }
       }
@@ -34,6 +35,7 @@ const SEO = ({
           defaultDescription,
           siteUrl,
           defaultImage,
+          googleAnalyticsTrackingId
         },
       },
     }) => {
@@ -42,6 +44,7 @@ const SEO = ({
         description: description || defaultDescription,
         image: `${siteUrl}${image || defaultImage}`,
         url: `${siteUrl}${pathname || '/'}`,
+        googleAnalyticsTrackingId: googleAnalyticsTrackingId
       };
 
       return (
@@ -49,6 +52,16 @@ const SEO = ({
           <Helmet title={seo.title} titleTemplate={titleTemplate}>
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=` + googleAnalyticsTrackingId}></script>
+              
+              <script>
+                {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '` + googleAnalyticsTrackingId + `');
+                `} 
+              </script>
           </Helmet>
         </>
       );
