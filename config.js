@@ -14,6 +14,7 @@ module.exports = {
   nav: [
     { path: '/', name: 'Home', icon: 'home', },
     { path: '/blog', name: 'Blog', icon: 'pen-alt', },
+    { path: '/playground', name: 'Playground', icon: 'flask', },
     { path: '/portfolio', name: 'Portfolio', icon: 'laptop-code', },
     { path: '/about', name: 'About', icon: 'user', },
   ],

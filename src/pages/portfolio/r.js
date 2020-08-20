@@ -222,7 +222,7 @@ class PortfolioRenderer extends React.Component {
 }
 
 const PortfolioTemplate = (props) => {
-  const name = (props.location.search) ? qs.parse(props.location.search, { ignoreQueryPrefix: true }).name : 1
+const name = (props.location.search) ? qs.parse(props.location.search, { ignoreQueryPrefix: true }).name : 1
   const base_url = props.location.origin
   return (
     <Layout>
@@ -243,6 +243,5 @@ const PortfolioTemplate = (props) => {
     </Layout>
   )
 }
-
 
 export default PortfolioTemplate
