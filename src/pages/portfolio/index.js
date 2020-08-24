@@ -15,6 +15,7 @@ const qs = require('qs')
 
 
 class PortfolioListRenderer extends React.Component {
+  
   state = {
     loading: false,
     error: false,

@@ -52,7 +52,7 @@ function createPostByTagsPages(createPage, tags, postsPerPage) {
       const tag_path = lodash.kebabCase(tag.fieldValue)
       createPage({
         path: i === 0 ? blog_prefix_page + `/tags/${tag_path}` : blog_prefix_page + `/tags/${tag_path}/${i + 1}`,
-        component: path.resolve(`./src/templates/blog-list.js`),
+        component: path.resolve(`./src/templates/blog-list-by-tag.js`),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,

@@ -23,6 +23,12 @@ class BlogIndex extends React.Component {
       <Layout breadcrumb_items={[{ link: prefix_page, name: 'Blog' }]}>
         <SEO title={'Blog'} />
         <Container>
+          {
+            <>
+              <h5>List of posts by tag: {this.props.pageContext.tag}</h5>
+              <HLine />
+            </>
+          }
           {/* START of Post List */}
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;
@@ -110,7 +116,7 @@ class BlogIndex extends React.Component {
 export default BlogIndex;
 
 export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
+  query blogPageQueryWithTag($skip: Int!, $limit: Int!, $tag: String = "*") {
     site {
       siteMetadata {
         title
@@ -120,6 +126,7 @@ export const pageQuery = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip
+      filter: { frontmatter: { tags: { glob: $tag } } }
     ) {
       edges {
         node {
