@@ -8,6 +8,7 @@ tags:
 - tips and trick
 - window manager
 - dotfiles
+- productivity
 ---
 
 Awal saya menggunakan *tiling window manager* dimulai saat laptop saya yang utama, Acer E5-475G rusak. Ya, syukurlah ketika laptop utama saya rusak, masih ada laptop cadangan yang kira-kira sudah berumur 8 tahun lebih. Berhubung karena laptop cadangan ini spesifikasinya sangat jadul (Intel Core i3 SandyBridge, 4GB RAM & HDD 500GB) dan sangat tidak nyaman digunakan dalam proses *development*, timbul keingingan untuk melakukan modifikasi bagaimana caranya memangkas *resources* yang ada di *background* namun tidak benar-benar dibutuhkan.
@@ -15,19 +16,19 @@ Awal saya menggunakan *tiling window manager* dimulai saat laptop saya yang utam
 ```toc
 ```
 
-Laptop cadangan saya sudah terintstall Ubuntu 20.04 (Focal Fossa). Secara default *Desktop Environment-*nya (DE) adalah GNOME. *FYI*, saya sangat suka dengan GNOME dari dulu karena tampilannya cukup bagus dan opsi kustomisasinya (mulai dari tema, *icon*, *font* dan *cursor*) sangat beragam. Namun, karena GNOME ini DE yang cukup berat, terpaksa saya memangkas beberapa elemen-elemen GNOME yang sebenarnya tidak cukup penting dalam proses *development*. Percobaan pertama, yaitu memangkas semua kustomisasi yang ada di GNOME dan kembali ke setelah *default*. Hasilnya, ternyata tidak memberikan perubahan. Percobaan kedua, yaitu memangkas animasi serta memangkas background proses GNOME yang tidak dibutuhkan. Hasilnya, ternyata tetap sama juga ☹️.
+Laptop cadangan saya sudah ter-*install* Ubuntu 20.04 (Focal Fossa). Secara *default* *Desktop Environment-*nya (DE) adalah GNOME. *FYI*, saya sangat suka dengan GNOME dari dulu karena tampilannya cukup bagus dan opsi kustomisasinya (mulai dari tema, *icon*, *font* dan *cursor*) sangat beragam. Namun, karena GNOME ini DE yang cukup berat, terpaksa saya memangkas beberapa elemen-elemen GNOME yang sebenarnya tidak cukup penting dalam proses *development*. Percobaan pertama, yaitu memangkas semua kustomisasi yang ada di GNOME dan kembali ke setelah *default*. Hasilnya, ternyata tidak memberikan perubahan. Percobaan kedua, yaitu memangkas animasi serta memangkas background proses GNOME yang tidak dibutuhkan. Hasilnya, ternyata tetap sama juga ☹️.
 
-Kemudian, saya teringat pada salah satu sub-reddit yang bernama [r/unixporn](https://www.reddit.com/r/unixporn/), dimana orang-orang disana suka memposting tampilan dari *desktop* Linux milik mereka yang dikustomisasi sedemikian rupa hingga menjadi desktop sangat menarik untuk dilihat. Mayoritas orang disana menggunakan w*indow manager* yang jenisnya t*iling window manager* (eg: i3, awesomeWM, bspwm, dll). Kata beberapa orang disana karena selain sangat ringan, *tiling window manager* ini juga memudahkan dalam berganti-ganti window disaat proses *development* berlangsung (proses *switching window-*nya dilakukan menggunakan kombinasi *keyboard*). Selain itu, *tiling window manager* ini memberikan tampilan desktop yang cukup rapi karena tidak ada konsep jendela program yang saling timpang tindih satu sama lain. Akhirnya, timbul keingingan untuk berpindah menggunakan *tiling window manager*.
+Kemudian, saya teringat pada salah satu subreddit yang bernama [r/unixporn](https://www.reddit.com/r/unixporn/), dimana orang-orang disana suka memposting tampilan dari *desktop* Linux milik mereka yang dikustomisasi sedemikian rupa hingga menjadi desktop sangat menarik untuk dilihat. Mayoritas orang disana menggunakan w*indow manager* yang jenisnya *tiling window manager* (eg: i3, awesomeWM, bspwm, dll). Kata beberapa orang disana karena selain sangat ringan, *tiling window manager* ini juga memudahkan dalam berganti-ganti window disaat proses *development* berlangsung (proses *switching window-*nya dilakukan menggunakan kombinasi *keyboard*). Selain itu, *tiling window manager* ini memberikan tampilan desktop yang cukup rapi karena tidak ada konsep jendela program yang saling timpang tindih satu sama lain. Akhirnya, timbul keingingan untuk berpindah menggunakan *tiling window manager*.
 
 ## Hello i3!
 
-Pilihan akhirnya jatuh ke *tiling window manager* i3. Awal menggunakan i3 ini cukup bingung juga, mengingat tidak ada tombol *close*, *minimize* dan *maximize* layaknya desktop pada umumnya. Setelah saya baca dokumentasi, ternyata memang semua operasi yang berkaitan dengan window dilakukan menggunakan keyboard dan ini harus dikonfigurasi dulu keybinding-nya tepatnya di file `~/.config/i3/config`. Karena cukup ribet, akhirnya saya menggunakan beberapa setelan keybinding i3 milik orang lain untuk setup awal (yang bisa disebut juga nyomot `dotfiles` orang lain, hehe).
+Pilihan akhirnya jatuh ke *tiling window manager* i3. Pengalaman pertama dalam menggunakan i3 tentunya cukup untuk membuat kepala pusing, mengingat tidak ada tombol *close*, *minimize* dan *maximize* layaknya desktop pada umumnya. Setelah saya baca dokumentasi, ternyata memang semua operasi yang berkaitan dengan window dilakukan menggunakan keyboard dan ini harus dikonfigurasi dulu *keybinding*-nya tepatnya di *file* `~/.config/i3/config`. Karena cukup ribet, akhirnya saya menggunakan beberapa setelan keybinding i3 milik orang lain untuk setup awal (yang bisa disebut juga nyomot `dotfiles` orang lain, hehe).
 
 ![Dimana ada seseorang yang membagikan .dotfiles-nya, disitu ada kesempatan untuk nyomot wkwk.](https://i.imgur.com/QLhiURT.png)
 
 ## Operasi dasar
 
-WM i3 ini memiliki konsep tombol modifier yang merupakan *trigger* untuk masuk mode kontrol window. Terdapat dua tombol modifier yang dapat digunakan yaitu tombol `super` (dikenal dengan tombol start) dan tombol `alt` . Saya menggunakan tombol `super` sebagai modifier utama. Kalau di setelan `dotfiles` i3 tombol `super` ini dikenal dengan nama `Mod4.`
+WM i3 ini memiliki konsep tombol modifier yang merupakan *trigger* untuk masuk mode kontrol window. Terdapat dua tombol modifier yang disediakan yaitu tombol `super` (dikenal dengan tombol start) dan tombol `alt` . Saya menggunakan tombol `super` sebagai modifier utama. Kalau di setelan `dotfiles` i3 tombol `super` ini dikenal dengan nama `Mod4.`
 
 ```text
 ~/.config/i3/config
@@ -36,7 +37,7 @@ WM i3 ini memiliki konsep tombol modifier yang merupakan *trigger* untuk masuk m
 set $mod Mod4
 ```
 
-Setelah *modifier* disetel, pengguna dapat menentukan kombinasi tombol *keyboard* dengan mengikutsertakan tombol *modifier* tersebut ke dalam kombinasi keyboard. Kombinasi tombol yang paling penting yang harus disetel tentunya buka tutup aplikasi serta akses ke *terminal* tentunya. Untuk membuka aplikasi, saya menggunakan utilitas **`dmenu`, sebuah utilitas yang mirip seperti *start menu* tetapi hanya untuk perintah yang tersedia di *host* (selanjutnya saya lebih sering menggunakan utility `rofi` yang 'mungkin' saya bahas di *post* yang berbeda).
+Setelah *modifier* disetel, pengguna dapat menentukan kombinasi tombol *keyboard* dengan mengikutsertakan tombol *modifier* tersebut ke dalam kombinasi keyboard. Kombinasi tombol yang paling penting yang harus disetel tentunya buka tutup aplikasi serta akses ke *terminal* tentunya. Untuk membuka aplikasi, saya menggunakan utilitas `dmenu`, sebuah utilitas yang mirip seperti *start menu* tetapi hanya untuk perintah atau *command* yang tersedia di *host* terkait (selanjutnya saya lebih sering menggunakan utility `rofi` yang 'mungkin' saya akan bahas di *post* yang berbeda).
 
 ```text
 ~/.config/i3/config
@@ -53,7 +54,7 @@ bindsym $mod+Shift+q kill
 
 ## Berganti-ganti Jendela Program
 
-Setelah beberapa perulangan, akhirnya mulai dapat juga *feel* dari menggunakan *tiling window manager*. Yang jelas berpindah-pindah jendela program dari workspace satu ke *workspace* lain cukup mudah dan bisa disetel sesuai dengan kebutuhan pengguna. Pada konfigurasi saya, saya menggunakan kombinasi tombol `super` untuk berganti *focus* dari jendela program satu ke jendela program yang lain. 
+Setelah beberapa perulangan, akhirnya mulai dapat juga *feel* dari menggunakan *tiling window manager*. Yang jelas berpindah-pindah jendela program dari workspace satu ke *workspace* lain cukup mudah dan bisa disetel sesuai dengan kebutuhan pengguna. Pada konfigurasi saya, saya menggunakan kombinasi tombol `super` untuk berganti *focus* dari jendela program satu ke jendela program yang lain.
 
 ```text
 ~/.config/i3/config
@@ -70,7 +71,7 @@ Sepertinya sudah menjadi keharusan di i3 untuk melakukan *setup workspace*. Kare
 ```text
 ~/.config/i3/config
 ------------------------------------------------------------------
-# Setup variabel monitor, daftar monitor yang terhubung 
+# Setup variabel monitor, daftar monitor yang terhubung
 # dapat dilihat dengan perintah xrandr -q
 set $monR eDP-1
 set $monL DP-1
@@ -85,7 +86,7 @@ set $ws3R 13:C
 set $ws4L 4:C
 set $ws4R 14:C
 
-# Setup tiap workspaces ke dalam monitor terkait. 
+# Setup tiap workspaces ke dalam monitor terkait.
 # Variabel workspaces dengan akhiran L (Left) akan menempati monitor dengan
 # akhiran L. Begitu juga untuk workspaces berakhiran R
 workspace $ws1L output $monL
@@ -98,7 +99,7 @@ workspace $ws4L output $monL
 workspace $ws4R output $monR
 ```
 
-Setelah melakukan konfigurasi variabel baik workspace maupun monitor, pengguna dapat melakukan setup keybinding untuk berpindah dari *workspace* satu ke *workspace* lain, atau juga memindah jendela program ke *workspace* lain. 
+Setelah melakukan konfigurasi variabel baik *workspace* maupun monitor, pengguna dapat melakukan *setup* *keybinding* untuk berpindah dari *workspace* satu ke *workspace* lain, atau juga memindah jendela program ke *workspace* lain.
 
 ```text
 ~/.config/i3/config
@@ -164,15 +165,15 @@ Nah, pasti kan dalam organisasi jendela program pasti ada beberapa program yang 
 # kombinasi tombol yang akan aktif ketika mode pengguna
 # masuk ke dalam mode resize
 mode "resize" {
-        
-				# menggunakan tombol jkl; untuk navigasi layaknya panah 
+
+        # menggunakan tombol jkl; untuk navigasi layaknya panah
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
 
         # menggunakan tombol panah untuk mengubah ukuran jendela
-				# left right untuk lebar dan up down untuk tinggi
+        # left right untuk lebar dan up down untuk tinggi
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
@@ -216,7 +217,7 @@ bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 
 ## Etc(s)
 
-Beberapa konfigurasi saya selain yang telah disebutkan antara lain sebagai berikut. Untuk startup program yang akan dieksekusi, saya memasang command `nitrogen` (sebuah utilitas *wallpaper* *engine*), `picom` yang merupakan desktop compositor serta `Polybar` sebagai utilitas pengganti *taskbar*.
+Beberapa konfigurasi saya selain yang telah disebutkan antara lain sebagai berikut. Untuk startup program yang akan dieksekusi, saya memasang *command* `nitrogen` (sebuah utilitas *wallpaper* *engine*), `picom` yang merupakan desktop compositor serta `Polybar` sebagai utilitas pengganti *taskbar*.
 
 Untuk mengambil tangkapan layar, saya menggunakan utilitas `xfce4-screenshooter` yang *keybinding*-nya disetel dengan tombol `PrintScreen`. Satu tanpa kombinasi *modifier* yang berfungsi untuk mengambil tangkapan layar secara langsung dan satunya menggunakan *modifier* yang berfungsi untuk mengambil tangkapan layar dengan pada area tertentu.
 
@@ -233,7 +234,7 @@ bindsym Print exec --no-startup-id xfce4-screenshooter -c
 bindsym $mod+Print exec --no-startup-id xfce4-screenshooter -r
 ```
 
-Saya menggunakan sistem manajemen waktu GTD (Getting Things Done) dan salah satu kunci manajemen waktu GTD adalah *Quick Add Task* dimana seseorang harus secara cepat menambahkan sesuatu ke dalam daftar *Inbox* jika sebuah hal yang ingin dikerjakan muncul di kepala. Pada setup saya, saya menambahkan sebuah keybinding yang secara langsung membuka sebuah *input text* (yang sebenarnya merupakan utilitas `rofi`) **untuk menambahkan sebuah *task. Task* tersebut akan disimpan pada *web-apps* Notion. *Script* ini saya buat sendiri dengan memanfaatkan API *unofficial* dari Notion yang bisa diakses di [tautan](https://github.com/jamalex/notion-py) berikut.
+Saya menggunakan sistem manajemen waktu Getting Things Done (GTD) dan salah satu kunci manajemen waktu GTD adalah *Quick Add Task* dimana seseorang harus secara cepat menambahkan sesuatu ke dalam daftar *Inbox* jika sebuah hal yang ingin dikerjakan muncul di kepala. Pada setup saya, saya menambahkan sebuah keybinding yang secara langsung membuka sebuah *input text* (yang sebenarnya merupakan utilitas `rofi`) untuk menambahkan sebuah *task*. *Task* tersebut akan disimpan pada Notion.so yang merupakan sebuah *note management apps*. *Script* ini saya buat sendiri dengan memanfaatkan API *unofficial* dari Notion yang bisa diakses di [tautan](https://github.com/jamalex/notion-py) berikut.
 
 ```text
 ~/.config/i3/config
@@ -242,6 +243,6 @@ Saya menggunakan sistem manajemen waktu GTD (Getting Things Done) dan salah satu
 bindsym $mod+q exec --no-startup-id "~/.config/i3/scripts/notion_companion_launch.sh"
 ```
 
-![FYI, saya orang yang agak pelupa untuk mengingat banyak hal. Utilitas ini jujur sangat membantu mengingat hal yang akan dikerjakan mulai dari inspirasi yang tiba-tiba nongol gak tahu dari mana hingga hal-hal penting](https://i.imgur.com/QNxW58M.png)
+![FYI, saya orang yang agak pelupa untuk mengingat banyak hal. Utilitas ini jujur sangat membantu untuk mengingat hal yang akan dikerjakan, mulai dari inspirasi yang tiba-tiba nongol gak tahu dari mana hingga hal-hal penting yang harus dikerjakan](https://i.imgur.com/QNxW58M.png)
 
 > PS: Untuk bahasan mengenai *desktop compositor* `picom` (yang sebenarnya adalah turunan dari `compton`), launcher `rofi`, utilitas `polybar` maupun *note management* Notion mungkin akan saya bahas di *post* yang berbeda. *Stay Tune* 😉
